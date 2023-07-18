@@ -110,20 +110,20 @@ typedef DWORD DPID, FAR *LPDPID;
  */
 typedef struct
 {
-    DWORD dwSize;               // Size of structure, in bytes
-    DWORD dwFlags;              // DPCAPS_xxx flags
-    DWORD dwMaxBufferSize;      // Maximum message size, in bytes,  for this service provider
-    DWORD dwMaxQueueSize;       // Obsolete. 
-    DWORD dwMaxPlayers;         // Maximum players/groups (local + remote)
-    DWORD dwHundredBaud;        // Bandwidth in 100 bits per second units; 
-                                // i.e. 24 is 2400, 96 is 9600, etc.
-    DWORD dwLatency;            // Estimated latency; 0 = unknown
-    DWORD dwMaxLocalPlayers;    // Maximum # of locally created players allowed
-    DWORD dwHeaderLength;       // Maximum header length, in bytes, on messages
-                                // added by the service provider
-    DWORD dwTimeout;            // Service provider's suggested timeout value
-                                // This is how long DirectPlay will wait for 
-                                // responses to system messages
+    DWORD dwSize;               //!< Size of structure, in bytes
+    DWORD dwFlags;              //!< DPCAPS_xxx flags
+    DWORD dwMaxBufferSize;      //!< Maximum message size, in bytes,  for this service provider
+    DWORD dwMaxQueueSize;       //!< Obsolete. 
+    DWORD dwMaxPlayers;         //!< Maximum players/groups (local + remote)
+    DWORD dwHundredBaud;        //!< Bandwidth in 100 bits per second units; 
+                                ///< i.e. 24 is 2400, 96 is 9600, etc.
+    DWORD dwLatency;            ///< Estimated latency; 0 = unknown
+    DWORD dwMaxLocalPlayers;    //!< Maximum # of locally created players allowed
+    DWORD dwHeaderLength;       ///< Maximum header length, in bytes, on messages
+                                ///< added by the service provider
+    DWORD dwTimeout;            ///< Service provider's suggested timeout value
+                                ///< This is how long DirectPlay will wait for 
+                                ///< responses to system messages
 } DPCAPS, FAR *LPDPCAPS;
 
 /*
