@@ -182,28 +182,28 @@ typedef struct DICUSTOMFORCE {
 typedef const DICUSTOMFORCE *LPCDICUSTOMFORCE;
 
 typedef struct DIENVELOPE {
-    DWORD dwSize;                   /* sizeof(DIENVELOPE)   */
+    DWORD dwSize;                   /*! sizeof(DIENVELOPE)   */
     DWORD dwAttackLevel;
-    DWORD dwAttackTime;             /* Microseconds         */
+    DWORD dwAttackTime;             /*! Microseconds         */
     DWORD dwFadeLevel;
-    DWORD dwFadeTime;               /* Microseconds         */
+    DWORD dwFadeTime;               /*! Microseconds         */
 } DIENVELOPE, *LPDIENVELOPE;
 typedef const DIENVELOPE *LPCDIENVELOPE;
 
 typedef struct DIEFFECT {
-    DWORD dwSize;                   /* sizeof(DIEFFECT)     */
-    DWORD dwFlags;                  /* DIEFF_*              */
-    DWORD dwDuration;               /* Microseconds         */
-    DWORD dwSamplePeriod;           /* Microseconds         */
+    DWORD dwSize;                   /*! sizeof(DIEFFECT)     */
+    DWORD dwFlags;                  /*! DIEFF_*              */
+    DWORD dwDuration;               /*! Microseconds         */
+    DWORD dwSamplePeriod;           /*! Microseconds         */
     DWORD dwGain;
-    DWORD dwTriggerButton;          /* or DIEB_NOTRIGGER    */
-    DWORD dwTriggerRepeatInterval;  /* Microseconds         */
-    DWORD cAxes;                    /* Number of axes       */
-    LPDWORD rgdwAxes;               /* Array of axes        */
-    LPLONG rglDirection;            /* Array of directions  */
-    LPDIENVELOPE lpEnvelope;        /* Optional             */
-    DWORD cbTypeSpecificParams;     /* Size of params       */
-    LPVOID lpvTypeSpecificParams;   /* Pointer to params    */
+    DWORD dwTriggerButton;          /*! or DIEB_NOTRIGGER    */
+    DWORD dwTriggerRepeatInterval;  /*! Microseconds         */
+    DWORD cAxes;                    /*! Number of axes       */
+    LPDWORD rgdwAxes;               /*! Array of axes        */
+    LPLONG rglDirection;            /*! Array of directions  */
+    LPDIENVELOPE lpEnvelope;        /*! Optional             */
+    DWORD cbTypeSpecificParams;     /*! Size of params       */
+    LPVOID lpvTypeSpecificParams;   /*! Pointer to params    */
 } DIEFFECT, *LPDIEFFECT;
 typedef const DIEFFECT *LPCDIEFFECT;
 
@@ -1060,6 +1060,7 @@ typedef struct _DIMOUSESTATE {
  *
  ****************************************************************************/
 
+/// Redocumentation fixme: how to tell doxygen the hex values for each?
 #define DIK_ESCAPE          0x01
 #define DIK_1               0x02
 #define DIK_2               0x03
@@ -1071,9 +1072,9 @@ typedef struct _DIMOUSESTATE {
 #define DIK_8               0x09
 #define DIK_9               0x0A
 #define DIK_0               0x0B
-#define DIK_MINUS           0x0C    /* - on main keyboard */
+#define DIK_MINUS           0x0C    /*! - on main keyboard */
 #define DIK_EQUALS          0x0D
-#define DIK_BACK            0x0E    /* backspace */
+#define DIK_BACK            0x0E    /*! backspace */
 #define DIK_TAB             0x0F
 #define DIK_Q               0x10
 #define DIK_W               0x11
@@ -1087,7 +1088,7 @@ typedef struct _DIMOUSESTATE {
 #define DIK_P               0x19
 #define DIK_LBRACKET        0x1A
 #define DIK_RBRACKET        0x1B
-#define DIK_RETURN          0x1C    /* Enter on main keyboard */
+#define DIK_RETURN          0x1C    /*! Enter on main keyboard */
 #define DIK_LCONTROL        0x1D
 #define DIK_A               0x1E
 #define DIK_S               0x1F
@@ -1100,7 +1101,7 @@ typedef struct _DIMOUSESTATE {
 #define DIK_L               0x26
 #define DIK_SEMICOLON       0x27
 #define DIK_APOSTROPHE      0x28
-#define DIK_GRAVE           0x29    /* accent grave */
+#define DIK_GRAVE           0x29    /*! accent grave */
 #define DIK_LSHIFT          0x2A
 #define DIK_BACKSLASH       0x2B
 #define DIK_Z               0x2C
@@ -1111,11 +1112,11 @@ typedef struct _DIMOUSESTATE {
 #define DIK_N               0x31
 #define DIK_M               0x32
 #define DIK_COMMA           0x33
-#define DIK_PERIOD          0x34    /* . on main keyboard */
-#define DIK_SLASH           0x35    /* / on main keyboard */
+#define DIK_PERIOD          0x34    /*! . on main keyboard */
+#define DIK_SLASH           0x35    /*! / on main keyboard */
 #define DIK_RSHIFT          0x36
-#define DIK_MULTIPLY        0x37    /* * on numeric keypad */
-#define DIK_LMENU           0x38    /* left Alt */
+#define DIK_MULTIPLY        0x37    /*! * on numeric keypad */
+#define DIK_LMENU           0x38    /*! left Alt */
 #define DIK_SPACE           0x39
 #define DIK_CAPITAL         0x3A
 #define DIK_F1              0x3B
@@ -1129,20 +1130,20 @@ typedef struct _DIMOUSESTATE {
 #define DIK_F9              0x43
 #define DIK_F10             0x44
 #define DIK_NUMLOCK         0x45
-#define DIK_SCROLL          0x46    /* Scroll Lock */
+#define DIK_SCROLL          0x46    /*! Scroll Lock */
 #define DIK_NUMPAD7         0x47
 #define DIK_NUMPAD8         0x48
 #define DIK_NUMPAD9         0x49
-#define DIK_SUBTRACT        0x4A    /* - on numeric keypad */
+#define DIK_SUBTRACT        0x4A    /*! - on numeric keypad */
 #define DIK_NUMPAD4         0x4B
 #define DIK_NUMPAD5         0x4C
 #define DIK_NUMPAD6         0x4D
-#define DIK_ADD             0x4E    /* + on numeric keypad */
+#define DIK_ADD             0x4E    /*! + on numeric keypad */
 #define DIK_NUMPAD1         0x4F
 #define DIK_NUMPAD2         0x50
 #define DIK_NUMPAD3         0x51
 #define DIK_NUMPAD0         0x52
-#define DIK_DECIMAL         0x53    /* . on numeric keypad */
+#define DIK_DECIMAL         0x53    /*! . on numeric keypad */
 #define DIK_F11             0x57
 #define DIK_F12             0x58
 

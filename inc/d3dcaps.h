@@ -33,8 +33,8 @@ typedef struct _D3DLIGHTINGCAPS {
     DWORD dwNumLights;              /*!< Number of lights that can be handled */
 } D3DLIGHTINGCAPS, *LPD3DLIGHTINGCAPS;
 
-#define D3DLIGHTINGMODEL_RGB		0x00000001L
-#define D3DLIGHTINGMODEL_MONO		0x00000002L
+#define D3DLIGHTINGMODEL_RGB		0x00000001L //! RGB lighting model
+#define D3DLIGHTINGMODEL_MONO		0x00000002L //! Mono lighting model
 
 #define D3DLIGHTCAPS_POINT		0x00000001L /*!< Point lights supported */
 #define D3DLIGHTCAPS_SPOT		0x00000002L /*!< Spot lights supported */
