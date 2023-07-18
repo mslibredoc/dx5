@@ -25,7 +25,7 @@
 #define D3DAPI
 #endif
 
-/*
+/*!
  * Interface IID's
  */
 #if defined( _WIN32 ) && !defined( _NO_COM)
@@ -49,7 +49,7 @@ DEFINE_GUID( IID_IDirect3DViewport,     0x4417C146,0x33AD,0x11CF,0x81,0x6F,0x00,
 DEFINE_GUID( IID_IDirect3DViewport2,	0x93281500, 0x8cf8, 0x11d0, 0x89, 0xab, 0x0, 0xa0, 0xc9, 0x5, 0x41, 0x29);
 #endif
 
-/*
+/*!
  * Data structures
  */
 #ifdef __cplusplus
@@ -104,18 +104,18 @@ typedef struct IDirect3DViewport2	*LPDIRECT3DVIEWPORT2;
 extern "C" {
 #endif
 
-/*
+/*!
  * IDirect3D
  */
 #undef INTERFACE
 #define INTERFACE IDirect3D
 DECLARE_INTERFACE_(IDirect3D, IUnknown)
 {
-    /*** IUnknown methods ***/
+    /** IUnknown methods */
     STDMETHOD(QueryInterface) (THIS_ REFIID riid, LPVOID* ppvObj) PURE;
     STDMETHOD_(ULONG, AddRef) (THIS) PURE;
     STDMETHOD_(ULONG, Release) (THIS) PURE;
-    /*** IDirect3D methods ***/
+    /** IDirect3D methods */
     STDMETHOD(Initialize) (THIS_ REFIID) PURE;
     STDMETHOD(EnumDevices)(THIS_ LPD3DENUMDEVICESCALLBACK, LPVOID) PURE;
     STDMETHOD(CreateLight) (THIS_ LPDIRECT3DLIGHT*, IUnknown*) PURE;
