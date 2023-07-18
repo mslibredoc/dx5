@@ -34,32 +34,32 @@ extern "C" {
 #define DSETUPERR_CANTFINDINF           -7
 #define DSETUPERR_CANTFINDDIR           -8
 #define DSETUPERR_INTERNAL              -9
-#define DSETUPERR_NTWITHNO3D            -10  /* REM: obsolete, you'll never see this */
+#define DSETUPERR_NTWITHNO3D            -10  /*!< REM: obsolete, you'll never see this */
 #define DSETUPERR_UNKNOWNOS             -11
 #define DSETUPERR_USERHITCANCEL         -12
 #define DSETUPERR_NOTPREINSTALLEDONNT   -13
 
 // DSETUP flags. DirectX 5.0 apps should use these flags only.
-#define DSETUP_DDRAWDRV         0x00000008      /* install DirectDraw Drivers           */
-#define DSETUP_DSOUNDDRV        0x00000010      /* install DirectSound Drivers          */
-#define DSETUP_DXCORE           0x00010000	/* install DirectX runtime              */
+#define DSETUP_DDRAWDRV         0x00000008      /*!< install DirectDraw Drivers           */
+#define DSETUP_DSOUNDDRV        0x00000010      /*!< install DirectSound Drivers          */
+#define DSETUP_DXCORE           0x00010000	/*!< install DirectX runtime              */
 #define DSETUP_DIRECTX  (DSETUP_DXCORE|DSETUP_DDRAWDRV|DSETUP_DSOUNDDRV)
-#define DSETUP_TESTINSTALL      0x00020000      /* just test install, don't do anything */
+#define DSETUP_TESTINSTALL      0x00020000      /*!< just test install, don't do anything */
 
 // These OBSOLETE flags are here for compatibility with pre-DX5 apps only.
 // They are present to allow DX3 apps to be recompiled with DX5 and still work.
 // DO NOT USE THEM for DX5. They will go away in future DX releases.
-#define DSETUP_DDRAW            0x00000001      /* OBSOLETE. install DirectDraw           */
-#define DSETUP_DSOUND           0x00000002      /* OBSOLETE. install DirectSound          */
-#define DSETUP_DPLAY            0x00000004      /* OBSOLETE. install DirectPlay           */
-#define DSETUP_DPLAYSP          0x00000020      /* OBSOLETE. install DirectPlay Providers */
-#define DSETUP_DVIDEO           0x00000040      /* OBSOLETE. install DirectVideo          */
-#define DSETUP_D3D              0x00000200      /* OBSOLETE. install Direct3D             */
-#define DSETUP_DINPUT           0x00000800      /* OBSOLETE. install DirectInput          */
-#define DSETUP_DIRECTXSETUP     0x00001000      /* OBSOLETE. install DirectXSetup DLL's   */
-#define DSETUP_NOUI             0x00002000      /* OBSOLETE. install DirectX with NO UI   */
-#define DSETUP_PROMPTFORDRIVERS 0x10000000      /* OBSOLETE. prompt when replacing display/audio drivers */
-#define DSETUP_RESTOREDRIVERS   0x20000000      /* OBSOLETE. restore display/audio drivers */
+#define DSETUP_DDRAW            0x00000001      /*!< OBSOLETE. install DirectDraw           */
+#define DSETUP_DSOUND           0x00000002      /*!< OBSOLETE. install DirectSound          */
+#define DSETUP_DPLAY            0x00000004      /*!< OBSOLETE. install DirectPlay           */
+#define DSETUP_DPLAYSP          0x00000020      /*!< OBSOLETE. install DirectPlay Providers */
+#define DSETUP_DVIDEO           0x00000040      /*!< OBSOLETE. install DirectVideo          */
+#define DSETUP_D3D              0x00000200      /*!< OBSOLETE. install Direct3D             */
+#define DSETUP_DINPUT           0x00000800      /*!< OBSOLETE. install DirectInput          */
+#define DSETUP_DIRECTXSETUP     0x00001000      /*!< OBSOLETE. install DirectXSetup DLL's   */
+#define DSETUP_NOUI             0x00002000      /*!< OBSOLETE. install DirectX with NO UI   */
+#define DSETUP_PROMPTFORDRIVERS 0x10000000      /*!< OBSOLETE. prompt when replacing display/audio drivers */
+#define DSETUP_RESTOREDRIVERS   0x20000000      /*!< OBSOLETE. restore display/audio drivers */
 
 
 
@@ -249,7 +249,7 @@ typedef INT (WINAPI * LPDIRECTXREGISTERAPPLICATION)(HWND, LPDIRECTXREGISTERAPPA)
 #endif // UNICODE
 
 typedef DWORD (FAR PASCAL * DSETUP_CALLBACK)(DWORD Reason,
-                                  DWORD MsgType,       /* Same as flags to MessageBox */
+                                  DWORD MsgType,       /*! Same as flags to MessageBox */
                                   LPSTR szMessage,
                                   LPSTR szName,
                                   void *pInfo);

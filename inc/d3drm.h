@@ -25,7 +25,7 @@ WIN_TYPES(IDirect3DRM, DIRECT3DRM);
 WIN_TYPES(IDirect3DRM2, DIRECT3DRM2);
 
 
-/* Create a Direct3DRM API */
+/*! Create a Direct3DRM API */
 STDAPI Direct3DRMCreate(LPDIRECT3DRM FAR *lplpDirect3DRM);
 
 #undef INTERFACE
@@ -50,13 +50,13 @@ DECLARE_INTERFACE_(IDirect3DRM, IUnknown)
     STDMETHOD(CreateMaterial)	(THIS_ D3DVALUE, LPDIRECT3DRMMATERIAL *) PURE;
     STDMETHOD(CreateDevice)	(THIS_ DWORD, DWORD, LPDIRECT3DRMDEVICE *) PURE;
 
-    /* Create a Windows Device using DirectDraw surfaces */
+    /*! Create a Windows Device using DirectDraw surfaces */
     STDMETHOD(CreateDeviceFromSurface)
     (	THIS_ LPGUID lpGUID, LPDIRECTDRAW lpDD,
 	LPDIRECTDRAWSURFACE lpDDSBack, LPDIRECT3DRMDEVICE *
     ) PURE;
 
-    /* Create a Windows Device using D3D objects */
+    /*! Create a Windows Device using D3D objects */
     STDMETHOD(CreateDeviceFromD3D)
     (	THIS_ LPDIRECT3D lpD3D, LPDIRECT3DDEVICE lpD3DDev,
 	LPDIRECT3DRMDEVICE *
@@ -132,13 +132,13 @@ DECLARE_INTERFACE_(IDirect3DRM2, IUnknown)
     STDMETHOD(CreateMaterial)	(THIS_ D3DVALUE, LPDIRECT3DRMMATERIAL *) PURE;
     STDMETHOD(CreateDevice)	(THIS_ DWORD, DWORD, LPDIRECT3DRMDEVICE2 *) PURE;
 
-    /* Create a Windows Device using DirectDraw surfaces */
+    /*! Create a Windows Device using DirectDraw surfaces */
     STDMETHOD(CreateDeviceFromSurface)
     (	THIS_ LPGUID lpGUID, LPDIRECTDRAW lpDD,
 	LPDIRECTDRAWSURFACE lpDDSBack, LPDIRECT3DRMDEVICE2 *
     ) PURE;
 
-    /* Create a Windows Device using D3D objects */
+    /*! Create a Windows Device using D3D objects */
     STDMETHOD(CreateDeviceFromD3D)
     (	THIS_ LPDIRECT3D2 lpD3D, LPDIRECT3DDEVICE2 lpD3DDev,
 	LPDIRECT3DRMDEVICE2 *

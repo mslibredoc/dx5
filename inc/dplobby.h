@@ -18,15 +18,15 @@ extern "C" {
  * GUIDS used by DirectPlay objects
  */
 
-/* {AF465C71-9588-11cf-A020-00AA006157AC} */
+/*! {AF465C71-9588-11cf-A020-00AA006157AC} */
 DEFINE_GUID(IID_IDirectPlayLobby, 0xaf465c71, 0x9588, 0x11cf, 0xa0, 0x20, 0x0, 0xaa, 0x0, 0x61, 0x57, 0xac);
-/* {26C66A70-B367-11cf-A024-00AA006157AC} */
+/*! {26C66A70-B367-11cf-A024-00AA006157AC} */
 DEFINE_GUID(IID_IDirectPlayLobbyA, 0x26c66a70, 0xb367, 0x11cf, 0xa0, 0x24, 0x0, 0xaa, 0x0, 0x61, 0x57, 0xac);
-/* {0194C220-A303-11d0-9C4F-00A0C905425E} */
+/*! {0194C220-A303-11d0-9C4F-00A0C905425E} */
 DEFINE_GUID(IID_IDirectPlayLobby2, 0x194c220, 0xa303, 0x11d0, 0x9c, 0x4f, 0x0, 0xa0, 0xc9, 0x5, 0x42, 0x5e);
-/* {1BB4AF80-A303-11d0-9C4F-00A0C905425E} */
+/*! {1BB4AF80-A303-11d0-9C4F-00A0C905425E} */
 DEFINE_GUID(IID_IDirectPlayLobby2A, 0x1bb4af80, 0xa303, 0x11d0, 0x9c, 0x4f, 0x0, 0xa0, 0xc9, 0x5, 0x42, 0x5e);
-/* {2FE8F810-B2A5-11d0-A787-0000F803ABFC} */
+/*! {2FE8F810-B2A5-11d0-A787-0000F803ABFC} */
 DEFINE_GUID(CLSID_DirectPlayLobby, 0x2fe8f810, 0xb2a5, 0x11d0, 0xa7, 0x87, 0x0, 0x0, 0xf8, 0x3, 0xab, 0xfc);
 
 
@@ -47,30 +47,30 @@ typedef struct IDirectPlayLobby2    FAR *LPDIRECTPLAYLOBBY2A;
 typedef struct IDirectPlayLobby2    IDirectPlayLobby2A;
 
 
-/*
+/*!
  * DPLAPPINFO
  * Used to hold information about a registered DirectPlay
  * application
  */
 typedef struct DPLAPPINFO
 {
-    DWORD       dwSize;             // Size of this structure
-    GUID        guidApplication;    // GUID of the Application
+    DWORD       dwSize;             //! Size of this structure
+    GUID        guidApplication;    //! GUID of the Application
     union
     {
-        LPSTR   lpszAppNameA;       // Pointer to the Application Name
+        LPSTR   lpszAppNameA;       //! Pointer to the Application Name
         LPWSTR  lpszAppName;
     };
 
 } DPLAPPINFO, FAR *LPDPLAPPINFO;
 
-/*
+/*!
  * LPCDPLAPPINFO
  * A constant pointer to DPLAPPINFO
  */
 typedef const DPLAPPINFO FAR *LPCDPLAPPINFO;
 
-/*
+/*!
  * DPCOMPOUNDADDRESSELEMENT
  *
  * An array of these is passed to CreateCompoundAddresses()
@@ -82,7 +82,7 @@ typedef struct DPCOMPOUNDADDRESSELEMENT
 	LPVOID				lpData;
 } DPCOMPOUNDADDRESSELEMENT, FAR *LPDPCOMPOUNDADDRESSELEMENT;
 
-/*
+/*!
  * LPCDPCOMPOUNDADDRESSELEMENT
  * A constant pointer to DPCOMPOUNDADDRESSELEMENT
  */
@@ -95,7 +95,7 @@ typedef const DPCOMPOUNDADDRESSELEMENT FAR *LPCDPCOMPOUNDADDRESSELEMENT;
  *
  ****************************************************************************/
 
-/*
+/*!
  * Callback for EnumAddress()
  */
 typedef BOOL (FAR PASCAL *LPDPENUMADDRESSCALLBACK)(
@@ -104,7 +104,7 @@ typedef BOOL (FAR PASCAL *LPDPENUMADDRESSCALLBACK)(
     LPCVOID         lpData,
     LPVOID          lpContext);
 
-/*
+/*!
  * Callback for EnumAddressTypes()
  */
 typedef BOOL (FAR PASCAL *LPDPLENUMADDRESSTYPESCALLBACK)(
@@ -112,7 +112,7 @@ typedef BOOL (FAR PASCAL *LPDPLENUMADDRESSTYPESCALLBACK)(
     LPVOID          lpContext,
     DWORD           dwFlags);
 
-/*
+/*!
  * Callback for EnumLocalApplications()
  */
 typedef BOOL (FAR PASCAL * LPDPLENUMLOCALAPPLICATIONSCALLBACK)(
@@ -246,14 +246,14 @@ DECLARE_INTERFACE_( IDirectPlayLobby2, IDirectPlayLobby )
  *
  ****************************************************************************/
 
-/*
+/*!
  *	This is a message flag used by ReceiveLobbyMessage.  It can be
  *	returned in the dwMessageFlags parameter to indicate a message from
  *	the system.
  */
 #define DPLMSG_SYSTEM					0x00000001
 
-/*
+/*!
  *	This is a message flag used by ReceiveLobbyMessage and SendLobbyMessage.
  *  It is used to indicate that the message is a standard lobby message.
  *  DPLMSG_SETPROPERTY, DPLMSG_SETPROPERTYRESPONSE, DPLMSG_GETPROPERTY,
@@ -274,7 +274,7 @@ DECLARE_INTERFACE_( IDirectPlayLobby2, IDirectPlayLobby )
  *
  ****************************************************************************/
 
-/*
+/*!
  * DPLMSG_GENERIC
  * Generic message structure used to identify the message type.
  */
@@ -283,64 +283,64 @@ typedef struct _DPLMSG_GENERIC
     DWORD       dwType;         // Message type
 } DPLMSG_GENERIC, FAR *LPDPLMSG_GENERIC;
 
-/*
+/*!
  *  DPLMSG_SETPROPERTY
  *  Standard message sent by an application to a lobby to set a
  *  property
  */
 typedef struct _DPLMSG_SETPROPERTY
 {
-	DWORD	dwType;				// Message type
-	DWORD	dwRequestID;		// Request ID (DPL_NOCONFIRMATION if no confirmation desired)
-	GUID	guidPlayer;			// Player GUID
-	GUID	guidPropertyTag;	// Property GUID
-	DWORD	dwDataSize;			// Size of data
-	DWORD	dwPropertyData[1];	// Buffer containing data
+	DWORD	dwType;				//! Message type
+	DWORD	dwRequestID;		//! Request ID (DPL_NOCONFIRMATION if no confirmation desired)
+	GUID	guidPlayer;			//! Player GUID
+	GUID	guidPropertyTag;	//! Property GUID
+	DWORD	dwDataSize;			//! Size of data
+	DWORD	dwPropertyData[1];	//! Buffer containing data
 } DPLMSG_SETPROPERTY, FAR *LPDPLMSG_SETPROPERTY;
 
 #define	DPL_NOCONFIRMATION			0
 
-/*
+/*!
  *  DPLMSG_SETPROPERTYRESPONSE
  *  Standard message returned by a lobby to confirm a 
  *  DPLMSG_SETPROPERTY message.
  */
 typedef struct _DPLMSG_SETPROPERTYRESPONSE
 {
-	DWORD	dwType;				// Message type
-	DWORD	dwRequestID;		// Request ID
-	GUID	guidPlayer;			// Player GUID
-	GUID	guidPropertyTag;	// Property GUID
-	HRESULT	hr;					// Return Code
+	DWORD	dwType;				//! Message type
+	DWORD	dwRequestID;		//! Request ID
+	GUID	guidPlayer;			//! Player GUID
+	GUID	guidPropertyTag;	//! Property GUID
+	HRESULT	hr;					//! Return Code
 } DPLMSG_SETPROPERTYRESPONSE, FAR *LPDPLMSG_SETPROPERTYRESPONSE;
 
-/*
+/*!
  *  DPLMSG_GETPROPERTY
  *  Standard message sent by an application to a lobby to request
  *	the current value of a property
  */
 typedef struct _DPLMSG_GETPROPERTY
 {
-	DWORD	dwType;				// Message type
-	DWORD	dwRequestID;		// Request ID
-	GUID	guidPlayer;			// Player GUID
-	GUID	guidPropertyTag;	// Property GUID
+	DWORD	dwType;				//! Message type
+	DWORD	dwRequestID;		//! Request ID
+	GUID	guidPlayer;			//! Player GUID
+	GUID	guidPropertyTag;	//! Property GUID
 } DPLMSG_GETPROPERTY, FAR *LPDPLMSG_GETPROPERTY;
 
-/*
+/*!
  *  DPLMSG_GETPROPERTYRESPONSE
  *  Standard message returned by a lobby in response to a
  *	DPLMSG_GETPROPERTY message.
  */
 typedef struct _DPLMSG_GETPROPERTYRESPONSE
 {
-	DWORD	dwType;				// Message type
-	DWORD	dwRequestID;		// Request ID
-	GUID	guidPlayer;			// Player GUID
-	GUID	guidPropertyTag;	// Property GUID
-	HRESULT	hr;					// Return Code
-	DWORD	dwDataSize;			// Size of data
-	DWORD	dwPropertyData[1];	// Buffer containing data
+	DWORD	dwType;				//! Message type
+	DWORD	dwRequestID;		//! Request ID
+	GUID	guidPlayer;			//! Player GUID
+	GUID	guidPropertyTag;	//! Property GUID
+	HRESULT	hr;					//! Return Code
+	DWORD	dwDataSize;			//! Size of data
+	DWORD	dwPropertyData[1];	//! Buffer containing data
 } DPLMSG_GETPROPERTYRESPONSE, FAR *LPDPLMSG_GETPROPERTYRESPONSE;
 
 
@@ -350,44 +350,44 @@ typedef struct _DPLMSG_GETPROPERTYRESPONSE
  *
  *****************************************/
 
-/*
+/*!
  *  The application has read the connection settings.
  *  It is now O.K. for the lobby client to release
  *  its IDirectPlayLobby interface.
  */
 #define DPLSYS_CONNECTIONSETTINGSREAD   0x00000001
 
-/*
+/*!
  *  The application's call to DirectPlayConnect failed
  */
 #define DPLSYS_DPLAYCONNECTFAILED       0x00000002
 
-/*
+/*!
  *  The application has created a DirectPlay session.
  */
 #define DPLSYS_DPLAYCONNECTSUCCEEDED    0x00000003
 
-/*
+/*!
  *  The application has terminated.
  */
 #define DPLSYS_APPTERMINATED            0x00000004
 
-/*
+/*!
  *  The message is a DPLMSG_SETPROPERTY message.
  */
 #define DPLSYS_SETPROPERTY				0x00000005
 
-/*
+/*!
  *  The message is a DPLMSG_SETPROPERTYRESPONSE message.
  */
 #define DPLSYS_SETPROPERTYRESPONSE		0x00000006
 
-/*
+/*!
  *  The message is a DPLMSG_GETPROPERTY message.
  */
 #define DPLSYS_GETPROPERTY				0x00000007
 
-/*
+/*!
  *  The message is a DPLMSG_GETPROPERTYRESPONSE message.
  */
 #define DPLSYS_GETPROPERTYRESPONSE		0x00000008
@@ -399,7 +399,7 @@ typedef struct _DPLMSG_GETPROPERTYRESPONSE
  *
  ****************************************************************************/
 
-/*
+/*!
  * DPLPROPERTY_MessagesSupported
  *
  * Request whether the lobby supports standard.  Lobby with respond with either
@@ -411,7 +411,7 @@ typedef struct _DPLMSG_GETPROPERTYRESPONSE
 DEFINE_GUID(DPLPROPERTY_MessagesSupported, 
 0x762ccda1, 0xd916, 0x11d0, 0xba, 0x39, 0x0, 0xc0, 0x4f, 0xd7, 0xed, 0x67);
 
-/*
+/*!
  * DPLPROPERTY_LobbyGuid
  *
  * Request the GUID that identifies the lobby software that the application
@@ -423,7 +423,7 @@ DEFINE_GUID(DPLPROPERTY_MessagesSupported,
 DEFINE_GUID(DPLPROPERTY_LobbyGuid, 
 0xf56920a0, 0xd218, 0x11d0, 0xba, 0x39, 0x0, 0xc0, 0x4f, 0xd7, 0xed, 0x67);
 
-/*
+/*!
  * DPLPROPERTY_PlayerGuid
  *
  * Request the GUID that identifies the player on this machine for sending
@@ -435,7 +435,7 @@ DEFINE_GUID(DPLPROPERTY_LobbyGuid,
 DEFINE_GUID(DPLPROPERTY_PlayerGuid, 
 0xb4319322, 0xd20d, 0x11d0, 0xba, 0x39, 0x0, 0xc0, 0x4f, 0xd7, 0xed, 0x67);
 
-/*
+/*!
  * DPLDATA_PLAYERGUID
  *
  * Data structure to hold the GUID of the player and player creation flags
@@ -447,7 +447,7 @@ typedef struct _DPLDATA_PLAYERGUID
 	DWORD	dwPlayerFlags;
 } DPLDATA_PLAYERGUID, FAR *LPDPLDATA_PLAYERGUID;
 
-/*
+/*!
  * DPLPROPERTY_PlayerScore
  *
  * Used to send an array of long integers to the lobby indicating the 
@@ -459,7 +459,7 @@ typedef struct _DPLDATA_PLAYERGUID
 DEFINE_GUID(DPLPROPERTY_PlayerScore, 
 0x48784000, 0xd219, 0x11d0, 0xba, 0x39, 0x0, 0xc0, 0x4f, 0xd7, 0xed, 0x67);
 
-/*
+/*!
  * DPLDATA_PLAYERSCORE
  *
  * Data structure to hold an array of long integers representing a player score.
@@ -486,7 +486,7 @@ typedef struct _DPLDATA_PLAYERSCORE
  * The EnumAddress() function is used to parse these address data chunks.
  */
 
-/*
+/*!
  * DPADDRESS
  *
  * Header for block of address data elements
@@ -499,7 +499,7 @@ typedef struct _DPADDRESS
 
 typedef DPADDRESS FAR *LPDPADDRESS;
 
-/*
+/*!
  * DPAID_TotalSize
  *
  * Chunk is a DWORD containing size of entire DPADDRESS structure
@@ -509,7 +509,7 @@ typedef DPADDRESS FAR *LPDPADDRESS;
 DEFINE_GUID(DPAID_TotalSize, 
 0x1318f560, 0x912c, 0x11d0, 0x9d, 0xaa, 0x0, 0xa0, 0xc9, 0xa, 0x43, 0xcb);
 
-/*
+/*!
  * DPAID_ServiceProvider
  *
  * Chunk is a GUID describing the service provider that created the chunk.
@@ -520,7 +520,7 @@ DEFINE_GUID(DPAID_TotalSize,
 DEFINE_GUID(DPAID_ServiceProvider, 
 0x7d916c0, 0xe0af, 0x11cf, 0x9c, 0x4e, 0x0, 0xa0, 0xc9, 0x5, 0x42, 0x5e);
 
-/*
+/*!
  * DPAID_LobbyProvider
  *
  * Chunk is a GUID describing the lobby provider that created the chunk.
@@ -531,7 +531,7 @@ DEFINE_GUID(DPAID_ServiceProvider,
 DEFINE_GUID(DPAID_LobbyProvider, 
 0x59b95640, 0x9667, 0x11d0, 0xa7, 0x7d, 0x0, 0x0, 0xf8, 0x3, 0xab, 0xfc);
 
-/*
+/*!
  * DPAID_Phone and DPAID_PhoneW
  *
  * Chunk is a string containing a phone number (i.e. "1-800-555-1212")
@@ -546,7 +546,7 @@ DEFINE_GUID(DPAID_Phone,
 DEFINE_GUID(DPAID_PhoneW, 
 0xba5a7a70, 0x9dbf, 0x11d0, 0x9c, 0xc1, 0x0, 0xa0, 0xc9, 0x5, 0x42, 0x5e);
 
-/*
+/*!
  * DPAID_Modem and DPAID_ModemW
  *
  * Chunk is a string containing a modem name registered with TAPI
@@ -561,7 +561,7 @@ DEFINE_GUID(DPAID_Modem,
 DEFINE_GUID(DPAID_ModemW, 
 0x1fd92e0, 0xa2ff, 0x11d0, 0x9c, 0x4f, 0x0, 0xa0, 0xc9, 0x5, 0x42, 0x5e);
 
-/*
+/*!
  * DPAID_Inet and DPAID_InetW
  *
  * Chunk is a string containing a TCP/IP host name or an IP address
@@ -576,7 +576,7 @@ DEFINE_GUID(DPAID_INet,
 DEFINE_GUID(DPAID_INetW, 
 0xe63232a0, 0x9dbf, 0x11d0, 0x9c, 0xc1, 0x0, 0xa0, 0xc9, 0x5, 0x42, 0x5e);
 
-/*
+/*!
  * DPCOMPORTADDRESS
  *
  * Used to specify com port settings. The constants that define baud rate,
@@ -584,24 +584,24 @@ DEFINE_GUID(DPAID_INetW,
  * control are given below.
  */
 
-#define DPCPA_NOFLOW        0           // no flow control
-#define DPCPA_XONXOFFFLOW   1           // software flow control
-#define DPCPA_RTSFLOW       2           // hardware flow control with RTS
-#define DPCPA_DTRFLOW       3           // hardware flow control with DTR
-#define DPCPA_RTSDTRFLOW    4           // hardware flow control with RTS and DTR
+#define DPCPA_NOFLOW        0           //! no flow control
+#define DPCPA_XONXOFFFLOW   1           //! software flow control
+#define DPCPA_RTSFLOW       2           //! hardware flow control with RTS
+#define DPCPA_DTRFLOW       3           //! hardware flow control with DTR
+#define DPCPA_RTSDTRFLOW    4           //! hardware flow control with RTS and DTR
 
 typedef struct _DPCOMPORTADDRESS
 {
-    DWORD   dwComPort;                  // COM port to use (1-4)
-    DWORD   dwBaudRate;                 // baud rate (100-256k)
-    DWORD   dwStopBits;                 // no. stop bits (1-2)
-    DWORD   dwParity;                   // parity (none, odd, even, mark)
-    DWORD   dwFlowControl;              // flow control (none, xon/xoff, rts, dtr)
+    DWORD   dwComPort;                  //! COM port to use (1-4)
+    DWORD   dwBaudRate;                 //! baud rate (100-256k)
+    DWORD   dwStopBits;                 //! no. stop bits (1-2)
+    DWORD   dwParity;                   //! parity (none, odd, even, mark)
+    DWORD   dwFlowControl;              //! flow control (none, xon/xoff, rts, dtr)
 } DPCOMPORTADDRESS;
 
 typedef DPCOMPORTADDRESS FAR *LPDPCOMPORTADDRESS;
 
-/*
+/*!
  * DPAID_ComPort
  *
  * Chunk contains a DPCOMPORTADDRESS structure defining the serial port.
