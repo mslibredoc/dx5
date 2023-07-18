@@ -770,17 +770,17 @@ DECLARE_INTERFACE_(IDirect3DViewport2, IDirect3DViewport)
  *
  ****************************************************************************/
 
-/*
+/*!
  * Return the next viewport
  */
 #define D3DNEXT_NEXT	0x00000001l
 
-/*
+/*!
  * Return the first viewport
  */
 #define D3DNEXT_HEAD	0x00000002l
 
-/*
+/*!
  * Return the last viewport
  */
 #define D3DNEXT_TAIL	0x00000004l
@@ -793,24 +793,24 @@ DECLARE_INTERFACE_(IDirect3DViewport2, IDirect3DViewport)
  *
  ****************************************************************************/
 
-/*
+/*!
  * Wait until the device is ready to draw the primitive
  * This will cause DP to not return DDERR_WASSTILLDRAWING
  */
 #define D3DDP_WAIT					0x00000001l
 
 
-/*
+/*!
  * Hint that the primitives have been clipped by the application.
  */
 #define D3DDP_DONOTCLIP				0x00000004l
 
-/*
+/*!
  * Hint that the extents need not be updated.
  */
 #define D3DDP_DONOTUPDATEEXTENTS	0x00000008l
 
-/*
+/*!
  * Direct3D Errors
  * DirectDraw error codes are used when errors not specified here.
  */
@@ -818,13 +818,13 @@ DECLARE_INTERFACE_(IDirect3DViewport2, IDirect3DViewport)
 #define D3DERR_BADMAJORVERSION		MAKE_DDHRESULT(700)
 #define D3DERR_BADMINORVERSION		MAKE_DDHRESULT(701)
 
-/*
+/*!
  * An invalid device was requested by the application.
  */
 #define D3DERR_INVALID_DEVICE   MAKE_DDHRESULT(705)
 #define D3DERR_INITFAILED       MAKE_DDHRESULT(706)
 
-/*
+/*!
  * SetRenderTarget attempted on a device that was
  * QI'd off the render target.
  */
