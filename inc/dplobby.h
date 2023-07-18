@@ -274,20 +274,13 @@ DECLARE_INTERFACE_( IDirectPlayLobby2, IDirectPlayLobby )
  *
  ****************************************************************************/
 
-/*!
- * DPLMSG_GENERIC
- * Generic message structure used to identify the message type.
- */
+//! Generic message structure used to identify the message type.
 typedef struct _DPLMSG_GENERIC
 {
     DWORD       dwType;         // Message type
 } DPLMSG_GENERIC, FAR *LPDPLMSG_GENERIC;
 
-/*!
- *  DPLMSG_SETPROPERTY
- *  Standard message sent by an application to a lobby to set a
- *  property
- */
+//! Standard message sent by an application to a lobby to set a property
 typedef struct _DPLMSG_SETPROPERTY
 {
 	DWORD	dwType;				//! Message type
@@ -300,11 +293,7 @@ typedef struct _DPLMSG_SETPROPERTY
 
 #define	DPL_NOCONFIRMATION			0
 
-/*!
- *  DPLMSG_SETPROPERTYRESPONSE
- *  Standard message returned by a lobby to confirm a 
- *  DPLMSG_SETPROPERTY message.
- */
+//! Standard message returned by a lobby to confirm a DPLMSG_SETPROPERTY message.
 typedef struct _DPLMSG_SETPROPERTYRESPONSE
 {
 	DWORD	dwType;				//! Message type
@@ -314,11 +303,7 @@ typedef struct _DPLMSG_SETPROPERTYRESPONSE
 	HRESULT	hr;					//! Return Code
 } DPLMSG_SETPROPERTYRESPONSE, FAR *LPDPLMSG_SETPROPERTYRESPONSE;
 
-/*!
- *  DPLMSG_GETPROPERTY
- *  Standard message sent by an application to a lobby to request
- *	the current value of a property
- */
+//! Standard message sent by an application to a lobby to request the current value of a property
 typedef struct _DPLMSG_GETPROPERTY
 {
 	DWORD	dwType;				//! Message type
@@ -327,11 +312,7 @@ typedef struct _DPLMSG_GETPROPERTY
 	GUID	guidPropertyTag;	//! Property GUID
 } DPLMSG_GETPROPERTY, FAR *LPDPLMSG_GETPROPERTY;
 
-/*!
- *  DPLMSG_GETPROPERTYRESPONSE
- *  Standard message returned by a lobby in response to a
- *	DPLMSG_GETPROPERTY message.
- */
+//!  Standard message returned by a lobby in response to a DPLMSG_GETPROPERTY message.
 typedef struct _DPLMSG_GETPROPERTYRESPONSE
 {
 	DWORD	dwType;				//! Message type
