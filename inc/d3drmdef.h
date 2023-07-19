@@ -114,36 +114,36 @@ typedef enum _D3DRMCOMBINETYPE
 typedef D3DCOLORMODEL D3DRMCOLORMODEL, *LPD3DRMCOLORMODEL;
 
 typedef enum _D3DRMPALETTEFLAGS
-{   D3DRMPALETTE_FREE,			/* renderer may use this entry freely */
-    D3DRMPALETTE_READONLY,		/* fixed but may be used by renderer */
-    D3DRMPALETTE_RESERVED		/* may not be used by renderer */
+{   D3DRMPALETTE_FREE,			/*!< renderer may use this entry freely */
+    D3DRMPALETTE_READONLY,		/*!< fixed but may be used by renderer */
+    D3DRMPALETTE_RESERVED		/*!< may not be used by renderer */
 } D3DRMPALETTEFLAGS, *LPD3DRMPALETTEFLAGS;
 
 typedef struct _D3DRMPALETTEENTRY
-{   unsigned char red;		/* 0 .. 255 */
-    unsigned char green;	/* 0 .. 255 */
-    unsigned char blue;		/* 0 .. 255 */
-    unsigned char flags;	/* one of D3DRMPALETTEFLAGS */
+{   unsigned char red;		/*!< 0 .. 255 */
+    unsigned char green;	/*!< 0 .. 255 */
+    unsigned char blue;		/*!< 0 .. 255 */
+    unsigned char flags;	/*!< one of D3DRMPALETTEFLAGS */
 } D3DRMPALETTEENTRY, *LPD3DRMPALETTEENTRY;
 
 typedef struct _D3DRMIMAGE
-{   int width, height;		/* width and height in pixels */
-    int aspectx, aspecty;	/* aspect ratio for non-square pixels */
-    int depth;			/* bits per pixel */
-    int rgb;			/* if false, pixels are indices into a
+{   int width, height;		/*!< width and height in pixels */
+    int aspectx, aspecty;	/*!< aspect ratio for non-square pixels */
+    int depth;			/*!< bits per pixel */
+    int rgb;			/*!< if false, pixels are indices into a
 				   palette otherwise, pixels encode
 				   RGB values. */
-    int bytes_per_line;		/* number of bytes of memory for a
+    int bytes_per_line;		/*!< number of bytes of memory for a
 				   scanline. This must be a multiple
 				   of 4. */
-    void* buffer1;		/* memory to render into (first buffer). */
-    void* buffer2;		/* second rendering buffer for double
+    void* buffer1;		/*!< memory to render into (first buffer). */
+    void* buffer2;		/*!< second rendering buffer for double
 				   buffering, set to NULL for single
 				   buffering. */
     unsigned long red_mask;
     unsigned long green_mask;
     unsigned long blue_mask;
-    unsigned long alpha_mask;	/* if rgb is true, these are masks for
+    unsigned long alpha_mask;	/*!< if rgb is true, these are masks for
 				   the red, green and blue parts of a
 				   pixel.  Otherwise, these are masks
 				   for the significant bits of the
@@ -152,8 +152,8 @@ typedef struct _D3DRMIMAGE
 				   displays use 64 intensities of red,
 				   green and blue, so the masks should
 				   all be set to 0xfc. */
-    int palette_size;           /* number of entries in palette */
-    D3DRMPALETTEENTRY* palette;	/* description of the palette (only if
+    int palette_size;           /*!< number of entries in palette */
+    D3DRMPALETTEENTRY* palette;	/*!< description of the palette (only if
 				   rgb is false).  Must be (1<<depth)
 				   elements. */
 } D3DRMIMAGE, *LPD3DRMIMAGE;

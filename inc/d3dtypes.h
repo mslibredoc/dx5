@@ -249,12 +249,12 @@ public:
  * Vertex data types supported in an ExecuteBuffer.
  */
 
-/*
+/**
  * Homogeneous vertices
  */
 
 typedef struct _D3DHVERTEX {
-    DWORD           dwFlags;        /* Homogeneous clipping flags */
+    DWORD           dwFlags;        /*!< Homogeneous clipping flags */
     union {
 	D3DVALUE    hx;
 	D3DVALUE    dvHX;
@@ -317,12 +317,12 @@ typedef struct _D3DTLVERTEX {
 #endif
 } D3DTLVERTEX, *LPD3DTLVERTEX;
 
-/*
+/**
  * Untransformed/lit vertices
  */
 typedef struct _D3DLVERTEX {
     union {
-	D3DVALUE     x;             /* Homogeneous coordinates */
+	D3DVALUE     x;             /*!< Homogeneous coordinates */
 	D3DVALUE     dvX;
     };
     union {
@@ -335,15 +335,15 @@ typedef struct _D3DLVERTEX {
     };
     DWORD            dwReserved;
     union {
-	D3DCOLOR     color;         /* Vertex color */
+	D3DCOLOR     color;         /*!< Vertex color */
 	D3DCOLOR     dcColor;
     };
     union {
-	D3DCOLOR     specular;      /* Specular component of vertex */
+	D3DCOLOR     specular;      /*!< Specular component of vertex */
 	D3DCOLOR     dcSpecular;
     };
     union {
-	D3DVALUE     tu;            /* Texture coordinates */
+	D3DVALUE     tu;            /*!< Texture coordinates */
 	D3DVALUE     dvTU;
     };
     union {
@@ -409,7 +409,7 @@ typedef struct _D3DVERTEX {
 #endif
 } D3DVERTEX, *LPD3DVERTEX;
 
-/*
+/**
  * Matrix, viewport, and tranformation structures and definitions.
  */
 
@@ -575,40 +575,40 @@ typedef struct _D3DTRANSFORMDATA {
     D3DRECT         drExtent;       /* Extent of transformed vertices */
 } D3DTRANSFORMDATA, *LPD3DTRANSFORMDATA;
 
-/*
+/*!
  * Structure defining position and direction properties for lighting.
  */
 typedef struct _D3DLIGHTINGELEMENT {
-    D3DVECTOR dvPosition;     	    /* Lightable point in model space */
-    D3DVECTOR dvNormal;             /* Normalised unit vector */
+    D3DVECTOR dvPosition;     	    /*!< Lightable point in model space */
+    D3DVECTOR dvNormal;             /*!< Normalised unit vector */
 } D3DLIGHTINGELEMENT, *LPD3DLIGHTINGELEMENT;
 
-/*
+/**
  * Structure defining material properties for lighting.
  */
 typedef struct _D3DMATERIAL {
     DWORD       	dwSize;
     union {
-	D3DCOLORVALUE   diffuse;        /* Diffuse color RGBA */
+	D3DCOLORVALUE   diffuse;        /*!< Diffuse color RGBA */
 	D3DCOLORVALUE   dcvDiffuse;
     };
     union {
-	D3DCOLORVALUE   ambient;        /* Ambient color RGB */
+	D3DCOLORVALUE   ambient;        /*!< Ambient color RGB */
 	D3DCOLORVALUE   dcvAmbient;
     };
     union {
-	D3DCOLORVALUE   specular;       /* Specular 'shininess' */
+	D3DCOLORVALUE   specular;       /*!< Specular 'shininess' */
 	D3DCOLORVALUE   dcvSpecular;
     };
     union {
-	D3DCOLORVALUE	emissive;       /* Emissive color RGB */
+	D3DCOLORVALUE	emissive;       /*!< Emissive color RGB */
 	D3DCOLORVALUE	dcvEmissive;
     };
     union {
-	D3DVALUE    	power;          /* Sharpness if specular highlight */
+	D3DVALUE    	power;          /*!< Sharpness if specular highlight */
 	D3DVALUE    	dvPower;
     };
-    D3DTEXTUREHANDLE    hTexture;   	/* Handle to texture map */
+    D3DTEXTUREHANDLE    hTexture;   	/*!< Handle to texture map */
     DWORD       	dwRampSize;
 } D3DMATERIAL, *LPD3DMATERIAL;
 
@@ -620,22 +620,22 @@ typedef enum _D3DLIGHTTYPE {
     D3DLIGHT_FORCE_DWORD    = 0x7fffffff, /* force 32-bit size enum */
 } D3DLIGHTTYPE;
 
-/*
+/*!
  * Structure defining a light source and its properties.
  */
 typedef struct _D3DLIGHT {
     DWORD           dwSize;
-    D3DLIGHTTYPE    dltType;           	/* Type of light source */
-    D3DCOLORVALUE   dcvColor;		/* Color of light */
-    D3DVECTOR       dvPosition;		/* Position in world space */
-    D3DVECTOR       dvDirection;        /* Direction in world space */
-    D3DVALUE        dvRange;            /* Cutoff range */
-    D3DVALUE        dvFalloff;          /* Falloff */
-    D3DVALUE        dvAttenuation0;     /* Constant attenuation */
-    D3DVALUE        dvAttenuation1;     /* Linear attenuation */
-    D3DVALUE        dvAttenuation2;     /* Quadratic attenuation */
-    D3DVALUE        dvTheta;            /* Inner angle of spotlight cone */
-    D3DVALUE        dvPhi;              /* Outer angle of spotlight cone */
+    D3DLIGHTTYPE    dltType;           	/*!< Type of light source */
+    D3DCOLORVALUE   dcvColor;		/*!< Color of light */
+    D3DVECTOR       dvPosition;		/*!< Position in world space */
+    D3DVECTOR       dvDirection;        /*!< Direction in world space */
+    D3DVALUE        dvRange;            /*!< Cutoff range */
+    D3DVALUE        dvFalloff;          /*!< Falloff */
+    D3DVALUE        dvAttenuation0;     /*!< Constant attenuation */
+    D3DVALUE        dvAttenuation1;     /*!< Linear attenuation */
+    D3DVALUE        dvAttenuation2;     /*!< Quadratic attenuation */
+    D3DVALUE        dvTheta;            /*!< Inner angle of spotlight cone */
+    D3DVALUE        dvPhi;              /*!< Outer angle of spotlight cone */
 } D3DLIGHT, *LPD3DLIGHT;
 
 /*
@@ -651,26 +651,26 @@ typedef struct _D3DLIGHT {
 
 typedef struct _D3DLIGHT2 {
     DWORD           dwSize;
-    D3DLIGHTTYPE    dltType;		/* Type of light source */
-    D3DCOLORVALUE   dcvColor;		/* Color of light */
-    D3DVECTOR       dvPosition;		/* Position in world space */
-    D3DVECTOR       dvDirection;	/* Direction in world space */
-    D3DVALUE        dvRange;		/* Cutoff range */
-    D3DVALUE        dvFalloff;		/* Falloff */
-    D3DVALUE        dvAttenuation0;	/* Constant attenuation */
-    D3DVALUE        dvAttenuation1;	/* Linear attenuation */
-    D3DVALUE        dvAttenuation2;	/* Quadratic attenuation */
-    D3DVALUE        dvTheta;		/* Inner angle of spotlight cone */
-    D3DVALUE        dvPhi;			/* Outer angle of spotlight cone */
+    D3DLIGHTTYPE    dltType;		/*!< Type of light source */
+    D3DCOLORVALUE   dcvColor;		/*!< Color of light */
+    D3DVECTOR       dvPosition;		/*!< Position in world space */
+    D3DVECTOR       dvDirection;	/*!< Direction in world space */
+    D3DVALUE        dvRange;		/*!< Cutoff range */
+    D3DVALUE        dvFalloff;		/*!< Falloff */
+    D3DVALUE        dvAttenuation0;	/*!< Constant attenuation */
+    D3DVALUE        dvAttenuation1;	/*!< Linear attenuation */
+    D3DVALUE        dvAttenuation2;	/*!< Quadratic attenuation */
+    D3DVALUE        dvTheta;		/*!< Inner angle of spotlight cone */
+    D3DVALUE        dvPhi;			/*!< Outer angle of spotlight cone */
 	DWORD			dwFlags;
 } D3DLIGHT2, *LPD3DLIGHT2;
 
 typedef struct _D3DLIGHTDATA {
     DWORD                dwSize;
-    LPD3DLIGHTINGELEMENT lpIn;		/* Input positions and normals */
-    DWORD                dwInSize;	/* Stride of input elements */
-    LPD3DTLVERTEX        lpOut;		/* Output colors */
-    DWORD                dwOutSize;	/* Stride of output colors */
+    LPD3DLIGHTINGELEMENT lpIn;		/*!< Input positions and normals */
+    DWORD                dwInSize;	/*!< Stride of input elements */
+    LPD3DTLVERTEX        lpOut;		/*!< Output colors */
+    DWORD                dwOutSize;	/*!< Stride of output colors */
 } D3DLIGHTDATA, *LPD3DLIGHTDATA;
 
 /*
@@ -718,9 +718,9 @@ typedef enum _D3DOPCODE {
 } D3DOPCODE;
 
 typedef struct _D3DINSTRUCTION {
-    BYTE bOpcode;   /* Instruction opcode */
-    BYTE bSize;     /* Size of each instruction data unit */
-    WORD wCount;    /* Count of instruction data units to follow */
+    BYTE bOpcode;   /*!< Instruction opcode */
+    BYTE bSize;     /*!< Size of each instruction data unit */
+    WORD wCount;    /*!< Count of instruction data units to follow */
 } D3DINSTRUCTION, *LPD3DINSTRUCTION;
 
 /*
@@ -731,7 +731,7 @@ typedef struct _D3DTEXTURELOAD {
     D3DTEXTUREHANDLE hSrcTexture;
 } D3DTEXTURELOAD, *LPD3DTEXTURELOAD;
 
-/*
+/**
  * Structure for picking
  */
 typedef struct _D3DPICKRECORD {
@@ -995,34 +995,34 @@ typedef struct _D3DSTATE {
     };
 } D3DSTATE, *LPD3DSTATE;
 
-/*
+/**
  * Operation used to load matrices
  * hDstMat = hSrcMat
  */
 typedef struct _D3DMATRIXLOAD {
-    D3DMATRIXHANDLE hDestMatrix;   /* Destination matrix */
-    D3DMATRIXHANDLE hSrcMatrix;   /* Source matrix */
+    D3DMATRIXHANDLE hDestMatrix;   /*!< Destination matrix */
+    D3DMATRIXHANDLE hSrcMatrix;   /*!< Source matrix */
 } D3DMATRIXLOAD, *LPD3DMATRIXLOAD;
 
-/*
+/**
  * Operation used to multiply matrices
  * hDstMat = hSrcMat1 * hSrcMat2
  */
 typedef struct _D3DMATRIXMULTIPLY {
-    D3DMATRIXHANDLE hDestMatrix;   /* Destination matrix */
-    D3DMATRIXHANDLE hSrcMatrix1;  /* First source matrix */
-    D3DMATRIXHANDLE hSrcMatrix2;  /* Second source matrix */
+    D3DMATRIXHANDLE hDestMatrix;   /*!< Destination matrix */
+    D3DMATRIXHANDLE hSrcMatrix1;  /*!< First source matrix */
+    D3DMATRIXHANDLE hSrcMatrix2;  /*!< Second source matrix */
 } D3DMATRIXMULTIPLY, *LPD3DMATRIXMULTIPLY;
 
-/*
+/**
  * Operation used to transform and light vertices.
  */
 typedef struct _D3DPROCESSVERTICES {
-    DWORD        dwFlags;    /* Do we transform or light or just copy? */
-    WORD         wStart;     /* Index to first vertex in source	*/
-    WORD         wDest;      /* Index to first vertex in local buffer */
-    DWORD        dwCount;    /* Number of vertices to be processed */
-    DWORD	 dwReserved; /* Must be zero */
+    DWORD        dwFlags;    /*!< Do we transform or light or just copy? */
+    WORD         wStart;     /*!< Index to first vertex in source	*/
+    WORD         wDest;      /*!< Index to first vertex in local buffer */
+    DWORD        dwCount;    /*!< Number of vertices to be processed */
+    DWORD	 dwReserved; /*!< Must be zero */
 } D3DPROCESSVERTICES, *LPD3DPROCESSVERTICES;
 
 #define D3DPROCESSVERTICES_TRANSFORMLIGHT	0x00000000L
@@ -1085,13 +1085,13 @@ typedef struct _D3DTRIANGLE {
     WORD    	wFlags;       /* Edge (and other) flags */
 } D3DTRIANGLE, *LPD3DTRIANGLE;
 
-/*
+/**
  * Line list structure.
  * The instruction count defines the number of line segments.
  */
 typedef struct _D3DLINE {
     union {
-	WORD    v1;            /* Vertex indices */
+	WORD    v1;            /*!< Vertex indices */
 	WORD    wV1;
     };
     union {
@@ -1110,25 +1110,25 @@ typedef struct _D3DSPAN {
     WORD	wFirst;	/* Index to first vertex */
 } D3DSPAN, *LPD3DSPAN;
 
-/*
+/**
  * Point structure
  */
 typedef struct _D3DPOINT {
-    WORD	wCount;		/* number of points	    */
-    WORD	wFirst;		/* index to first vertex    */
+    WORD	wCount;		/*!< number of points	    */
+    WORD	wFirst;		/*!< index to first vertex    */
 } D3DPOINT, *LPD3DPOINT;
 
 
-/*
+/**
  * Forward branch structure.
  * Mask is logically anded with the driver status mask
  * if the result equals 'value', the branch is taken.
  */
 typedef struct _D3DBRANCH {
-    DWORD	dwMask;		/* Bitmask against D3D status */
+    DWORD	dwMask;		/*!< Bitmask against D3D status */
     DWORD	dwValue;
-    BOOL	bNegate;    	/* TRUE to negate comparison */
-    DWORD	dwOffset;	/* How far to branch forward (0 for exit)*/
+    BOOL	bNegate;    	/*!< TRUE to negate comparison */
+    DWORD	dwOffset;	/*!< How far to branch forward (0 for exit)*/
 } D3DBRANCH, *LPD3DBRANCH;
 
 /*
@@ -1137,8 +1137,8 @@ typedef struct _D3DBRANCH {
  * and is modified by all execute calls.
  */
 typedef struct _D3DSTATUS {
-    DWORD       dwFlags;	/* Do we set extents or status */
-    DWORD	dwStatus;	/* D3D status */
+    DWORD       dwFlags;	/*!< Do we set extents or status */
+    DWORD	dwStatus;	/*!< D3D status */
     D3DRECT	drExtent;
 } D3DSTATUS, *LPD3DSTATUS;
 
@@ -1147,11 +1147,11 @@ typedef struct _D3DSTATUS {
 #define D3DSETSTATUS_ALL	(D3DSETSTATUS_STATUS | D3DSETSTATUS_EXTENTS)
 
 typedef struct _D3DCLIPSTATUS {
-	DWORD dwFlags; /* Do we set 2d extents, 3D extents or status */
-	DWORD dwStatus; /* Clip status */
-	float minx, maxx; /* X extents */
-	float miny, maxy; /* Y extents */
-	float minz, maxz; /* Z extents */
+	DWORD dwFlags; /*!< Do we set 2d extents, 3D extents or status */
+	DWORD dwStatus; /*!< Clip status */
+	float minx, maxx; /*!< X extents */
+	float miny, maxy; /*!< Y extents */
+	float minz, maxz; /*!< Z extents */
 } D3DCLIPSTATUS, *LPD3DCLIPSTATUS;
 
 #define D3DCLIPSTATUS_STATUS        0x00000001L
@@ -1185,7 +1185,7 @@ typedef struct _D3DEXECUTEDATA {
     DWORD       dwInstructionOffset;
     DWORD       dwInstructionLength;
     DWORD       dwHVertexOffset;
-    D3DSTATUS   dsStatus;	/* Status after execute */
+    D3DSTATUS   dsStatus;	/*!< Status after execute */
 } D3DEXECUTEDATA, *LPD3DEXECUTEDATA;
 
 /*
