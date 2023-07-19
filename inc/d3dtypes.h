@@ -269,12 +269,12 @@ typedef struct _D3DHVERTEX {
     };
 } D3DHVERTEX, *LPD3DHVERTEX;
 
-/*
+/*!
  * Transformed/lit vertices
  */
 typedef struct _D3DTLVERTEX {
     union {
-	D3DVALUE    sx;             /* Screen coordinates */
+	D3DVALUE    sx;             /*!< Screen coordinates */
 	D3DVALUE    dvSX;
     };
     union {
@@ -286,19 +286,19 @@ typedef struct _D3DTLVERTEX {
 	D3DVALUE    dvSZ;
     };
     union {
-	D3DVALUE    rhw;	    /* Reciprocal of homogeneous w */
+	D3DVALUE    rhw;	    /*!< Reciprocal of homogeneous w */
 	D3DVALUE    dvRHW;
     };
     union {
-	D3DCOLOR    color;          /* Vertex color */
+	D3DCOLOR    color;          /*!< Vertex color */
 	D3DCOLOR    dcColor;
     };
     union {
-	D3DCOLOR    specular;       /* Specular component of vertex */
+	D3DCOLOR    specular;       /*!< Specular component of vertex */
 	D3DCOLOR    dcSpecular;
     };
     union {
-	D3DVALUE    tu;             /* Texture coordinates */
+	D3DVALUE    tu;             /*!< Texture coordinates */
 	D3DVALUE    dvTU;
     };
     union {
