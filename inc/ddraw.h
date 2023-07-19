@@ -10,7 +10,7 @@
 #ifndef __DDRAW_INCLUDED__
 #define __DDRAW_INCLUDED__
 
-/*
+/**
  * If you wish an application built against the newest version of DirectDraw
  * to run against an older DirectDraw run time then define DIRECTDRAW_VERSION
  * to be the earlies version of DirectDraw you wish to run against. For,
@@ -38,7 +38,7 @@
 extern "C" {
 #endif
 
-/*
+/**
  * GUIDS used by DirectDraw objects
  */
 #if defined( _WIN32 ) && !defined( _NO_COM )
@@ -124,65 +124,62 @@ typedef HRESULT (FAR PASCAL * LPDDENUMSURFACESCALLBACK)(LPDIRECTDRAWSURFACE, LPD
  */
 typedef struct _DDCOLORKEY
 {
-    DWORD	dwColorSpaceLowValue;	// low boundary of color space that is to
-					// be treated as Color Key, inclusive
-    DWORD	dwColorSpaceHighValue;	// high boundary of color space that is
-					// to be treated as Color Key, inclusive
+    DWORD	dwColorSpaceLowValue;	///< low boundary of color space that is to
+					                          ///< be treated as Color Key, inclusive
+    DWORD	dwColorSpaceHighValue;	///< high boundary of color space that is
+					                           ///< to be treated as Color Key, inclusive
 } DDCOLORKEY;
 
 typedef DDCOLORKEY FAR* LPDDCOLORKEY;
 
-/*
- * DDBLTFX
- * Used to pass override information to the DIRECTDRAWSURFACE callback Blt.
- */
+/// Used to pass override information to the DIRECTDRAWSURFACE callback Blt.
 typedef struct _DDBLTFX
 {
-    DWORD	dwSize;				// size of structure
-    DWORD	dwDDFX;				// FX operations
-    DWORD	dwROP;				// Win32 raster operations
-    DWORD	dwDDROP;			// Raster operations new for DirectDraw
-    DWORD	dwRotationAngle;		// Rotation angle for blt
-    DWORD	dwZBufferOpCode;		// ZBuffer compares
-    DWORD	dwZBufferLow;			// Low limit of Z buffer
-    DWORD	dwZBufferHigh;			// High limit of Z buffer
-    DWORD	dwZBufferBaseDest;		// Destination base value
-    DWORD	dwZDestConstBitDepth;		// Bit depth used to specify Z constant for destination
+    DWORD	dwSize;				//! size of structure
+    DWORD	dwDDFX;				//! FX operations
+    DWORD	dwROP;				//! Win32 raster operations
+    DWORD	dwDDROP;			//! Raster operations new for DirectDraw
+    DWORD	dwRotationAngle;		//! Rotation angle for blt
+    DWORD	dwZBufferOpCode;		//! ZBuffer compares
+    DWORD	dwZBufferLow;			//! Low limit of Z buffer
+    DWORD	dwZBufferHigh;			//! High limit of Z buffer
+    DWORD	dwZBufferBaseDest;		//! Destination base value
+    DWORD	dwZDestConstBitDepth;		//! Bit depth used to specify Z constant for destination
     union
     {
-	DWORD	dwZDestConst;			// Constant to use as Z buffer for dest
-	LPDIRECTDRAWSURFACE lpDDSZBufferDest;	// Surface to use as Z buffer for dest
+	DWORD	dwZDestConst;			//! Constant to use as Z buffer for dest
+	LPDIRECTDRAWSURFACE lpDDSZBufferDest;	//! Surface to use as Z buffer for dest
     };
-    DWORD	dwZSrcConstBitDepth;		// Bit depth used to specify Z constant for source
+    DWORD	dwZSrcConstBitDepth;		//! Bit depth used to specify Z constant for source
     union
     {
-	DWORD	dwZSrcConst;			// Constant to use as Z buffer for src
-	LPDIRECTDRAWSURFACE lpDDSZBufferSrc;	// Surface to use as Z buffer for src
+	DWORD	dwZSrcConst;			//! Constant to use as Z buffer for src
+	LPDIRECTDRAWSURFACE lpDDSZBufferSrc;	//! Surface to use as Z buffer for src
     };
-    DWORD	dwAlphaEdgeBlendBitDepth;	// Bit depth used to specify constant for alpha edge blend
-    DWORD	dwAlphaEdgeBlend;		// Alpha for edge blending
+    DWORD	dwAlphaEdgeBlendBitDepth;	//! Bit depth used to specify constant for alpha edge blend
+    DWORD	dwAlphaEdgeBlend;		//! Alpha for edge blending
     DWORD	dwReserved;
-    DWORD	dwAlphaDestConstBitDepth;	// Bit depth used to specify alpha constant for destination
+    DWORD	dwAlphaDestConstBitDepth;	//! Bit depth used to specify alpha constant for destination
     union
     {
-	DWORD	dwAlphaDestConst;		// Constant to use as Alpha Channel
-	LPDIRECTDRAWSURFACE lpDDSAlphaDest;	// Surface to use as Alpha Channel
+	DWORD	dwAlphaDestConst;		//! Constant to use as Alpha Channel
+	LPDIRECTDRAWSURFACE lpDDSAlphaDest;	//! Surface to use as Alpha Channel
     };
-    DWORD	dwAlphaSrcConstBitDepth;	// Bit depth used to specify alpha constant for source
+    DWORD	dwAlphaSrcConstBitDepth;	//! Bit depth used to specify alpha constant for source
     union
     {
-	DWORD	dwAlphaSrcConst;		// Constant to use as Alpha Channel
-	LPDIRECTDRAWSURFACE lpDDSAlphaSrc;	// Surface to use as Alpha Channel
+	DWORD	dwAlphaSrcConst;		//! Constant to use as Alpha Channel
+	LPDIRECTDRAWSURFACE lpDDSAlphaSrc;	//! Surface to use as Alpha Channel
     };
     union
     {
-	DWORD	dwFillColor;			// color in RGB or Palettized
-	DWORD   dwFillDepth;                    // depth value for z-buffer
-	DWORD	dwFillPixel;			// pixel value for RGBA or RGBZ
-	LPDIRECTDRAWSURFACE lpDDSPattern;	// Surface to use as pattern
+	DWORD	dwFillColor;			//! color in RGB or Palettized
+	DWORD   dwFillDepth;                    //! depth value for z-buffer
+	DWORD	dwFillPixel;			//! pixel value for RGBA or RGBZ
+	LPDIRECTDRAWSURFACE lpDDSPattern;	//! Surface to use as pattern
     };
-    DDCOLORKEY	ddckDestColorkey;		// DestColorkey override
-    DDCOLORKEY	ddckSrcColorkey;		// SrcColorkey override
+    DDCOLORKEY	ddckDestColorkey;		//! DestColorkey override
+    DDCOLORKEY	ddckSrcColorkey;		//! SrcColorkey override
 } DDBLTFX;
 
 typedef DDBLTFX FAR* LPDDBLTFX;
@@ -193,7 +190,7 @@ typedef DDBLTFX FAR* LPDDBLTFX;
  */
 typedef struct _DDSCAPS
 {
-    DWORD	dwCaps;		// capabilities of surface wanted
+    DWORD	dwCaps;		//! capabilities of surface wanted
 } DDSCAPS;
 
 typedef DDSCAPS FAR* LPDDSCAPS;
@@ -201,66 +198,66 @@ typedef DDSCAPS FAR* LPDDSCAPS;
 /*
  * DDCAPS
  */
-#define DD_ROP_SPACE		(256/32)	// space required to store ROP array
+#define DD_ROP_SPACE		(256/32)	//! space required to store ROP array
 
 #if DIRECTDRAW_VERSION >= 0x0500
-/*
+/**
  * This structure is the DDCAPS structure as it was in version 2 and 3 of Direct X.
  * It is present for back compatability.
  */
 typedef struct _DDCAPS_DX3
 {
-    DWORD	dwSize;			// size of the DDDRIVERCAPS structure
-    DWORD	dwCaps;			// driver specific capabilities
-    DWORD	dwCaps2;		// more driver specific capabilites
-    DWORD	dwCKeyCaps;		// color key capabilities of the surface
-    DWORD	dwFXCaps;		// driver specific stretching and effects capabilites
-    DWORD	dwFXAlphaCaps;		// alpha driver specific capabilities
-    DWORD	dwPalCaps;		// palette capabilities
-    DWORD	dwSVCaps;		// stereo vision capabilities
-    DWORD	dwAlphaBltConstBitDepths;	// DDBD_2,4,8
-    DWORD	dwAlphaBltPixelBitDepths;	// DDBD_1,2,4,8
-    DWORD	dwAlphaBltSurfaceBitDepths;	// DDBD_1,2,4,8
-    DWORD	dwAlphaOverlayConstBitDepths;	// DDBD_2,4,8
-    DWORD	dwAlphaOverlayPixelBitDepths;	// DDBD_1,2,4,8
-    DWORD	dwAlphaOverlaySurfaceBitDepths; // DDBD_1,2,4,8
-    DWORD	dwZBufferBitDepths;		// DDBD_8,16,24,32
-    DWORD	dwVidMemTotal;		// total amount of video memory
-    DWORD	dwVidMemFree;		// amount of free video memory
-    DWORD	dwMaxVisibleOverlays;	// maximum number of visible overlays
-    DWORD	dwCurrVisibleOverlays;	// current number of visible overlays
-    DWORD	dwNumFourCCCodes;	// number of four cc codes
-    DWORD	dwAlignBoundarySrc;	// source rectangle alignment
-    DWORD	dwAlignSizeSrc;		// source rectangle byte size
-    DWORD	dwAlignBoundaryDest;	// dest rectangle alignment
-    DWORD	dwAlignSizeDest;	// dest rectangle byte size
-    DWORD	dwAlignStrideAlign;	// stride alignment
-    DWORD	dwRops[DD_ROP_SPACE];	// ROPS supported
-    DDSCAPS	ddsCaps;		// DDSCAPS structure has all the general capabilities
-    DWORD	dwMinOverlayStretch;	// minimum overlay stretch factor multiplied by 1000, eg 1000 == 1.0, 1300 == 1.3
-    DWORD	dwMaxOverlayStretch;	// maximum overlay stretch factor multiplied by 1000, eg 1000 == 1.0, 1300 == 1.3
-    DWORD	dwMinLiveVideoStretch;	// minimum live video stretch factor multiplied by 1000, eg 1000 == 1.0, 1300 == 1.3
-    DWORD	dwMaxLiveVideoStretch;	// maximum live video stretch factor multiplied by 1000, eg 1000 == 1.0, 1300 == 1.3
-    DWORD	dwMinHwCodecStretch;	// minimum hardware codec stretch factor multiplied by 1000, eg 1000 == 1.0, 1300 == 1.3
-    DWORD	dwMaxHwCodecStretch;	// maximum hardware codec stretch factor multiplied by 1000, eg 1000 == 1.0, 1300 == 1.3
-    DWORD	dwReserved1;		// reserved
-    DWORD	dwReserved2;		// reserved
-    DWORD	dwReserved3;		// reserved
-    DWORD	dwSVBCaps;		// driver specific capabilities for System->Vmem blts
-    DWORD	dwSVBCKeyCaps;		// driver color key capabilities for System->Vmem blts
-    DWORD	dwSVBFXCaps;		// driver FX capabilities for System->Vmem blts
-    DWORD	dwSVBRops[DD_ROP_SPACE];// ROPS supported for System->Vmem blts
-    DWORD	dwVSBCaps;		// driver specific capabilities for Vmem->System blts
-    DWORD	dwVSBCKeyCaps;		// driver color key capabilities for Vmem->System blts
-    DWORD	dwVSBFXCaps;		// driver FX capabilities for Vmem->System blts
-    DWORD	dwVSBRops[DD_ROP_SPACE];// ROPS supported for Vmem->System blts
-    DWORD	dwSSBCaps;		// driver specific capabilities for System->System blts
-    DWORD	dwSSBCKeyCaps;		// driver color key capabilities for System->System blts
-    DWORD	dwSSBFXCaps;		// driver FX capabilities for System->System blts
-    DWORD	dwSSBRops[DD_ROP_SPACE];// ROPS supported for System->System blts
-    DWORD	dwReserved4;		// reserved
-    DWORD	dwReserved5;		// reserved
-    DWORD	dwReserved6;		// reserved
+    DWORD	dwSize;			//! size of the DDDRIVERCAPS structure
+    DWORD	dwCaps;			//! driver specific capabilities
+    DWORD	dwCaps2;		//! more driver specific capabilites
+    DWORD	dwCKeyCaps;	 //! color key capabilities of the surface
+    DWORD	dwFXCaps;		//! driver specific stretching and effects capabilites
+    DWORD	dwFXAlphaCaps;		//! alpha driver specific capabilities
+    DWORD	dwPalCaps;		//! palette capabilities
+    DWORD	dwSVCaps;		//! stereo vision capabilities
+    DWORD	dwAlphaBltConstBitDepths;	//! DDBD_2,4,8
+    DWORD	dwAlphaBltPixelBitDepths;	//! DDBD_1,2,4,8
+    DWORD	dwAlphaBltSurfaceBitDepths;	//! DDBD_1,2,4,8
+    DWORD	dwAlphaOverlayConstBitDepths;	//! DDBD_2,4,8
+    DWORD	dwAlphaOverlayPixelBitDepths;	//! DDBD_1,2,4,8
+    DWORD	dwAlphaOverlaySurfaceBitDepths; //! DDBD_1,2,4,8
+    DWORD	dwZBufferBitDepths;		//! DDBD_8,16,24,32
+    DWORD	dwVidMemTotal;		//! total amount of video memory
+    DWORD	dwVidMemFree;		//! amount of free video memory
+    DWORD	dwMaxVisibleOverlays;	//! maximum number of visible overlays
+    DWORD	dwCurrVisibleOverlays;	//! current number of visible overlays
+    DWORD	dwNumFourCCCodes;	//! number of four cc codes
+    DWORD	dwAlignBoundarySrc;	//! source rectangle alignment
+    DWORD	dwAlignSizeSrc;		//! source rectangle byte size
+    DWORD	dwAlignBoundaryDest;	 //! dest rectangle alignment
+    DWORD	dwAlignSizeDest;	//! dest rectangle byte size
+    DWORD	dwAlignStrideAlign;	//! stride alignment
+    DWORD	dwRops[DD_ROP_SPACE];	// ROPS! supported
+    DDSCAPS	ddsCaps;		//! DDSCAPS structure has all the general capabilities
+    DWORD	dwMinOverlayStretch;	//! minimum overlay stretch factor multiplied by 1000, eg 1000 == 1.0, 1300 == 1.3
+    DWORD	dwMaxOverlayStretch;	//! maximum overlay stretch factor multiplied by 1000, eg 1000 == 1.0, 1300 == 1.3
+    DWORD	dwMinLiveVideoStretch;	//! minimum live video stretch factor multiplied by 1000, eg 1000 == 1.0, 1300 == 1.3
+    DWORD	dwMaxLiveVideoStretch;	//! maximum live video stretch factor multiplied by 1000, eg 1000 == 1.0, 1300 == 1.3
+    DWORD	dwMinHwCodecStretch;	//! minimum hardware codec stretch factor multiplied by 1000, eg 1000 == 1.0, 1300 == 1.3
+    DWORD	dwMaxHwCodecStretch;	//! maximum hardware codec stretch factor multiplied by 1000, eg 1000 == 1.0, 1300 == 1.3
+    DWORD	dwReserved1;		//! reserved
+    DWORD	dwReserved2;		//! reserved
+    DWORD	dwReserved3;		//! reserved
+    DWORD	dwSVBCaps;		//! driver specific capabilities for System->Vmem blts
+    DWORD	dwSVBCKeyCaps;		//! driver color key capabilities for System->Vmem blts
+    DWORD	dwSVBFXCaps;		//! driver FX capabilities for System->Vmem blts
+    DWORD	dwSVBRops[DD_ROP_SPACE];//! ROPS supported for System->Vmem blts
+    DWORD	dwVSBCaps;		//! driver specific capabilities for Vmem->System blts
+    DWORD	dwVSBCKeyCaps;		//! driver color key capabilities for Vmem->System blts
+    DWORD	dwVSBFXCaps;		//! driver FX capabilities for Vmem->System blts
+    DWORD	dwVSBRops[DD_ROP_SPACE];//! ROPS supported for Vmem->System blts
+    DWORD	dwSSBCaps;		//! driver specific capabilities for System->System blts
+    DWORD	dwSSBCKeyCaps;		//! driver color key capabilities for System->System blts
+    DWORD	dwSSBFXCaps;		//! driver FX capabilities for System->System blts
+    DWORD	dwSSBRops[DD_ROP_SPACE];//! ROPS supported for System->System blts
+    DWORD	dwReserved4;		//! reserved
+    DWORD	dwReserved5;		//! reserved
+    DWORD	dwReserved6;		//! reserved
 } DDCAPS_DX3;
 typedef DDCAPS_DX3 FAR* LPDDCAPS_DX3;
 #endif /* DIRECTDRAW_VERSION >= 0x0500 */
