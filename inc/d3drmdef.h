@@ -334,14 +334,14 @@ typedef struct _D3DRMVERTEX
 typedef LONG D3DRMGROUPINDEX; /* group indexes begin a 0 */
 static const D3DRMGROUPINDEX D3DRMGROUP_ALLGROUPS = -1;
 
-/*
+/**
  * Create a color from three components in the range 0-1 inclusive.
  */
 extern D3DCOLOR D3DRMAPI	D3DRMCreateColorRGB(D3DVALUE red,
 					  D3DVALUE green,
 					  D3DVALUE blue);
 
-/*
+/**
  * Create a color from four components in the range 0-1 inclusive.
  */
 extern D3DCOLOR D3DRMAPI	D3DRMCreateColorRGBA(D3DVALUE red,
@@ -349,88 +349,88 @@ extern D3DCOLOR D3DRMAPI	D3DRMCreateColorRGBA(D3DVALUE red,
 						 D3DVALUE blue,
 						 D3DVALUE alpha);
 
-/*
+/**
  * Get the red component of a color.
  */
 extern D3DVALUE 		D3DRMAPI D3DRMColorGetRed(D3DCOLOR);
 
-/*
+/**
  * Get the green component of a color.
  */
 extern D3DVALUE 		D3DRMAPI D3DRMColorGetGreen(D3DCOLOR);
 
-/*
+/**
  * Get the blue component of a color.
  */
 extern D3DVALUE 		D3DRMAPI D3DRMColorGetBlue(D3DCOLOR);
 
-/*
+/**
  * Get the alpha component of a color.
  */
 extern D3DVALUE 		D3DRMAPI D3DRMColorGetAlpha(D3DCOLOR);
 
-/*
+/**
  * Add two vectors.  Returns its first argument.
  */
 extern LPD3DVECTOR 	D3DRMAPI D3DRMVectorAdd(LPD3DVECTOR d,
 					  LPD3DVECTOR s1,
 					  LPD3DVECTOR s2);
 
-/*
+/**
  * Subtract two vectors.  Returns its first argument.
  */
 extern LPD3DVECTOR 	D3DRMAPI D3DRMVectorSubtract(LPD3DVECTOR d,
 					       LPD3DVECTOR s1,
 					       LPD3DVECTOR s2);
-/*
+/**
  * Reflect a ray about a given normal.  Returns its first argument.
  */
 extern LPD3DVECTOR 	D3DRMAPI D3DRMVectorReflect(LPD3DVECTOR d,
 					      LPD3DVECTOR ray,
 					      LPD3DVECTOR norm);
 
-/*
+/**
  * Calculate the vector cross product.  Returns its first argument.
  */
 extern LPD3DVECTOR 	D3DRMAPI D3DRMVectorCrossProduct(LPD3DVECTOR d,
 						   LPD3DVECTOR s1,
 						   LPD3DVECTOR s2);
-/*
+/**
  * Return the vector dot product.
  */
 extern D3DVALUE 		D3DRMAPI D3DRMVectorDotProduct(LPD3DVECTOR s1,
 						 LPD3DVECTOR s2);
 
-/*
+/**
  * Scale a vector so that its modulus is 1.  Returns its argument or
  * NULL if there was an error (e.g. a zero vector was passed).
  */
 extern LPD3DVECTOR 	D3DRMAPI D3DRMVectorNormalize(LPD3DVECTOR);
 #define D3DRMVectorNormalise D3DRMVectorNormalize
 
-/*
+/**
  * Return the length of a vector (e.g. sqrt(x*x + y*y + z*z)).
  */
 extern D3DVALUE 		D3DRMAPI D3DRMVectorModulus(LPD3DVECTOR v);
 
-/*
+/**
  * Set the rotation part of a matrix to be a rotation of theta radians
  * around the given axis.
  */
 
 extern LPD3DVECTOR 	D3DRMAPI D3DRMVectorRotate(LPD3DVECTOR r, LPD3DVECTOR v, LPD3DVECTOR axis, D3DVALUE theta);
 
-/*
+/**
  * Scale a vector uniformly in all three axes
  */
 extern LPD3DVECTOR	D3DRMAPI D3DRMVectorScale(LPD3DVECTOR d, LPD3DVECTOR s, D3DVALUE factor);
 
-/*
+/**
  * Return a random unit vector
  */
 extern LPD3DVECTOR	D3DRMAPI D3DRMVectorRandom(LPD3DVECTOR d);
 
-/*
+/**
  * Returns a unit quaternion that represents a rotation of theta radians
  * around the given axis.
  */
@@ -439,14 +439,14 @@ extern LPD3DRMQUATERNION D3DRMAPI D3DRMQuaternionFromRotation(LPD3DRMQUATERNION 
 							      LPD3DVECTOR v,
 							      D3DVALUE theta);
 
-/*
+/**
  * Calculate the product of two quaternions
  */
 extern LPD3DRMQUATERNION D3DRMAPI D3DRMQuaternionMultiply(LPD3DRMQUATERNION q,
 						    	  LPD3DRMQUATERNION a,
 						   	  LPD3DRMQUATERNION b);
 
-/*
+/**
  * Interpolate between two quaternions
  */
 extern LPD3DRMQUATERNION D3DRMAPI D3DRMQuaternionSlerp(LPD3DRMQUATERNION q,
@@ -454,12 +454,12 @@ extern LPD3DRMQUATERNION D3DRMAPI D3DRMQuaternionSlerp(LPD3DRMQUATERNION q,
 						       LPD3DRMQUATERNION b,
 						       D3DVALUE alpha);
 
-/*
+/**
  * Calculate the matrix for the rotation that a unit quaternion represents
  */
 extern void 		D3DRMAPI D3DRMMatrixFromQuaternion(D3DRMMATRIX4D dmMat, LPD3DRMQUATERNION lpDqQuat);
 
-/*
+/**
  * Calculate the quaternion that corresponds to a rotation matrix
  */
 extern LPD3DRMQUATERNION D3DRMAPI D3DRMQuaternionFromMatrix(LPD3DRMQUATERNION, D3DRMMATRIX4D);
