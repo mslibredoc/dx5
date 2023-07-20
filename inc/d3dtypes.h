@@ -368,7 +368,7 @@ typedef struct _D3DLVERTEX {
 
 typedef struct _D3DVERTEX {
     union {
-	D3DVALUE     x;             /* Homogeneous coordinates */
+	D3DVALUE     x;             /*!< Homogeneous coordinates */
 	D3DVALUE     dvX;
     };
     union {
@@ -380,7 +380,7 @@ typedef struct _D3DVERTEX {
 	D3DVALUE     dvZ;
     };
     union {
-	D3DVALUE     nx;            /* Normal */
+	D3DVALUE     nx;            /*!< Normal */
 	D3DVALUE     dvNX;
     };
     union {
@@ -392,7 +392,7 @@ typedef struct _D3DVERTEX {
 	D3DVALUE     dvNZ;
     };
     union {
-	D3DVALUE     tu;            /* Texture coordinates */
+	D3DVALUE     tu;            /*!< Texture coordinates */
 	D3DVALUE     dvTU;
     };
     union {
@@ -449,28 +449,28 @@ typedef struct _D3DMATRIX {
 typedef struct _D3DVIEWPORT {
     DWORD       dwSize;
     DWORD       dwX;
-    DWORD       dwY;		/* Top left */
+    DWORD       dwY;		/*!< Top left */
     DWORD       dwWidth;
-    DWORD       dwHeight;	/* Dimensions */
-    D3DVALUE    dvScaleX;	/* Scale homogeneous to screen */
-    D3DVALUE    dvScaleY;	/* Scale homogeneous to screen */
-    D3DVALUE    dvMaxX;		/* Min/max homogeneous x coord */
-    D3DVALUE    dvMaxY;		/* Min/max homogeneous y coord */
+    DWORD       dwHeight;	/*!< Dimensions */
+    D3DVALUE    dvScaleX;	/*!< Scale homogeneous to screen */
+    D3DVALUE    dvScaleY;	/*!< Scale homogeneous to screen */
+    D3DVALUE    dvMaxX;		/*!< Min/max homogeneous x coord */
+    D3DVALUE    dvMaxY;		/*!< Min/max homogeneous y coord */
     D3DVALUE    dvMinZ;
-    D3DVALUE    dvMaxZ;		/* Min/max homogeneous z coord */
+    D3DVALUE    dvMaxZ;		/*!< Min/max homogeneous z coord */
 } D3DVIEWPORT, *LPD3DVIEWPORT;
 
 typedef struct _D3DVIEWPORT2 {
     DWORD       dwSize;
     DWORD       dwX;
-    DWORD       dwY;		/* Viewport Top left */
+    DWORD       dwY;		/*!< Viewport Top left */
     DWORD       dwWidth;
-    DWORD       dwHeight;	/* Viewport Dimensions */
-    D3DVALUE    dvClipX;		/* Top left of clip volume */
+    DWORD       dwHeight;	/*!< Viewport Dimensions */
+    D3DVALUE    dvClipX;		/*!< Top left of clip volume */
     D3DVALUE    dvClipY;	
-    D3DVALUE    dvClipWidth;	/* Clip Volume Dimensions */
+    D3DVALUE    dvClipWidth;	/*!< Clip Volume Dimensions */
     D3DVALUE    dvClipHeight;
-    D3DVALUE    dvMinZ;			/* Min/max of clip Volume */
+    D3DVALUE    dvMinZ;			/*!< Min/max of clip Volume */
     D3DVALUE    dvMaxZ;		
 } D3DVIEWPORT2, *LPD3DVIEWPORT2;
 
@@ -564,15 +564,15 @@ typedef struct _D3DVIEWPORT2 {
 
 typedef struct _D3DTRANSFORMDATA {
     DWORD           dwSize;
-    LPVOID	    lpIn;           /* Input vertices */
-    DWORD           dwInSize;       /* Stride of input vertices */
-    LPVOID	    lpOut;          /* Output vertices */
-    DWORD           dwOutSize;      /* Stride of output vertices */
-    LPD3DHVERTEX    lpHOut;         /* Output homogeneous vertices */
-    DWORD           dwClip;         /* Clipping hint */
+    LPVOID	    lpIn;           /*!< Input vertices */
+    DWORD           dwInSize;       /*!< Stride of input vertices */
+    LPVOID	    lpOut;          /*!< Output vertices */
+    DWORD           dwOutSize;      /*!< Stride of output vertices */
+    LPD3DHVERTEX    lpHOut;         /*!< Output homogeneous vertices */
+    DWORD           dwClip;         /*!< Clipping hint */
     DWORD           dwClipIntersection;
-    DWORD           dwClipUnion;    /* Union of all clip flags */
-    D3DRECT         drExtent;       /* Extent of transformed vertices */
+    DWORD           dwClipUnion;    /*!< Union of all clip flags */
+    D3DRECT         drExtent;       /*!< Extent of transformed vertices */
 } D3DTRANSFORMDATA, *LPD3DTRANSFORMDATA;
 
 /*!
