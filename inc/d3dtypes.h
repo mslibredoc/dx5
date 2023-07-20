@@ -1047,7 +1047,7 @@ typedef struct _D3DPROCESSVERTICES {
  * e.g. for a quad len = 1
  */
 #define D3DTRIFLAG_START			0x00000000L
-#define D3DTRIFLAG_STARTFLAT(len) (len)		/* 0 < len < 30 */
+#define D3DTRIFLAG_STARTFLAT(len) (len)		/*!< 0 < len < 30 */
 #define D3DTRIFLAG_ODD				0x0000001eL
 #define D3DTRIFLAG_EVEN				0x0000001fL
 
@@ -1055,9 +1055,9 @@ typedef struct _D3DPROCESSVERTICES {
  * Triangle edge flags
  * enable edges for wireframe or antialiasing
  */
-#define D3DTRIFLAG_EDGEENABLE1 			0x00000100L /* v0-v1 edge */
-#define D3DTRIFLAG_EDGEENABLE2 			0x00000200L /* v1-v2 edge */
-#define D3DTRIFLAG_EDGEENABLE3 			0x00000400L /* v2-v0 edge */
+#define D3DTRIFLAG_EDGEENABLE1 			0x00000100L /*!< v0-v1 edge */
+#define D3DTRIFLAG_EDGEENABLE2 			0x00000200L /*!< v1-v2 edge */
+#define D3DTRIFLAG_EDGEENABLE3 			0x00000400L /*!< v2-v0 edge */
 #define D3DTRIFLAG_EDGEENABLETRIANGLE \
         (D3DTRIFLAG_EDGEENABLE1 | D3DTRIFLAG_EDGEENABLE2 | D3DTRIFLAG_EDGEENABLE3)
 	
@@ -1066,12 +1066,12 @@ typedef struct _D3DPROCESSVERTICES {
  * D3DVERTEX, D3DLVERTEX, or D3DTLVERTEX.
  */
 
-/*
+/**
  * Triangle list primitive structure
  */
 typedef struct _D3DTRIANGLE {
     union {
-	WORD    v1;            /* Vertex indices */
+	WORD    v1;            /*!< Vertex indices */
 	WORD    wV1;
     };
     union {
@@ -1082,7 +1082,7 @@ typedef struct _D3DTRIANGLE {
 	WORD    v3;
 	WORD    wV3;
     };
-    WORD    	wFlags;       /* Edge (and other) flags */
+    WORD    	wFlags;       /*!< Edge (and other) flags */
 } D3DTRIANGLE, *LPD3DTRIANGLE;
 
 /**
@@ -1100,14 +1100,14 @@ typedef struct _D3DLINE {
     };
 } D3DLINE, *LPD3DLINE;
 
-/*
+/**
  * Span structure
  * Spans join a list of points with the same y value.
  * If the y value changes, a new span is started.
  */
 typedef struct _D3DSPAN {
-    WORD	wCount;	/* Number of spans */
-    WORD	wFirst;	/* Index to first vertex */
+    WORD	wCount;	/*!< Number of spans */
+    WORD	wFirst;	/*!< Index to first vertex */
 } D3DSPAN, *LPD3DSPAN;
 
 /**
