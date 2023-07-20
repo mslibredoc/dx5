@@ -303,13 +303,13 @@ typedef struct _D3DRMLOADMEMORY {
 #define D3DRMPMESHEVENT_COMPLETE 0x02L
 
 typedef struct _D3DRMPMESHLOADSTATUS {
-  DWORD dwSize;            // Size of this structure
-  DWORD dwPMeshSize;       // Total Size (bytes)
-  DWORD dwBaseMeshSize;    // Total Size of the Base Mesh
-  DWORD dwBytesLoaded;     // Total bytes loaded
-  DWORD dwVerticesLoaded;  // Number of vertices loaded
-  DWORD dwFacesLoaded;     // Number of faces loaded
-  HRESULT dwLoadResult;    // Result of the load operation
+  DWORD dwSize;            //!< Size of this structure
+  DWORD dwPMeshSize;       //!< Total Size (bytes)
+  DWORD dwBaseMeshSize;    //!< Total Size of the Base Mesh
+  DWORD dwBytesLoaded;     //!< Total bytes loaded
+  DWORD dwVerticesLoaded;  //!< Number of vertices loaded
+  DWORD dwFacesLoaded;     //!< Number of faces loaded
+  HRESULT dwLoadResult;    //!< Result of the load operation
   DWORD dwFlags;
 } D3DRMPMESHLOADSTATUS, *LPD3DRMPMESHLOADSTATUS;
 
