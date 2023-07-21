@@ -723,7 +723,7 @@ typedef struct _D3DINSTRUCTION {
     WORD wCount;    /*!< Count of instruction data units to follow */
 } D3DINSTRUCTION, *LPD3DINSTRUCTION;
 
-/*
+/**
  * Structure for texture loads
  */
 typedef struct _D3DTEXTURELOAD {
@@ -1131,7 +1131,7 @@ typedef struct _D3DBRANCH {
     DWORD	dwOffset;	/*!< How far to branch forward (0 for exit)*/
 } D3DBRANCH, *LPD3DBRANCH;
 
-/*
+/**
  * Status used for set status instruction.
  * The D3D status is initialised on device creation
  * and is modified by all execute calls.
@@ -1158,7 +1158,7 @@ typedef struct _D3DCLIPSTATUS {
 #define D3DCLIPSTATUS_EXTENTS2      0x00000002L
 #define D3DCLIPSTATUS_EXTENTS3      0x00000004L
 
-/*
+/**
  * Statistics structure
  */
 typedef struct _D3DSTATS {
