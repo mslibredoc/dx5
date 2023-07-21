@@ -262,69 +262,70 @@ typedef struct _DDCAPS_DX3
 typedef DDCAPS_DX3 FAR* LPDDCAPS_DX3;
 #endif /* DIRECTDRAW_VERSION >= 0x0500 */
 
+// FIXME: document the offsets
 typedef struct _DDCAPS
 {
-/*  0*/ DWORD	dwSize;			// size of the DDDRIVERCAPS structure
-/*  4*/ DWORD	dwCaps;			// driver specific capabilities
-/*  8*/ DWORD	dwCaps2;		// more driver specific capabilites
-/*  c*/ DWORD	dwCKeyCaps;		// color key capabilities of the surface
-/* 10*/ DWORD	dwFXCaps;		// driver specific stretching and effects capabilites
-/* 14*/ DWORD	dwFXAlphaCaps;		// alpha driver specific capabilities
-/* 18*/ DWORD	dwPalCaps;		// palette capabilities
-/* 1c*/ DWORD	dwSVCaps;		// stereo vision capabilities
-/* 20*/ DWORD	dwAlphaBltConstBitDepths;	// DDBD_2,4,8
-/* 24*/ DWORD	dwAlphaBltPixelBitDepths;	// DDBD_1,2,4,8
-/* 28*/ DWORD	dwAlphaBltSurfaceBitDepths;	// DDBD_1,2,4,8
-/* 2c*/ DWORD	dwAlphaOverlayConstBitDepths;	// DDBD_2,4,8
-/* 30*/ DWORD	dwAlphaOverlayPixelBitDepths;	// DDBD_1,2,4,8
-/* 34*/ DWORD	dwAlphaOverlaySurfaceBitDepths; // DDBD_1,2,4,8
-/* 38*/ DWORD	dwZBufferBitDepths;		// DDBD_8,16,24,32
-/* 3c*/ DWORD	dwVidMemTotal;		// total amount of video memory
-/* 40*/ DWORD	dwVidMemFree;		// amount of free video memory
-/* 44*/ DWORD	dwMaxVisibleOverlays;	// maximum number of visible overlays
-/* 48*/ DWORD	dwCurrVisibleOverlays;	// current number of visible overlays
-/* 4c*/ DWORD	dwNumFourCCCodes;	// number of four cc codes
-/* 50*/ DWORD	dwAlignBoundarySrc;	// source rectangle alignment
-/* 54*/ DWORD	dwAlignSizeSrc;		// source rectangle byte size
-/* 58*/ DWORD	dwAlignBoundaryDest;	// dest rectangle alignment
-/* 5c*/ DWORD	dwAlignSizeDest;	// dest rectangle byte size
-/* 60*/ DWORD	dwAlignStrideAlign;	// stride alignment
-/* 64*/ DWORD	dwRops[DD_ROP_SPACE];	// ROPS supported
-/* 84*/ DDSCAPS	ddsCaps;		// DDSCAPS structure has all the general capabilities
-/* 88*/ DWORD	dwMinOverlayStretch;	// minimum overlay stretch factor multiplied by 1000, eg 1000 == 1.0, 1300 == 1.3
-/* 8c*/ DWORD	dwMaxOverlayStretch;	// maximum overlay stretch factor multiplied by 1000, eg 1000 == 1.0, 1300 == 1.3
-/* 90*/ DWORD	dwMinLiveVideoStretch;	// minimum live video stretch factor multiplied by 1000, eg 1000 == 1.0, 1300 == 1.3
-/* 94*/ DWORD	dwMaxLiveVideoStretch;	// maximum live video stretch factor multiplied by 1000, eg 1000 == 1.0, 1300 == 1.3
-/* 98*/ DWORD	dwMinHwCodecStretch;	// minimum hardware codec stretch factor multiplied by 1000, eg 1000 == 1.0, 1300 == 1.3
-/* 9c*/ DWORD	dwMaxHwCodecStretch;	// maximum hardware codec stretch factor multiplied by 1000, eg 1000 == 1.0, 1300 == 1.3
-/* a0*/ DWORD	dwReserved1;		// reserved
-/* a4*/ DWORD	dwReserved2;		// reserved
-/* a8*/ DWORD	dwReserved3;		// reserved
-/* ac*/ DWORD	dwSVBCaps;		// driver specific capabilities for System->Vmem blts
-/* b0*/ DWORD	dwSVBCKeyCaps;		// driver color key capabilities for System->Vmem blts
-/* b4*/ DWORD	dwSVBFXCaps;		// driver FX capabilities for System->Vmem blts
-/* b8*/ DWORD	dwSVBRops[DD_ROP_SPACE];// ROPS supported for System->Vmem blts
-/* d8*/ DWORD	dwVSBCaps;		// driver specific capabilities for Vmem->System blts
-/* dc*/ DWORD	dwVSBCKeyCaps;		// driver color key capabilities for Vmem->System blts
-/* e0*/ DWORD	dwVSBFXCaps;		// driver FX capabilities for Vmem->System blts
-/* e4*/ DWORD	dwVSBRops[DD_ROP_SPACE];// ROPS supported for Vmem->System blts
-/*104*/ DWORD	dwSSBCaps;		// driver specific capabilities for System->System blts
-/*108*/ DWORD	dwSSBCKeyCaps;		// driver color key capabilities for System->System blts
-/*10c*/ DWORD	dwSSBFXCaps;		// driver FX capabilities for System->System blts
-/*110*/ DWORD	dwSSBRops[DD_ROP_SPACE];// ROPS supported for System->System blts
+/*  0*/ DWORD	dwSize;			//!< size of the DDDRIVERCAPS structure
+/*  4*/ DWORD	dwCaps;			//!< driver specific capabilities
+/*  8*/ DWORD	dwCaps2;		//!< more driver specific capabilites
+/*  c*/ DWORD	dwCKeyCaps;		//!< color key capabilities of the surface
+/* 10*/ DWORD	dwFXCaps;		//!< driver specific stretching and effects capabilites
+/* 14*/ DWORD	dwFXAlphaCaps;		//!< alpha driver specific capabilities
+/* 18*/ DWORD	dwPalCaps;		//!< palette capabilities
+/* 1c*/ DWORD	dwSVCaps;		//!< stereo vision capabilities
+/* 20*/ DWORD	dwAlphaBltConstBitDepths;	//!< DDBD_2,4,8
+/* 24*/ DWORD	dwAlphaBltPixelBitDepths;	//!< DDBD_1,2,4,8
+/* 28*/ DWORD	dwAlphaBltSurfaceBitDepths;	//!< DDBD_1,2,4,8
+/* 2c*/ DWORD	dwAlphaOverlayConstBitDepths;	//!< DDBD_2,4,8
+/* 30*/ DWORD	dwAlphaOverlayPixelBitDepths;	//!< DDBD_1,2,4,8
+/* 34*/ DWORD	dwAlphaOverlaySurfaceBitDepths; //!< DDBD_1,2,4,8
+/* 38*/ DWORD	dwZBufferBitDepths;		//!< DDBD_8,16,24,32
+/* 3c*/ DWORD	dwVidMemTotal;		//!< total amount of video memory
+/* 40*/ DWORD	dwVidMemFree;		//!< amount of free video memory
+/* 44*/ DWORD	dwMaxVisibleOverlays;	//!< maximum number of visible overlays
+/* 48*/ DWORD	dwCurrVisibleOverlays;	//!< current number of visible overlays
+/* 4c*/ DWORD	dwNumFourCCCodes;	//!< number of four cc codes
+/* 50*/ DWORD	dwAlignBoundarySrc;	//!< source rectangle alignment
+/* 54*/ DWORD	dwAlignSizeSrc;		//!< source rectangle byte size
+/* 58*/ DWORD	dwAlignBoundaryDest;	//!< dest rectangle alignment
+/* 5c*/ DWORD	dwAlignSizeDest;	//!< dest rectangle byte size
+/* 60*/ DWORD	dwAlignStrideAlign;	//!< stride alignment
+/* 64*/ DWORD	dwRops[DD_ROP_SPACE];	//!< ROPS supported
+/* 84*/ DDSCAPS	ddsCaps;		//!< DDSCAPS structure has all the general capabilities
+/* 88*/ DWORD	dwMinOverlayStretch;	//!< minimum overlay stretch factor multiplied by 1000, eg 1000 == 1.0, 1300 == 1.3
+/* 8c*/ DWORD	dwMaxOverlayStretch;	//!< maximum overlay stretch factor multiplied by 1000, eg 1000 == 1.0, 1300 == 1.3
+/* 90*/ DWORD	dwMinLiveVideoStretch;	//!< minimum live video stretch factor multiplied by 1000, eg 1000 == 1.0, 1300 == 1.3
+/* 94*/ DWORD	dwMaxLiveVideoStretch;	//!< maximum live video stretch factor multiplied by 1000, eg 1000 == 1.0, 1300 == 1.3
+/* 98*/ DWORD	dwMinHwCodecStretch;	//!< minimum hardware codec stretch factor multiplied by 1000, eg 1000 == 1.0, 1300 == 1.3
+/* 9c*/ DWORD	dwMaxHwCodecStretch;	//!< maximum hardware codec stretch factor multiplied by 1000, eg 1000 == 1.0, 1300 == 1.3
+/* a0*/ DWORD	dwReserved1;		//!< reserved
+/* a4*/ DWORD	dwReserved2;		//!< reserved
+/* a8*/ DWORD	dwReserved3;		//!< reserved
+/* ac*/ DWORD	dwSVBCaps;		//!< driver specific capabilities for System->Vmem blts
+/* b0*/ DWORD	dwSVBCKeyCaps;		//!< driver color key capabilities for System->Vmem blts
+/* b4*/ DWORD	dwSVBFXCaps;		//!< driver FX capabilities for System->Vmem blts
+/* b8*/ DWORD	dwSVBRops[DD_ROP_SPACE];//!< ROPS supported for System->Vmem blts
+/* d8*/ DWORD	dwVSBCaps;		//!< driver specific capabilities for Vmem->System blts
+/* dc*/ DWORD	dwVSBCKeyCaps;		//!< driver color key capabilities for Vmem->System blts
+/* e0*/ DWORD	dwVSBFXCaps;		//!< driver FX capabilities for Vmem->System blts
+/* e4*/ DWORD	dwVSBRops[DD_ROP_SPACE];//!< ROPS supported for Vmem->System blts
+/*104*/ DWORD	dwSSBCaps;		//!< driver specific capabilities for System->System blts
+/*108*/ DWORD	dwSSBCKeyCaps;		//!< driver color key capabilities for System->System blts
+/*10c*/ DWORD	dwSSBFXCaps;		//!< driver FX capabilities for System->System blts
+/*110*/ DWORD	dwSSBRops[DD_ROP_SPACE];//!< ROPS supported for System->System blts
 #if       DIRECTDRAW_VERSION >= 0x0500
-/*130*/ DWORD	dwMaxVideoPorts;	// maximum number of usable video ports
-/*134*/ DWORD	dwCurrVideoPorts;	// current number of video ports used
-/*138*/ DWORD	dwSVBCaps2;		// more driver specific capabilities for System->Vmem blts
-/*13c*/ DWORD	dwNLVBCaps;		  // driver specific capabilities for non-local->local vidmem blts
-/*140*/ DWORD	dwNLVBCaps2;		  // more driver specific capabilities non-local->local vidmem blts
-/*144*/ DWORD	dwNLVBCKeyCaps;		  // driver color key capabilities for non-local->local vidmem blts
-/*148*/ DWORD	dwNLVBFXCaps;		  // driver FX capabilities for non-local->local blts
-/*14c*/ DWORD	dwNLVBRops[DD_ROP_SPACE]; // ROPS supported for non-local->local blts
+/*130*/ DWORD	dwMaxVideoPorts;	//!< maximum number of usable video ports
+/*134*/ DWORD	dwCurrVideoPorts;	//!< current number of video ports used
+/*138*/ DWORD	dwSVBCaps2;		//!< more driver specific capabilities for System->Vmem blts
+/*13c*/ DWORD	dwNLVBCaps;		  //!< driver specific capabilities for non-local->local vidmem blts
+/*140*/ DWORD	dwNLVBCaps2;		  //!< more driver specific capabilities non-local->local vidmem blts
+/*144*/ DWORD	dwNLVBCKeyCaps;		  //!< driver color key capabilities for non-local->local vidmem blts
+/*148*/ DWORD	dwNLVBFXCaps;		  //!< driver FX capabilities for non-local->local blts
+/*14c*/ DWORD	dwNLVBRops[DD_ROP_SPACE]; //!< ROPS supported for non-local->local blts
 #else  /* DIRECTDRAW_VERSION >= 0x0500 */
-/*130*/ DWORD	dwReserved4;		// reserved
-/*134*/ DWORD	dwReserved5;		// reserved
-/*138*/ DWORD	dwReserved6;		// reserved
+/*130*/ DWORD	dwReserved4;		//!< reserved
+/*134*/ DWORD	dwReserved5;		//!< reserved
+/*138*/ DWORD	dwReserved6;		//!< reserved
 #endif /* DIRECTDRAW_VERSION >= 0x0500 */
 } DDCAPS;
 
