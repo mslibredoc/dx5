@@ -197,11 +197,11 @@ DECLARE_INTERFACE_( IDirectDrawVideoPort, IUnknown )
  */
 typedef struct _DDVIDEOPORTCONNECT
 {
-    DWORD dwSize;           // size of the DDVIDEOPORTCONNECT structure
-    DWORD dwPortWidth;      // Width of the video port
-    GUID  guidTypeID;       // Description of video port connection
-    DWORD dwFlags;          // Connection flags
-    DWORD dwReserved1;      // Reserved, set to zero.
+    DWORD dwSize;           //!< size of the DDVIDEOPORTCONNECT structure
+    DWORD dwPortWidth;      //!< Width of the video port
+    GUID  guidTypeID;       //!< Description of video port connection
+    DWORD dwFlags;          //!< Connection flags
+    DWORD dwReserved1;      //!< Reserved, set to zero.
 } DDVIDEOPORTCONNECT;
 
 
@@ -210,57 +210,57 @@ typedef struct _DDVIDEOPORTCONNECT
  */
 typedef struct _DDVIDEOPORTCAPS
 {
-    DWORD dwSize;			// size of the DDVIDEOPORTCAPS structure
-    DWORD dwFlags;			// indicates which fields contain data
-    DWORD dwMaxWidth;			// max width of the video port field
-    DWORD dwMaxVBIWidth;		// max width of the VBI data
-    DWORD dwMaxHeight; 			// max height of the video port field
-    DWORD dwVideoPortID;		// Video port ID (0 - (dwMaxVideoPorts -1))
-    DWORD dwCaps;			// Video port capabilities
-    DWORD dwFX;				// More video port capabilities
-    DWORD dwNumAutoFlipSurfaces;	// Number of autoflippable surfaces
-    DWORD dwAlignVideoPortBoundary;	// Byte restriction of placement within the surface
-    DWORD dwAlignVideoPortPrescaleWidth;// Byte restriction of width after prescaling
-    DWORD dwAlignVideoPortCropBoundary;	// Byte restriction of left cropping
-    DWORD dwAlignVideoPortCropWidth;	// Byte restriction of cropping width
-    DWORD dwPreshrinkXStep;		// Width can be shrunk in steps of 1/x
-    DWORD dwPreshrinkYStep;		// Height can be shrunk in steps of 1/x
-    DWORD dwNumVBIAutoFlipSurfaces;	// Number of VBI autoflippable surfaces
-    DWORD dwReserved1;			// Reserved for future use
-    DWORD dwReserved2;			// Reserved for future use
+    DWORD dwSize;			//!< size of the DDVIDEOPORTCAPS structure
+    DWORD dwFlags;			//!< indicates which fields contain data
+    DWORD dwMaxWidth;			//!< max width of the video port field
+    DWORD dwMaxVBIWidth;		//!< max width of the VBI data
+    DWORD dwMaxHeight; 			//!< max height of the video port field
+    DWORD dwVideoPortID;		//!< Video port ID (0 - (dwMaxVideoPorts -1))
+    DWORD dwCaps;			//!< Video port capabilities
+    DWORD dwFX;				//!< More video port capabilities
+    DWORD dwNumAutoFlipSurfaces;	//!< Number of autoflippable surfaces
+    DWORD dwAlignVideoPortBoundary;	//!< Byte restriction of placement within the surface
+    DWORD dwAlignVideoPortPrescaleWidth;//!< Byte restriction of width after prescaling
+    DWORD dwAlignVideoPortCropBoundary;	//!< Byte restriction of left cropping
+    DWORD dwAlignVideoPortCropWidth;	//!< Byte restriction of cropping width
+    DWORD dwPreshrinkXStep;		//!< Width can be shrunk in steps of 1/x
+    DWORD dwPreshrinkYStep;		//!< Height can be shrunk in steps of 1/x
+    DWORD dwNumVBIAutoFlipSurfaces;	//!< Number of VBI autoflippable surfaces
+    DWORD dwReserved1;			//!< Reserved for future use
+    DWORD dwReserved2;			//!< Reserved for future use
 } DDVIDEOPORTCAPS;
 
-/*
+/**
  * The dwMaxWidth and dwMaxVBIWidth members are valid
  */
 #define DDVPD_WIDTH		0x00000001l
 
-/*
+/**
  * The dwMaxHeight member is valid
  */
 #define DDVPD_HEIGHT		0x00000002l
 
-/*
+/**
  * The dwVideoPortID member is valid
  */
 #define DDVPD_ID		0x00000004l
 
-/*
+/**
  * The dwCaps member is valid
  */
 #define DDVPD_CAPS		0x00000008l
 
-/*
+/**
  * The dwFX member is valid
  */
 #define DDVPD_FX		0x00000010l
 
-/*
+/**
  * The dwNumAutoFlipSurfaces member is valid
  */
 #define DDVPD_AUTOFLIP		0x00000020l
 
-/*
+/**
  * All of the alignment members are valid
  */
 #define DDVPD_ALIGN		0x00000040l
