@@ -1129,115 +1129,115 @@ DECLARE_INTERFACE_( IDirectDrawColorControl, IUnknown )
  */
 typedef struct _DDSURFACEDESC
 {
-    DWORD		dwSize;			// size of the DDSURFACEDESC structure
-    DWORD		dwFlags;		// determines what fields are valid
-    DWORD		dwHeight;		// height of surface to be created
-    DWORD		dwWidth;		// width of input surface
+    DWORD		dwSize;			//!< size of the DDSURFACEDESC structure
+    DWORD		dwFlags;		//!< determines what fields are valid
+    DWORD		dwHeight;		//!< height of surface to be created
+    DWORD		dwWidth;		//!< width of input surface
     union
     {
-        LONG		lPitch;			// distance to start of next line (return value only)
+        LONG		lPitch;			//!< distance to start of next line (return value only)
         DWORD           dwLinearSize;           // Formless late-allocated optimized surface size
     };
-    DWORD		dwBackBufferCount;	// number of back buffers requested
+    DWORD		dwBackBufferCount;	//!< number of back buffers requested
     union
     {
         DWORD           dwMipMapCount;          // number of mip-map levels requested
-	DWORD		dwZBufferBitDepth;	// depth of Z buffer requested
-	DWORD		dwRefreshRate;		// refresh rate (used when display mode is described)
+	DWORD		dwZBufferBitDepth;	//!< depth of Z buffer requested
+	DWORD		dwRefreshRate;		//!< refresh rate (used when display mode is described)
     };
-    DWORD		dwAlphaBitDepth;	// depth of alpha buffer requested
-    DWORD		dwReserved;		// reserved
-    LPVOID		lpSurface;		// pointer to the associated surface memory
-    DDCOLORKEY		ddckCKDestOverlay;	// color key for destination overlay use
-    DDCOLORKEY		ddckCKDestBlt;		// color key for destination blt use
-    DDCOLORKEY		ddckCKSrcOverlay;	// color key for source overlay use
-    DDCOLORKEY		ddckCKSrcBlt;		// color key for source blt use
-    DDPIXELFORMAT	ddpfPixelFormat;	// pixel format description of the surface
-    DDSCAPS		ddsCaps;		// direct draw surface capabilities
+    DWORD		dwAlphaBitDepth;	//!< depth of alpha buffer requested
+    DWORD		dwReserved;		//!< reserved
+    LPVOID		lpSurface;		//!< pointer to the associated surface memory
+    DDCOLORKEY		ddckCKDestOverlay;	//!< color key for destination overlay use
+    DDCOLORKEY		ddckCKDestBlt;		//!< color key for destination blt use
+    DDCOLORKEY		ddckCKSrcOverlay;	//!< color key for source overlay use
+    DDCOLORKEY		ddckCKSrcBlt;		//!< color key for source blt use
+    DDPIXELFORMAT	ddpfPixelFormat;	//!< pixel format description of the surface
+    DDSCAPS		ddsCaps;		//!< direct draw surface capabilities
 } DDSURFACEDESC;
 
-/*
+/**
  * ddsCaps field is valid.
  */
 #define DDSD_CAPS		0x00000001l	// default
 
-/*
+/**
  * dwHeight field is valid.
  */
 #define DDSD_HEIGHT		0x00000002l
 
-/*
+/**
  * dwWidth field is valid.
  */
 #define DDSD_WIDTH		0x00000004l
 
-/*
+/**
  * lPitch is valid.
  */
 #define DDSD_PITCH		0x00000008l
 
-/*
+/**
  * dwBackBufferCount is valid.
  */
 #define DDSD_BACKBUFFERCOUNT	0x00000020l
 
-/*
+/**
  * dwZBufferBitDepth is valid.
  */
 #define DDSD_ZBUFFERBITDEPTH	0x00000040l
 
-/*
+/**
  * dwAlphaBitDepth is valid.
  */
 #define DDSD_ALPHABITDEPTH	0x00000080l
 
 
-/*
+/**
  * lpSurface is valid.
  */
 #define DDSD_LPSURFACE		0x00000800l
 
-/*
+/**
  * ddpfPixelFormat is valid.
  */
 #define DDSD_PIXELFORMAT	0x00001000l
 
-/*
+/**
  * ddckCKDestOverlay is valid.
  */
 #define DDSD_CKDESTOVERLAY	0x00002000l
 
-/*
+/**
  * ddckCKDestBlt is valid.
  */
 #define DDSD_CKDESTBLT		0x00004000l
 
-/*
+/**
  * ddckCKSrcOverlay is valid.
  */
 #define DDSD_CKSRCOVERLAY	0x00008000l
 
-/*
+/**
  * ddckCKSrcBlt is valid.
  */
 #define DDSD_CKSRCBLT		0x00010000l
 
-/*
+/**
  * dwMipMapCount is valid.
  */
 #define DDSD_MIPMAPCOUNT        0x00020000l
 
- /*
+ /**
   * dwRefreshRate is valid
   */
 #define DDSD_REFRESHRATE	0x00040000l
 
-/*
+/**
  * dwLinearSize is valid
  */
 #define DDSD_LINEARSIZE		0x00080000l
 
-/*
+/**
  * All input fields are valid.
  */
 #define DDSD_ALL		0x000ff9eel
