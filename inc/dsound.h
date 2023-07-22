@@ -22,10 +22,10 @@
 extern "C" {
 #endif // __cplusplus
 
-// Direct Sound Component GUID {47D4D946-62E8-11cf-93BC-444553540000}
+/// Direct Sound Component GUID {47D4D946-62E8-11cf-93BC-444553540000}
 DEFINE_GUID(CLSID_DirectSound, 0x47d4d946, 0x62e8, 0x11cf, 0x93, 0xbc, 0x44, 0x45, 0x53, 0x54, 0x0, 0x0);
 
-// DirectSound Capture Component GUID {B0210780-89CD-11d0-AF08-00A0C925CD16}
+/// DirectSound Capture Component GUID {B0210780-89CD-11d0-AF08-00A0C925CD16}
 DEFINE_GUID(CLSID_DirectSoundCapture, 0xb0210780, 0x89cd, 0x11d0, 0xaf, 0x8, 0x0, 0xa0, 0xc9, 0x25, 0xcd, 0x16);
 
 //
@@ -689,55 +689,55 @@ DECLARE_INTERFACE_(IKsPropertySet, IUnknown)
 
 #define DS_OK                           0
 
-// The call failed because resources (such as a priority level)
-// were already being used by another caller.
+/// The call failed because resources (such as a priority level)
+/// were already being used by another caller.
 #define DSERR_ALLOCATED                 MAKE_DSHRESULT(10)
 
-// The control (vol,pan,etc.) requested by the caller is not available.
+/// The control (vol,pan,etc.) requested by the caller is not available.
 #define DSERR_CONTROLUNAVAIL            MAKE_DSHRESULT(30)
 
-// An invalid parameter was passed to the returning function
+/// An invalid parameter was passed to the returning function
 #define DSERR_INVALIDPARAM              E_INVALIDARG
 
-// This call is not valid for the current state of this object
+/// This call is not valid for the current state of this object
 #define DSERR_INVALIDCALL               MAKE_DSHRESULT(50)
 
-// An undetermined error occured inside the DirectSound subsystem
+/// An undetermined error occured inside the DirectSound subsystem
 #define DSERR_GENERIC                   E_FAIL
 
-// The caller does not have the priority level required for the function to
-// succeed.
+/// The caller does not have the priority level required for the function to
+/// succeed.
 #define DSERR_PRIOLEVELNEEDED           MAKE_DSHRESULT(70)
 
-// Not enough free memory is available to complete the operation
+/// Not enough free memory is available to complete the operation
 #define DSERR_OUTOFMEMORY               E_OUTOFMEMORY
 
-// The specified WAVE format is not supported
+/// The specified WAVE format is not supported
 #define DSERR_BADFORMAT                 MAKE_DSHRESULT(100)
 
-// The function called is not supported at this time
+/// The function called is not supported at this time
 #define DSERR_UNSUPPORTED               E_NOTIMPL
 
-// No sound driver is available for use
+/// No sound driver is available for use
 #define DSERR_NODRIVER                  MAKE_DSHRESULT(120)
 
-// This object is already initialized
+/// This object is already initialized
 #define DSERR_ALREADYINITIALIZED        MAKE_DSHRESULT(130)
 
-// This object does not support aggregation
+/// This object does not support aggregation
 #define DSERR_NOAGGREGATION             CLASS_E_NOAGGREGATION
 
-// The buffer memory has been lost, and must be restored.
+/// The buffer memory has been lost, and must be restored.
 #define DSERR_BUFFERLOST                MAKE_DSHRESULT(150)
 
-// Another app has a higher priority level, preventing this call from
-// succeeding.
+/// Another app has a higher priority level, preventing this call from
+/// succeeding.
 #define DSERR_OTHERAPPHASPRIO           MAKE_DSHRESULT(160)
 
-// This object has not been initialized
+/// This object has not been initialized
 #define DSERR_UNINITIALIZED             MAKE_DSHRESULT(170)
 
-// The requested COM interface is not available
+/// The requested COM interface is not available
 #define DSERR_NOINTERFACE               E_NOINTERFACE
 
 //
@@ -822,10 +822,10 @@ DECLARE_INTERFACE_(IKsPropertySet, IUnknown)
 #define DSSPEAKER_STEREO            0x00000004
 #define DSSPEAKER_SURROUND          0x00000005
 
-#define DSSPEAKER_GEOMETRY_MIN      0x00000005  //   5 degrees
-#define DSSPEAKER_GEOMETRY_NARROW   0x0000000A  //  10 degrees
-#define DSSPEAKER_GEOMETRY_WIDE     0x00000014  //  20 degrees
-#define DSSPEAKER_GEOMETRY_MAX      0x000000B4  // 180 degrees
+#define DSSPEAKER_GEOMETRY_MIN      0x00000005  ///   5 degrees
+#define DSSPEAKER_GEOMETRY_NARROW   0x0000000A  ///  10 degrees
+#define DSSPEAKER_GEOMETRY_WIDE     0x00000014  ///  20 degrees
+#define DSSPEAKER_GEOMETRY_MAX      0x000000B4  /// 180 degrees
 
 #define DSSPEAKER_COMBINED(c, g)    ((DWORD)(((BYTE)(c)) | ((DWORD)((BYTE)(g))) << 16))
 #define DSSPEAKER_CONFIG(a)         ((BYTE)(a))
