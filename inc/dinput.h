@@ -182,28 +182,28 @@ typedef struct DICUSTOMFORCE {
 typedef const DICUSTOMFORCE *LPCDICUSTOMFORCE;
 
 typedef struct DIENVELOPE {
-    DWORD dwSize;                   /*! sizeof(DIENVELOPE)   */
+    DWORD dwSize;                   /*!< sizeof(DIENVELOPE)   */
     DWORD dwAttackLevel;
-    DWORD dwAttackTime;             /*! Microseconds         */
+    DWORD dwAttackTime;             /*!< Microseconds         */
     DWORD dwFadeLevel;
-    DWORD dwFadeTime;               /*! Microseconds         */
+    DWORD dwFadeTime;               /*!< Microseconds         */
 } DIENVELOPE, *LPDIENVELOPE;
 typedef const DIENVELOPE *LPCDIENVELOPE;
 
 typedef struct DIEFFECT {
-    DWORD dwSize;                   /*! sizeof(DIEFFECT)     */
-    DWORD dwFlags;                  /*! DIEFF_*              */
-    DWORD dwDuration;               /*! Microseconds         */
-    DWORD dwSamplePeriod;           /*! Microseconds         */
+    DWORD dwSize;                   /*!< sizeof(DIEFFECT)     */
+    DWORD dwFlags;                  /*!< DIEFF_*              */
+    DWORD dwDuration;               /*!< Microseconds         */
+    DWORD dwSamplePeriod;           /*!< Microseconds         */
     DWORD dwGain;
-    DWORD dwTriggerButton;          /*! or DIEB_NOTRIGGER    */
-    DWORD dwTriggerRepeatInterval;  /*! Microseconds         */
-    DWORD cAxes;                    /*! Number of axes       */
-    LPDWORD rgdwAxes;               /*! Array of axes        */
-    LPLONG rglDirection;            /*! Array of directions  */
-    LPDIENVELOPE lpEnvelope;        /*! Optional             */
-    DWORD cbTypeSpecificParams;     /*! Size of params       */
-    LPVOID lpvTypeSpecificParams;   /*! Pointer to params    */
+    DWORD dwTriggerButton;          /*!< or DIEB_NOTRIGGER    */
+    DWORD dwTriggerRepeatInterval;  /*!< Microseconds         */
+    DWORD cAxes;                    /*!< Number of axes       */
+    LPDWORD rgdwAxes;               /*!< Array of axes        */
+    LPLONG rglDirection;            /*!< Array of directions  */
+    LPDIENVELOPE lpEnvelope;        /*!< Optional             */
+    DWORD cbTypeSpecificParams;     /*!< Size of params       */
+    LPVOID lpvTypeSpecificParams;   /*!< Pointer to params    */
 } DIEFFECT, *LPDIEFFECT;
 typedef const DIEFFECT *LPCDIEFFECT;
 
@@ -1072,9 +1072,9 @@ typedef struct _DIMOUSESTATE {
 #define DIK_8               0x09
 #define DIK_9               0x0A
 #define DIK_0               0x0B
-#define DIK_MINUS           0x0C    /*! - on main keyboard */
+#define DIK_MINUS           0x0C    /*!< - on main keyboard */
 #define DIK_EQUALS          0x0D
-#define DIK_BACK            0x0E    /*! backspace */
+#define DIK_BACK            0x0E    /*!< backspace */
 #define DIK_TAB             0x0F
 #define DIK_Q               0x10
 #define DIK_W               0x11
@@ -1088,7 +1088,7 @@ typedef struct _DIMOUSESTATE {
 #define DIK_P               0x19
 #define DIK_LBRACKET        0x1A
 #define DIK_RBRACKET        0x1B
-#define DIK_RETURN          0x1C    /*! Enter on main keyboard */
+#define DIK_RETURN          0x1C    /*!< Enter on main keyboard */
 #define DIK_LCONTROL        0x1D
 #define DIK_A               0x1E
 #define DIK_S               0x1F
@@ -1101,7 +1101,7 @@ typedef struct _DIMOUSESTATE {
 #define DIK_L               0x26
 #define DIK_SEMICOLON       0x27
 #define DIK_APOSTROPHE      0x28
-#define DIK_GRAVE           0x29    /*! accent grave */
+#define DIK_GRAVE           0x29    /*!< accent grave */
 #define DIK_LSHIFT          0x2A
 #define DIK_BACKSLASH       0x2B
 #define DIK_Z               0x2C
@@ -1112,11 +1112,11 @@ typedef struct _DIMOUSESTATE {
 #define DIK_N               0x31
 #define DIK_M               0x32
 #define DIK_COMMA           0x33
-#define DIK_PERIOD          0x34    /*! . on main keyboard */
-#define DIK_SLASH           0x35    /*! / on main keyboard */
+#define DIK_PERIOD          0x34    /*!< . on main keyboard */
+#define DIK_SLASH           0x35    /*!< / on main keyboard */
 #define DIK_RSHIFT          0x36
-#define DIK_MULTIPLY        0x37    /*! * on numeric keypad */
-#define DIK_LMENU           0x38    /*! left Alt */
+#define DIK_MULTIPLY        0x37    /*!< * on numeric keypad */
+#define DIK_LMENU           0x38    /*!< left Alt */
 #define DIK_SPACE           0x39
 #define DIK_CAPITAL         0x3A
 #define DIK_F1              0x3B
@@ -1130,78 +1130,78 @@ typedef struct _DIMOUSESTATE {
 #define DIK_F9              0x43
 #define DIK_F10             0x44
 #define DIK_NUMLOCK         0x45
-#define DIK_SCROLL          0x46    /*! Scroll Lock */
+#define DIK_SCROLL          0x46    /*!< Scroll Lock */
 #define DIK_NUMPAD7         0x47
 #define DIK_NUMPAD8         0x48
 #define DIK_NUMPAD9         0x49
-#define DIK_SUBTRACT        0x4A    /*! - on numeric keypad */
+#define DIK_SUBTRACT        0x4A    /*!< - on numeric keypad */
 #define DIK_NUMPAD4         0x4B
 #define DIK_NUMPAD5         0x4C
 #define DIK_NUMPAD6         0x4D
-#define DIK_ADD             0x4E    /*! + on numeric keypad */
+#define DIK_ADD             0x4E    /*!< + on numeric keypad */
 #define DIK_NUMPAD1         0x4F
 #define DIK_NUMPAD2         0x50
 #define DIK_NUMPAD3         0x51
 #define DIK_NUMPAD0         0x52
-#define DIK_DECIMAL         0x53    /*! . on numeric keypad */
+#define DIK_DECIMAL         0x53    /*!< . on numeric keypad */
 #define DIK_F11             0x57
 #define DIK_F12             0x58
 
-#define DIK_F13             0x64    /*                     (NEC PC98) */
-#define DIK_F14             0x65    /*                     (NEC PC98) */
-#define DIK_F15             0x66    /*                     (NEC PC98) */
+#define DIK_F13             0x64    /*!<                     (NEC PC98) */
+#define DIK_F14             0x65    /*!<                     (NEC PC98) */
+#define DIK_F15             0x66    /*!<                     (NEC PC98) */
 
-#define DIK_KANA            0x70    /* (Japanese keyboard)            */
-#define DIK_CONVERT         0x79    /* (Japanese keyboard)            */
-#define DIK_NOCONVERT       0x7B    /* (Japanese keyboard)            */
-#define DIK_YEN             0x7D    /* (Japanese keyboard)            */
-#define DIK_NUMPADEQUALS    0x8D    /* = on numeric keypad (NEC PC98) */
-#define DIK_CIRCUMFLEX      0x90    /* (Japanese keyboard)            */
-#define DIK_AT              0x91    /*                     (NEC PC98) */
-#define DIK_COLON           0x92    /*                     (NEC PC98) */
-#define DIK_UNDERLINE       0x93    /*                     (NEC PC98) */
-#define DIK_KANJI           0x94    /* (Japanese keyboard)            */
-#define DIK_STOP            0x95    /*                     (NEC PC98) */
-#define DIK_AX              0x96    /*                     (Japan AX) */
-#define DIK_UNLABELED       0x97    /*                        (J3100) */
-#define DIK_NUMPADENTER     0x9C    /* Enter on numeric keypad */
+#define DIK_KANA            0x70    /*!< (Japanese keyboard)            */
+#define DIK_CONVERT         0x79    /*!< (Japanese keyboard)            */
+#define DIK_NOCONVERT       0x7B    /*!< (Japanese keyboard)            */
+#define DIK_YEN             0x7D    /*!< (Japanese keyboard)            */
+#define DIK_NUMPADEQUALS    0x8D    /*!< = on numeric keypad (NEC PC98) */
+#define DIK_CIRCUMFLEX      0x90    /*!< (Japanese keyboard)            */
+#define DIK_AT              0x91    /*!<                     (NEC PC98) */
+#define DIK_COLON           0x92    /*!<                     (NEC PC98) */
+#define DIK_UNDERLINE       0x93    /*!<                     (NEC PC98) */
+#define DIK_KANJI           0x94    /*!< (Japanese keyboard)            */
+#define DIK_STOP            0x95    /*!<                     (NEC PC98) */
+#define DIK_AX              0x96    /*!<                     (Japan AX) */
+#define DIK_UNLABELED       0x97    /*!<                        (J3100) */
+#define DIK_NUMPADENTER     0x9C    /*!< Enter on numeric keypad */
 #define DIK_RCONTROL        0x9D
-#define DIK_NUMPADCOMMA     0xB3    /* , on numeric keypad (NEC PC98) */
-#define DIK_DIVIDE          0xB5    /* / on numeric keypad */
+#define DIK_NUMPADCOMMA     0xB3    /*!< , on numeric keypad (NEC PC98) */
+#define DIK_DIVIDE          0xB5    /*!< / on numeric keypad */
 #define DIK_SYSRQ           0xB7
-#define DIK_RMENU           0xB8    /* right Alt */
-#define DIK_HOME            0xC7    /* Home on arrow keypad */
-#define DIK_UP              0xC8    /* UpArrow on arrow keypad */
-#define DIK_PRIOR           0xC9    /* PgUp on arrow keypad */
-#define DIK_LEFT            0xCB    /* LeftArrow on arrow keypad */
-#define DIK_RIGHT           0xCD    /* RightArrow on arrow keypad */
-#define DIK_END             0xCF    /* End on arrow keypad */
-#define DIK_DOWN            0xD0    /* DownArrow on arrow keypad */
-#define DIK_NEXT            0xD1    /* PgDn on arrow keypad */
-#define DIK_INSERT          0xD2    /* Insert on arrow keypad */
-#define DIK_DELETE          0xD3    /* Delete on arrow keypad */
-#define DIK_LWIN            0xDB    /* Left Windows key */
-#define DIK_RWIN            0xDC    /* Right Windows key */
-#define DIK_APPS            0xDD    /* AppMenu key */
+#define DIK_RMENU           0xB8    /*!< right Alt */
+#define DIK_HOME            0xC7    /*!< Home on arrow keypad */
+#define DIK_UP              0xC8    /*!< UpArrow on arrow keypad */
+#define DIK_PRIOR           0xC9    /*!< PgUp on arrow keypad */
+#define DIK_LEFT            0xCB    /*!< LeftArrow on arrow keypad */
+#define DIK_RIGHT           0xCD    /*!< RightArrow on arrow keypad */
+#define DIK_END             0xCF    /*!< End on arrow keypad */
+#define DIK_DOWN            0xD0    /*!< DownArrow on arrow keypad */
+#define DIK_NEXT            0xD1    /*!< PgDn on arrow keypad */
+#define DIK_INSERT          0xD2    /*!< Insert on arrow keypad */
+#define DIK_DELETE          0xD3    /*!< Delete on arrow keypad */
+#define DIK_LWIN            0xDB    /*!< Left Windows key */
+#define DIK_RWIN            0xDC    /*!< Right Windows key */
+#define DIK_APPS            0xDD    /*!< AppMenu key */
 
 /*
  *  Alternate names for keys, to facilitate transition from DOS.
  */
-#define DIK_BACKSPACE       DIK_BACK            /* backspace */
-#define DIK_NUMPADSTAR      DIK_MULTIPLY        /* * on numeric keypad */
-#define DIK_LALT            DIK_LMENU           /* left Alt */
-#define DIK_CAPSLOCK        DIK_CAPITAL         /* CapsLock */
-#define DIK_NUMPADMINUS     DIK_SUBTRACT        /* - on numeric keypad */
-#define DIK_NUMPADPLUS      DIK_ADD             /* + on numeric keypad */
-#define DIK_NUMPADPERIOD    DIK_DECIMAL         /* . on numeric keypad */
-#define DIK_NUMPADSLASH     DIK_DIVIDE          /* / on numeric keypad */
-#define DIK_RALT            DIK_RMENU           /* right Alt */
-#define DIK_UPARROW         DIK_UP              /* UpArrow on arrow keypad */
-#define DIK_PGUP            DIK_PRIOR           /* PgUp on arrow keypad */
-#define DIK_LEFTARROW       DIK_LEFT            /* LeftArrow on arrow keypad */
-#define DIK_RIGHTARROW      DIK_RIGHT           /* RightArrow on arrow keypad */
-#define DIK_DOWNARROW       DIK_DOWN            /* DownArrow on arrow keypad */
-#define DIK_PGDN            DIK_NEXT            /* PgDn on arrow keypad */
+#define DIK_BACKSPACE       DIK_BACK            /*!< backspace */
+#define DIK_NUMPADSTAR      DIK_MULTIPLY        /*!< * on numeric keypad */
+#define DIK_LALT            DIK_LMENU           /*!< left Alt */
+#define DIK_CAPSLOCK        DIK_CAPITAL         /*!< CapsLock */
+#define DIK_NUMPADMINUS     DIK_SUBTRACT        /*!< - on numeric keypad */
+#define DIK_NUMPADPLUS      DIK_ADD             /*!< + on numeric keypad */
+#define DIK_NUMPADPERIOD    DIK_DECIMAL         /*!< . on numeric keypad */
+#define DIK_NUMPADSLASH     DIK_DIVIDE          /*!< / on numeric keypad */
+#define DIK_RALT            DIK_RMENU           /*!< right Alt */
+#define DIK_UPARROW         DIK_UP              /*!< UpArrow on arrow keypad */
+#define DIK_PGUP            DIK_PRIOR           /*!< PgUp on arrow keypad */
+#define DIK_LEFTARROW       DIK_LEFT            /*!< LeftArrow on arrow keypad */
+#define DIK_RIGHTARROW      DIK_RIGHT           /*!< RightArrow on arrow keypad */
+#define DIK_DOWNARROW       DIK_DOWN            /*!< DownArrow on arrow keypad */
+#define DIK_PGDN            DIK_NEXT            /*!< PgDn on arrow keypad */
 
 #endif /* DIJ_RINGZERO */
 
@@ -1214,48 +1214,48 @@ typedef struct _DIMOUSESTATE {
 #ifndef DIJ_RINGZERO
 
 typedef struct DIJOYSTATE {
-    LONG    lX;                     /* x-axis position              */
-    LONG    lY;                     /* y-axis position              */
-    LONG    lZ;                     /* z-axis position              */
-    LONG    lRx;                    /* x-axis rotation              */
-    LONG    lRy;                    /* y-axis rotation              */
-    LONG    lRz;                    /* z-axis rotation              */
-    LONG    rglSlider[2];           /* extra axes positions         */
-    DWORD   rgdwPOV[4];             /* POV directions               */
-    BYTE    rgbButtons[32];         /* 32 buttons                   */
+    LONG    lX;                     /*!< x-axis position              */
+    LONG    lY;                     /*!< y-axis position              */
+    LONG    lZ;                     /*!< z-axis position              */
+    LONG    lRx;                    /*!< x-axis rotation              */
+    LONG    lRy;                    /*!< y-axis rotation              */
+    LONG    lRz;                    /*!< z-axis rotation              */
+    LONG    rglSlider[2];           /*!< extra axes positions         */
+    DWORD   rgdwPOV[4];             /*!< POV directions               */
+    BYTE    rgbButtons[32];         /*!< 32 buttons                   */
 } DIJOYSTATE, *LPDIJOYSTATE;
 
 typedef struct DIJOYSTATE2 {
-    LONG    lX;                     /* x-axis position              */
-    LONG    lY;                     /* y-axis position              */
-    LONG    lZ;                     /* z-axis position              */
-    LONG    lRx;                    /* x-axis rotation              */
-    LONG    lRy;                    /* y-axis rotation              */
-    LONG    lRz;                    /* z-axis rotation              */
-    LONG    rglSlider[2];           /* extra axes positions         */
-    DWORD   rgdwPOV[4];             /* POV directions               */
-    BYTE    rgbButtons[128];        /* 128 buttons                  */
-    LONG    lVX;                    /* x-axis velocity              */
-    LONG    lVY;                    /* y-axis velocity              */
-    LONG    lVZ;                    /* z-axis velocity              */
-    LONG    lVRx;                   /* x-axis angular velocity      */
-    LONG    lVRy;                   /* y-axis angular velocity      */
-    LONG    lVRz;                   /* z-axis angular velocity      */
-    LONG    rglVSlider[2];          /* extra axes velocities        */
-    LONG    lAX;                    /* x-axis acceleration          */
-    LONG    lAY;                    /* y-axis acceleration          */
-    LONG    lAZ;                    /* z-axis acceleration          */
-    LONG    lARx;                   /* x-axis angular acceleration  */
-    LONG    lARy;                   /* y-axis angular acceleration  */
-    LONG    lARz;                   /* z-axis angular acceleration  */
-    LONG    rglASlider[2];          /* extra axes accelerations     */
-    LONG    lFX;                    /* x-axis force                 */
-    LONG    lFY;                    /* y-axis force                 */
-    LONG    lFZ;                    /* z-axis force                 */
-    LONG    lFRx;                   /* x-axis torque                */
-    LONG    lFRy;                   /* y-axis torque                */
-    LONG    lFRz;                   /* z-axis torque                */
-    LONG    rglFSlider[2];          /* extra axes forces            */
+    LONG    lX;                     /*!< x-axis position              */
+    LONG    lY;                     /*!< y-axis position              */
+    LONG    lZ;                     /*!< z-axis position              */
+    LONG    lRx;                    /*!< x-axis rotation              */
+    LONG    lRy;                    /*!< y-axis rotation              */
+    LONG    lRz;                    /*!< z-axis rotation              */
+    LONG    rglSlider[2];           /*!< extra axes positions         */
+    DWORD   rgdwPOV[4];             /*!< POV directions               */
+    BYTE    rgbButtons[128];        /*!< 128 buttons                  */
+    LONG    lVX;                    /*!< x-axis velocity              */
+    LONG    lVY;                    /*!< y-axis velocity              */
+    LONG    lVZ;                    /*!< z-axis velocity              */
+    LONG    lVRx;                   /*!< x-axis angular velocity      */
+    LONG    lVRy;                   /*!< y-axis angular velocity      */
+    LONG    lVRz;                   /*!< z-axis angular velocity      */
+    LONG    rglVSlider[2];          /*!< extra axes velocities        */
+    LONG    lAX;                    /*!< x-axis acceleration          */
+    LONG    lAY;                    /*!< y-axis acceleration          */
+    LONG    lAZ;                    /*!< z-axis acceleration          */
+    LONG    lARx;                   /*!< x-axis angular acceleration  */
+    LONG    lARy;                   /*!< y-axis angular acceleration  */
+    LONG    lARz;                   /*!< z-axis angular acceleration  */
+    LONG    rglASlider[2];          /*!< extra axes accelerations     */
+    LONG    lFX;                    /*!< x-axis force                 */
+    LONG    lFY;                    /*!< y-axis force                 */
+    LONG    lFZ;                    /*!< z-axis force                 */
+    LONG    lFRx;                   /*!< x-axis torque                */
+    LONG    lFRy;                   /*!< y-axis torque                */
+    LONG    lFRz;                   /*!< z-axis torque                */
+    LONG    rglFSlider[2];          /*!< extra axes forces            */
 } DIJOYSTATE2, *LPDIJOYSTATE2;
 
 #define DIJOFS_X            FIELD_OFFSET(DIJOYSTATE, lX)
@@ -1497,39 +1497,39 @@ extern HRESULT WINAPI DirectInputCreateW(HINSTANCE hinst, DWORD dwVersion, LPDIR
  *
  ****************************************************************************/
 
-/*
+/*!
  *  The operation completed successfully.
  */
 #define DI_OK                           S_OK
 
-/*
+/*!
  *  The device exists but is not currently attached.
  */
 #define DI_NOTATTACHED                  S_FALSE
 
-/*
+/*!
  *  The device buffer overflowed.  Some input was lost.
  */
 #define DI_BUFFEROVERFLOW               S_FALSE
 
-/*
+/*!
  *  The change in device properties had no effect.
  */
 #define DI_PROPNOEFFECT                 S_FALSE
 
-/*
+/*!
  *  The operation had no effect.
  */
 #define DI_NOEFFECT                     S_FALSE
 
-/*
+/*!
  *  The device is a polled device.  As a result, device buffering
  *  will not collect any data and event notifications will not be
  *  signalled until GetDeviceState is called.
  */
 #define DI_POLLEDDEVICE                 ((HRESULT)0x00000002L)
 
-/*
+/*!
  *  The parameters of the effect were successfully updated by
  *  IDirectInputEffect::SetParameters, but the effect was not
  *  downloaded because the device is not exclusively acquired
@@ -1537,32 +1537,32 @@ extern HRESULT WINAPI DirectInputCreateW(HINSTANCE hinst, DWORD dwVersion, LPDIR
  */
 #define DI_DOWNLOADSKIPPED              ((HRESULT)0x00000003L)
 
-/*
+/*!
  *  The parameters of the effect were successfully updated by
  *  IDirectInputEffect::SetParameters, but in order to change
  *  the parameters, the effect needed to be restarted.
  */
 #define DI_EFFECTRESTARTED              ((HRESULT)0x00000004L)
 
-/*
+/*!
  *  The parameters of the effect were successfully updated by
  *  IDirectInputEffect::SetParameters, but some of them were
  *  beyond the capabilities of the device and were truncated.
  */
 #define DI_TRUNCATED                    ((HRESULT)0x00000008L)
 
-/*
+/*!
  *  Equal to DI_EFFECTRESTARTED | DI_TRUNCATED.
  */
 #define DI_TRUNCATEDANDRESTARTED        ((HRESULT)0x0000000CL)
 
-/*
+/*!
  *  The application requires a newer version of DirectInput.
  */
 #define DIERR_OLDDIRECTINPUTVERSION     \
     MAKE_HRESULT(SEVERITY_ERROR, FACILITY_WIN32, ERROR_OLD_WIN_VERSION)
 
-/*
+/*!
  *  The application was written for an unsupported prerelease version
  *  of DirectInput.
  */
@@ -1576,157 +1576,157 @@ extern HRESULT WINAPI DirectInputCreateW(HINSTANCE hinst, DWORD dwVersion, LPDIR
 #define DIERR_BADDRIVERVER              \
     MAKE_HRESULT(SEVERITY_ERROR, FACILITY_WIN32, ERROR_BAD_DRIVER_LEVEL)
 
-/*
+/*!
  * The device or device instance or effect is not registered with DirectInput.
  */
 #define DIERR_DEVICENOTREG              REGDB_E_CLASSNOTREG
 
-/*
+/*!
  * The requested object does not exist.
  */
 #define DIERR_NOTFOUND                  \
     MAKE_HRESULT(SEVERITY_ERROR, FACILITY_WIN32, ERROR_FILE_NOT_FOUND)
 
-/*
+/*!
  * The requested object does not exist.
  */
 #define DIERR_OBJECTNOTFOUND            \
     MAKE_HRESULT(SEVERITY_ERROR, FACILITY_WIN32, ERROR_FILE_NOT_FOUND)
 
-/*
+/*!
  * An invalid parameter was passed to the returning function,
  * or the object was not in a state that admitted the function
  * to be called.
  */
 #define DIERR_INVALIDPARAM              E_INVALIDARG
 
-/*
+/*!
  * The specified interface is not supported by the object
  */
 #define DIERR_NOINTERFACE               E_NOINTERFACE
 
-/*
+/*!
  * An undetermined error occured inside the DInput subsystem
  */
 #define DIERR_GENERIC                   E_FAIL
 
-/*
+/*!
  * The DInput subsystem couldn't allocate sufficient memory to complete the
  * caller's request.
  */
 #define DIERR_OUTOFMEMORY               E_OUTOFMEMORY
 
-/*
+/*!
  * The function called is not supported at this time
  */
 #define DIERR_UNSUPPORTED               E_NOTIMPL
 
-/*
+/*!
  * This object has not been initialized
  */
 #define DIERR_NOTINITIALIZED            \
     MAKE_HRESULT(SEVERITY_ERROR, FACILITY_WIN32, ERROR_NOT_READY)
 
-/*
+/*!
  * This object is already initialized
  */
 #define DIERR_ALREADYINITIALIZED        \
     MAKE_HRESULT(SEVERITY_ERROR, FACILITY_WIN32, ERROR_ALREADY_INITIALIZED)
 
-/*
+/*!
  * This object does not support aggregation
  */
 #define DIERR_NOAGGREGATION             CLASS_E_NOAGGREGATION
 
-/*
+/*!
  * Another app has a higher priority level, preventing this call from
  * succeeding.
  */
 #define DIERR_OTHERAPPHASPRIO           E_ACCESSDENIED
 
-/*
+/*!
  * Access to the device has been lost.  It must be re-acquired.
  */
 #define DIERR_INPUTLOST                 \
     MAKE_HRESULT(SEVERITY_ERROR, FACILITY_WIN32, ERROR_READ_FAULT)
 
-/*
+/*!
  * The operation cannot be performed while the device is acquired.
  */
 #define DIERR_ACQUIRED                  \
     MAKE_HRESULT(SEVERITY_ERROR, FACILITY_WIN32, ERROR_BUSY)
 
-/*
+/*!
  * The operation cannot be performed unless the device is acquired.
  */
 #define DIERR_NOTACQUIRED               \
     MAKE_HRESULT(SEVERITY_ERROR, FACILITY_WIN32, ERROR_INVALID_ACCESS)
 
-/*
+/*!
  * The specified property cannot be changed.
  */
 #define DIERR_READONLY                  E_ACCESSDENIED
 
-/*
+/*!
  * The device already has an event notification associated with it.
  */
 #define DIERR_HANDLEEXISTS              E_ACCESSDENIED
 
-/*
+/*!
  * Data is not yet available.
  */
 #ifndef E_PENDING
 #define E_PENDING                       0x80070007L
 #endif
 
-/*
+/*!
  * Unable to IDirectInputJoyConfig_Acquire because the user
  * does not have sufficient privileges to change the joystick
  * configuration.
  */
 #define DIERR_INSUFFICIENTPRIVS         0x80040200L
 
-/*
+/*!
  * The device is full.
  */
 #define DIERR_DEVICEFULL                0x80040201L
 
-/*
+/*!
  * Not all the requested information fit into the buffer.
  */
 #define DIERR_MOREDATA                  0x80040202L
 
-/*
+/*!
  * The effect is not downloaded.
  */
 #define DIERR_NOTDOWNLOADED             0x80040203L
 
-/*
+/*!
  *  The device cannot be reinitialized because there are still effects
  *  attached to it.
  */
 #define DIERR_HASEFFECTS                0x80040204L
 
-/*
+/*!
  *  The operation cannot be performed unless the device is acquired
  *  in DISCL_EXCLUSIVE mode.
  */
 #define DIERR_NOTEXCLUSIVEACQUIRED      0x80040205L
 
-/*
+/*!
  *  The effect could not be downloaded because essential information
  *  is missing.  For example, no axes have been associated with the
  *  effect, or no type-specific information has been created.
  */
 #define DIERR_INCOMPLETEEFFECT          0x80040206L
 
-/*
+/*!
  *  Attempted to read buffered device data from a device that is
  *  not buffered.
  */
 #define DIERR_NOTBUFFERED               0x80040207L
 
-/*
+/*!
  *  An attempt was made to modify parameters of an effect while it is
  *  playing.  Not all hardware devices support altering the parameters
  *  of an effect while it is playing.
@@ -1756,58 +1756,58 @@ extern HRESULT WINAPI DirectInputCreateW(HINSTANCE hinst, DWORD dwVersion, LPDIR
 extern "C" {
 #endif
 
-/*
+/*!
  * Flag to indicate that the dwReserved2 field of the JOYINFOEX structure
  * contains mini-driver specific data to be passed by VJoyD to the mini-
  * driver instead of doing a poll.
  */
 #define JOY_PASSDRIVERDATA          0x10000000l
 
-/*
+/*!
  * Informs the joystick driver that the configuration has been changed
  * and should be reloaded from the registery.
  * dwFlags is reserved and should be set to zero
  */
 WINMMAPI MMRESULT WINAPI joyConfigChanged( DWORD dwFlags );
 
-/*
+/*!
  * Hardware Setting indicating that the device is a headtracker
  */
 #define JOY_HWS_ISHEADTRACKER       0x02000000l
 
-/*
+/*!
  * Hardware Setting indicating that the VxD is used to replace
  * the standard analog polling
  */
 #define JOY_HWS_ISGAMEPORTDRIVER    0x04000000l
 
-/*
+/*!
  * Hardware Setting indicating that the driver needs a standard
  * gameport in order to communicate with the device.
  */
 #define JOY_HWS_ISANALOGPORTDRIVER  0x08000000l 
 
-/*
+/*!
  * Hardware Setting indicating that VJoyD should not load this 
  * driver, it will be loaded externally and will register with
  * VJoyD of it's own accord.
  */
 #define JOY_HWS_AUTOLOAD            0x10000000l
 
-/*
+/*!
  * Hardware Setting indicating that the driver acquires any 
  * resources needed without needing a devnode through VJoyD.
  */
 #define JOY_HWS_NODEVNODE           0x20000000l
 
-/*
+/*!
  * Hardware Setting indicating that the VxD can be used as
  * a port 201h emulator.
  */
 #define JOY_HWS_ISGAMEPORTEMULATOR  0x40000000l
 
 
-/*
+/*!
  * Usage Setting indicating that the settings are volatile and
  * should be removed if still present on a reboot.
  */
@@ -1836,7 +1836,7 @@ WINMMAPI MMRESULT WINAPI joyConfigChanged( DWORD dwFlags );
 
 #ifndef __VJOYDXD_INCLUDED__
 #define __VJOYDXD_INCLUDED__
-/*
+/*!
  * Poll type in which the do_other field of the JOYOEMPOLLDATA
  * structure contains mini-driver specific data passed from an app.
  */
