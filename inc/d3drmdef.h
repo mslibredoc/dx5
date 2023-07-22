@@ -97,12 +97,12 @@ typedef DWORD D3DRMRENDERQUALITY, *LPD3DRMRENDERQUALITY;
 #define D3DRMRENDERMODE_SORTEDTRANSPARENCY	2
 
 typedef enum _D3DRMTEXTUREQUALITY
-{   D3DRMTEXTURE_NEAREST,		/* choose nearest texel */
-    D3DRMTEXTURE_LINEAR,		/* interpolate 4 texels */
-    D3DRMTEXTURE_MIPNEAREST,		/* nearest texel in nearest mipmap  */
-    D3DRMTEXTURE_MIPLINEAR,		/* interpolate 2 texels from 2 mipmaps */
-    D3DRMTEXTURE_LINEARMIPNEAREST,	/* interpolate 4 texels in nearest mipmap */
-    D3DRMTEXTURE_LINEARMIPLINEAR	/* interpolate 8 texels from 2 mipmaps */
+{   D3DRMTEXTURE_NEAREST,		/*!< choose nearest texel */
+    D3DRMTEXTURE_LINEAR,		/*!< interpolate 4 texels */
+    D3DRMTEXTURE_MIPNEAREST,		/*!< nearest texel in nearest mipmap  */
+    D3DRMTEXTURE_MIPLINEAR,		/*!< interpolate 2 texels from 2 mipmaps */
+    D3DRMTEXTURE_LINEARMIPNEAREST,	/*!< interpolate 4 texels in nearest mipmap */
+    D3DRMTEXTURE_LINEARMIPLINEAR	/*!< interpolate 8 texels from 2 mipmaps */
 } D3DRMTEXTUREQUALITY, *LPD3DRMTEXTUREQUALITY;
 
 typedef enum _D3DRMCOMBINETYPE
@@ -165,8 +165,8 @@ typedef enum _D3DRMWRAPTYPE
     D3DRMWRAP_CHROME
 } D3DRMWRAPTYPE, *LPD3DRMWRAPTYPE;
 
-#define D3DRMWIREFRAME_CULL		1 /* cull backfaces */
-#define D3DRMWIREFRAME_HIDDENLINE	2 /* lines are obscured by closer objects */
+#define D3DRMWIREFRAME_CULL		1 /*!< cull backfaces */
+#define D3DRMWIREFRAME_HIDDENLINE	2 /*!< lines are obscured by closer objects */
 
 typedef enum _D3DRMPROJECTIONTYPE
 {   D3DRMPROJECT_PERSPECTIVE,
@@ -196,9 +196,9 @@ typedef enum _D3DRMCOLORSOURCE
 } D3DRMCOLORSOURCE, *LPD3DRMCOLORSOURCE;
 
 typedef enum _D3DRMFRAMECONSTRAINT
-{   D3DRMCONSTRAIN_Z,		/* use only X and Y rotations */
-    D3DRMCONSTRAIN_Y,		/* use only X and Z rotations */
-    D3DRMCONSTRAIN_X		/* use only Y and Z rotations */
+{   D3DRMCONSTRAIN_Z,		/*!< use only X and Y rotations */
+    D3DRMCONSTRAIN_Y,		/*!< use only X and Z rotations */
+    D3DRMCONSTRAIN_X		/*!< use only Y and Z rotations */
 } D3DRMFRAMECONSTRAINT, *LPD3DRMFRAMECONSTRAINT;
 
 typedef enum _D3DRMMATERIALMODE
@@ -208,31 +208,31 @@ typedef enum _D3DRMMATERIALMODE
 } D3DRMMATERIALMODE, *LPD3DRMMATERIALMODE;
 
 typedef enum _D3DRMFOGMODE
-{   D3DRMFOG_LINEAR,		/* linear between start and end */
-    D3DRMFOG_EXPONENTIAL,	/* density * exp(-distance) */
-    D3DRMFOG_EXPONENTIALSQUARED	/* density * exp(-distance*distance) */
+{   D3DRMFOG_LINEAR,		/*!< linear between start and end */
+    D3DRMFOG_EXPONENTIAL,	/*!< density * exp(-distance) */
+    D3DRMFOG_EXPONENTIALSQUARED	/*!< density * exp(-distance*distance) */
 } D3DRMFOGMODE, *LPD3DRMFOGMODE;
 
 typedef enum _D3DRMZBUFFERMODE {
-    D3DRMZBUFFER_FROMPARENT,	/* default */
-    D3DRMZBUFFER_ENABLE,	/* enable zbuffering */
-    D3DRMZBUFFER_DISABLE	/* disable zbuffering */
+    D3DRMZBUFFER_FROMPARENT,	/*!< default */
+    D3DRMZBUFFER_ENABLE,	/*!< enable zbuffering */
+    D3DRMZBUFFER_DISABLE	/*!< disable zbuffering */
 } D3DRMZBUFFERMODE, *LPD3DRMZBUFFERMODE;
 
 typedef enum _D3DRMSORTMODE {
-    D3DRMSORT_FROMPARENT,	/* default */
-    D3DRMSORT_NONE,		/* don't sort child frames */
-    D3DRMSORT_FRONTTOBACK,	/* sort child frames front-to-back */
-    D3DRMSORT_BACKTOFRONT	/* sort child frames back-to-front */
+    D3DRMSORT_FROMPARENT,	/*!< default */
+    D3DRMSORT_NONE,		/*!< don't sort child frames */
+    D3DRMSORT_FRONTTOBACK,	/*!< sort child frames front-to-back */
+    D3DRMSORT_BACKTOFRONT	/*!< sort child frames back-to-front */
 } D3DRMSORTMODE, *LPD3DRMSORTMODE;
 
-/*
+/*!
  * Values for flags in Frame2::AddMoveCallback.
  */
 #define D3DRMCALLBACK_PREORDER		0
 #define D3DRMCALLBACK_POSTORDER		1
 
-/*
+/*!
  * Values for flags in MeshBuilder2::RayPick.
  */
 #define D3DRMRAYPICK_ONLYBOUNDINGBOXES		1
@@ -241,7 +241,7 @@ typedef enum _D3DRMSORTMODE {
 #define D3DRMRAYPICK_INTERPOLATECOLOR		8
 #define D3DRMRAYPICK_INTERPOLATENORMAL		0x10	
 
-/*
+/*!
  * Values for flags in MeshBuilder2::GenerateNormals.
  */
 #define D3DRMGENERATENORMALS_PRECOMPACT		1
