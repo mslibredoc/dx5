@@ -1569,7 +1569,7 @@ extern HRESULT WINAPI DirectInputCreateW(HINSTANCE hinst, DWORD dwVersion, LPDIR
 #define DIERR_BETADIRECTINPUTVERSION    \
     MAKE_HRESULT(SEVERITY_ERROR, FACILITY_WIN32, ERROR_RMODE_APP)
 
-/*
+/*!
  *  The object could not be created due to an incompatible driver version
  *  or mismatched or incomplete driver components.
  */
