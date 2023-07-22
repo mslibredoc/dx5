@@ -616,7 +616,7 @@ typedef enum _D3DLIGHTTYPE {
     D3DLIGHT_SPOT           = 2,
     D3DLIGHT_DIRECTIONAL    = 3,
     D3DLIGHT_PARALLELPOINT  = 4,
-    D3DLIGHT_FORCE_DWORD    = 0x7fffffff, /* force 32-bit size enum */
+    D3DLIGHT_FORCE_DWORD    = 0x7fffffff, /*!< force 32-bit size enum */
 } D3DLIGHTTYPE;
 
 /*!
@@ -713,7 +713,7 @@ typedef enum _D3DOPCODE {
     D3DOP_BRANCHFORWARD		= 12,
     D3DOP_SPAN			= 13,
     D3DOP_SETSTATUS		= 14,
-    D3DOP_FORCE_DWORD           = 0x7fffffff, /* force 32-bit size enum */
+    D3DOP_FORCE_DWORD           = 0x7fffffff, /*!< force 32-bit size enum */
 } D3DOPCODE;
 
 typedef struct _D3DINSTRUCTION {
@@ -740,7 +740,7 @@ typedef struct _D3DPICKRECORD {
     D3DVALUE dvZ;
 } D3DPICKRECORD, *LPD3DPICKRECORD;
 
-/*
+/*!
  * The following defines the rendering states which can be set in the
  * execute buffer.
  */
@@ -749,14 +749,14 @@ typedef enum _D3DSHADEMODE {
     D3DSHADE_FLAT              = 1,
     D3DSHADE_GOURAUD           = 2,
     D3DSHADE_PHONG             = 3,
-    D3DSHADE_FORCE_DWORD       = 0x7fffffff, /* force 32-bit size enum */
+    D3DSHADE_FORCE_DWORD       = 0x7fffffff, /*!< force 32-bit size enum */
 } D3DSHADEMODE;
 
 typedef enum _D3DFILLMODE {
     D3DFILL_POINT	       = 1,
     D3DFILL_WIREFRAME	       = 2,
     D3DFILL_SOLID	       = 3,
-    D3DFILL_FORCE_DWORD        = 0x7fffffff, /* force 32-bit size enum */
+    D3DFILL_FORCE_DWORD        = 0x7fffffff, /*!< force 32-bit size enum */
 } D3DFILLMODE;
 
 typedef struct _D3DLINEPATTERN {
@@ -771,7 +771,7 @@ typedef enum _D3DTEXTUREFILTER {
     D3DFILTER_MIPLINEAR        = 4,
     D3DFILTER_LINEARMIPNEAREST = 5,
     D3DFILTER_LINEARMIPLINEAR  = 6,
-    D3DFILTER_FORCE_DWORD      = 0x7fffffff, /* force 32-bit size enum */
+    D3DFILTER_FORCE_DWORD      = 0x7fffffff, /*!< force 32-bit size enum */
 } D3DTEXTUREFILTER;
 
 typedef enum _D3DBLEND {
@@ -788,7 +788,7 @@ typedef enum _D3DBLEND {
     D3DBLEND_SRCALPHASAT       = 11,
     D3DBLEND_BOTHSRCALPHA      = 12,
     D3DBLEND_BOTHINVSRCALPHA   = 13,
-    D3DBLEND_FORCE_DWORD       = 0x7fffffff, /* force 32-bit size enum */
+    D3DBLEND_FORCE_DWORD       = 0x7fffffff, /*!< force 32-bit size enum */
 } D3DBLEND;
 
 typedef enum _D3DTEXTUREBLEND {
@@ -800,7 +800,7 @@ typedef enum _D3DTEXTUREBLEND {
     D3DTBLEND_MODULATEMASK     = 6,
     D3DTBLEND_COPY             = 7,
     D3DTBLEND_ADD              = 8,
-    D3DTBLEND_FORCE_DWORD      = 0x7fffffff, /* force 32-bit size enum */
+    D3DTBLEND_FORCE_DWORD      = 0x7fffffff, /*!< force 32-bit size enum */
 } D3DTEXTUREBLEND;
 
 typedef enum _D3DTEXTUREADDRESS {
@@ -808,14 +808,14 @@ typedef enum _D3DTEXTUREADDRESS {
     D3DTADDRESS_MIRROR	       = 2,
     D3DTADDRESS_CLAMP	       = 3,
     D3DTADDRESS_BORDER         = 4,
-    D3DTADDRESS_FORCE_DWORD    = 0x7fffffff, /* force 32-bit size enum */
+    D3DTADDRESS_FORCE_DWORD    = 0x7fffffff, /*!< force 32-bit size enum */
 } D3DTEXTUREADDRESS;
 
 typedef enum _D3DCULL {
     D3DCULL_NONE               = 1,
     D3DCULL_CW                 = 2,
     D3DCULL_CCW                = 3,
-    D3DCULL_FORCE_DWORD        = 0x7fffffff, /* force 32-bit size enum */
+    D3DCULL_FORCE_DWORD        = 0x7fffffff, /*!< force 32-bit size enum */
 } D3DCULL;
 
 typedef enum _D3DCMPFUNC {
@@ -827,7 +827,7 @@ typedef enum _D3DCMPFUNC {
     D3DCMP_NOTEQUAL            = 6,
     D3DCMP_GREATEREQUAL        = 7,
     D3DCMP_ALWAYS              = 8,
-    D3DCMP_FORCE_DWORD         = 0x7fffffff, /* force 32-bit size enum */
+    D3DCMP_FORCE_DWORD         = 0x7fffffff, /*!< force 32-bit size enum */
 } D3DCMPFUNC;
 
 typedef enum _D3DFOGMODE {
@@ -835,14 +835,14 @@ typedef enum _D3DFOGMODE {
     D3DFOG_EXP                 = 1,
     D3DFOG_EXP2                = 2,
     D3DFOG_LINEAR              = 3,
-    D3DFOG_FORCE_DWORD         = 0x7fffffff, /* force 32-bit size enum */
+    D3DFOG_FORCE_DWORD         = 0x7fffffff, /*!< force 32-bit size enum */
 } D3DFOGMODE;
 
 typedef enum _D3DANTIALIASMODE {
     D3DANTIALIAS_NONE          = 0,
     D3DANTIALIAS_SORTDEPENDENT = 1,
     D3DANTIALIAS_SORTINDEPENDENT = 2,
-    D3DANTIALIAS_FORCE_DWORD   = 0x7fffffff, /* force 32-bit size enum */
+    D3DANTIALIAS_FORCE_DWORD   = 0x7fffffff, /*!< force 32-bit size enum */
 } D3DANTIALIASMODE;
 
 // Vertex types supported by Direct3D
@@ -850,7 +850,7 @@ typedef enum _D3DVERTEXTYPE {
     D3DVT_VERTEX        = 1,
     D3DVT_LVERTEX       = 2,
     D3DVT_TLVERTEX      = 3,
-    D3DVT_FORCE_DWORD   = 0x7fffffff, /* force 32-bit size enum */
+    D3DVT_FORCE_DWORD   = 0x7fffffff, /*!< force 32-bit size enum */
 } D3DVERTEXTYPE;
 
 // Primitives supported by draw-primitive API
@@ -861,15 +861,15 @@ typedef enum _D3DPRIMITIVETYPE {
     D3DPT_TRIANGLELIST  = 4,
     D3DPT_TRIANGLESTRIP = 5,
     D3DPT_TRIANGLEFAN   = 6,
-    D3DPT_FORCE_DWORD   = 0x7fffffff, /* force 32-bit size enum */
+    D3DPT_FORCE_DWORD   = 0x7fffffff, /*!< force 32-bit size enum */
 } D3DPRIMITIVETYPE;
 
-/*
+/*!
  * Amount to add to a state to generate the override for that state.
  */
 #define D3DSTATE_OVERRIDE_BIAS		256
 
-/*
+/*!
  * A state which sets the override flag for the specified state type.
  */
 #define D3DSTATE_OVERRIDE(type) ((DWORD) (type) + D3DSTATE_OVERRIDE_BIAS)
@@ -878,7 +878,7 @@ typedef enum _D3DTRANSFORMSTATETYPE {
     D3DTRANSFORMSTATE_WORLD           = 1,
     D3DTRANSFORMSTATE_VIEW            = 2,
     D3DTRANSFORMSTATE_PROJECTION      = 3,
-    D3DTRANSFORMSTATE_FORCE_DWORD     = 0x7fffffff, /* force 32-bit size enum */
+    D3DTRANSFORMSTATE_FORCE_DWORD     = 0x7fffffff, /*!< force 32-bit size enum */
 } D3DTRANSFORMSTATETYPE;
 
 typedef enum _D3DLIGHTSTATETYPE {
@@ -889,60 +889,60 @@ typedef enum _D3DLIGHTSTATETYPE {
     D3DLIGHTSTATE_FOGSTART	      = 5,
     D3DLIGHTSTATE_FOGEND	      = 6,
     D3DLIGHTSTATE_FOGDENSITY          = 7,
-    D3DLIGHTSTATE_FORCE_DWORD         = 0x7fffffff, /* force 32-bit size enum */
+    D3DLIGHTSTATE_FORCE_DWORD         = 0x7fffffff, /*!< force 32-bit size enum */
 } D3DLIGHTSTATETYPE;
 
 typedef enum _D3DRENDERSTATETYPE {
-    D3DRENDERSTATE_TEXTUREHANDLE      = 1,    /* Texture handle */
-    D3DRENDERSTATE_ANTIALIAS          = 2,    /* D3DANTIALIASMODE */
-    D3DRENDERSTATE_TEXTUREADDRESS     = 3,    /* D3DTEXTUREADDRESS	*/
-    D3DRENDERSTATE_TEXTUREPERSPECTIVE = 4,    /* TRUE for perspective correction */
-    D3DRENDERSTATE_WRAPU	      = 5,    /* TRUE for wrapping in u */
-    D3DRENDERSTATE_WRAPV	      = 6,    /* TRUE for wrapping in v */
-    D3DRENDERSTATE_ZENABLE            = 7,    /* TRUE to enable z test */
-    D3DRENDERSTATE_FILLMODE           = 8,    /* D3DFILL_MODE		 */
-    D3DRENDERSTATE_SHADEMODE          = 9,    /* D3DSHADEMODE */
-    D3DRENDERSTATE_LINEPATTERN        = 10,   /* D3DLINEPATTERN */
-    D3DRENDERSTATE_MONOENABLE         = 11,   /* TRUE to enable mono rasterization */
-    D3DRENDERSTATE_ROP2               = 12,   /* ROP2 */
-    D3DRENDERSTATE_PLANEMASK          = 13,   /* DWORD physical plane mask */
-    D3DRENDERSTATE_ZWRITEENABLE       = 14,   /* TRUE to enable z writes */
-    D3DRENDERSTATE_ALPHATESTENABLE    = 15,   /* TRUE to enable alpha tests */
-    D3DRENDERSTATE_LASTPIXEL          = 16,   /* TRUE for last-pixel on lines */
-    D3DRENDERSTATE_TEXTUREMAG         = 17,   /* D3DTEXTUREFILTER */
-    D3DRENDERSTATE_TEXTUREMIN         = 18,   /* D3DTEXTUREFILTER */
-    D3DRENDERSTATE_SRCBLEND           = 19,   /* D3DBLEND */
-    D3DRENDERSTATE_DESTBLEND          = 20,   /* D3DBLEND */
-    D3DRENDERSTATE_TEXTUREMAPBLEND    = 21,   /* D3DTEXTUREBLEND */
-    D3DRENDERSTATE_CULLMODE           = 22,   /* D3DCULL */
-    D3DRENDERSTATE_ZFUNC              = 23,   /* D3DCMPFUNC */
-    D3DRENDERSTATE_ALPHAREF           = 24,   /* D3DFIXED */
-    D3DRENDERSTATE_ALPHAFUNC          = 25,   /* D3DCMPFUNC */
-    D3DRENDERSTATE_DITHERENABLE       = 26,   /* TRUE to enable dithering */
-    D3DRENDERSTATE_ALPHABLENDENABLE   = 27,   /* TRUE to enable alpha blending */
-    D3DRENDERSTATE_FOGENABLE          = 28,   /* TRUE to enable fog */
-    D3DRENDERSTATE_SPECULARENABLE     = 29,   /* TRUE to enable specular */
-    D3DRENDERSTATE_ZVISIBLE           = 30,   /* TRUE to enable z checking */
-    D3DRENDERSTATE_SUBPIXEL	      = 31,   /* TRUE to enable subpixel correction */
-    D3DRENDERSTATE_SUBPIXELX          = 32,   /* TRUE to enable correction in X only */
-    D3DRENDERSTATE_STIPPLEDALPHA      = 33,   /* TRUE to enable stippled alpha */
-    D3DRENDERSTATE_FOGCOLOR           = 34,   /* D3DCOLOR */
-    D3DRENDERSTATE_FOGTABLEMODE       = 35,   /* D3DFOGMODE */
-    D3DRENDERSTATE_FOGTABLESTART      = 36,   /* Fog table start	*/
-    D3DRENDERSTATE_FOGTABLEEND        = 37,   /* Fog table end		*/
-    D3DRENDERSTATE_FOGTABLEDENSITY    = 38,   /* Fog table density	*/
-    D3DRENDERSTATE_STIPPLEENABLE      = 39,   /* TRUE to enable stippling */
-    D3DRENDERSTATE_EDGEANTIALIAS      = 40,   /* TRUE to enable edge antialiasing */
-    D3DRENDERSTATE_COLORKEYENABLE     = 41,   /* TRUE to enable source colorkeyed textures */
-    D3DRENDERSTATE_BORDERCOLOR        = 43,   /* Border color for texturing w/border */
-    D3DRENDERSTATE_TEXTUREADDRESSU    = 44,   /* Texture addressing mode for U coordinate */
-    D3DRENDERSTATE_TEXTUREADDRESSV    = 45,   /* Texture addressing mode for V coordinate */
-    D3DRENDERSTATE_MIPMAPLODBIAS      = 46,   /* D3DVALUE Mipmap LOD bias */
-    D3DRENDERSTATE_ZBIAS              = 47,   /* LONG Z bias */
-    D3DRENDERSTATE_RANGEFOGENABLE     = 48,   /* Enables range-based fog */
-    D3DRENDERSTATE_ANISOTROPY         = 49,   /* Max. anisotropy. 1 = no anisotropy */
-	D3DRENDERSTATE_FLUSHBATCH		  = 50,   /* Explicit flush for DP batching (DX5 Only) */
-    D3DRENDERSTATE_STIPPLEPATTERN00   = 64,   /* Stipple pattern 01...	*/
+    D3DRENDERSTATE_TEXTUREHANDLE      = 1,    /*!< Texture handle */
+    D3DRENDERSTATE_ANTIALIAS          = 2,    /*!< D3DANTIALIASMODE */
+    D3DRENDERSTATE_TEXTUREADDRESS     = 3,    /*!< D3DTEXTUREADDRESS	*/
+    D3DRENDERSTATE_TEXTUREPERSPECTIVE = 4,    /*!< TRUE for perspective correction */
+    D3DRENDERSTATE_WRAPU	      = 5,    /*!< TRUE for wrapping in u */
+    D3DRENDERSTATE_WRAPV	      = 6,    /*!< TRUE for wrapping in v */
+    D3DRENDERSTATE_ZENABLE            = 7,    /*!< TRUE to enable z test */
+    D3DRENDERSTATE_FILLMODE           = 8,    /*!< D3DFILL_MODE		 */
+    D3DRENDERSTATE_SHADEMODE          = 9,    /*!< D3DSHADEMODE */
+    D3DRENDERSTATE_LINEPATTERN        = 10,   /*!< D3DLINEPATTERN */
+    D3DRENDERSTATE_MONOENABLE         = 11,   /*!< TRUE to enable mono rasterization */
+    D3DRENDERSTATE_ROP2               = 12,   /*!< ROP2 */
+    D3DRENDERSTATE_PLANEMASK          = 13,   /*!< DWORD physical plane mask */
+    D3DRENDERSTATE_ZWRITEENABLE       = 14,   /*!< TRUE to enable z writes */
+    D3DRENDERSTATE_ALPHATESTENABLE    = 15,   /*!< TRUE to enable alpha tests */
+    D3DRENDERSTATE_LASTPIXEL          = 16,   /*!< TRUE for last-pixel on lines */
+    D3DRENDERSTATE_TEXTUREMAG         = 17,   /*!< D3DTEXTUREFILTER */
+    D3DRENDERSTATE_TEXTUREMIN         = 18,   /*!< D3DTEXTUREFILTER */
+    D3DRENDERSTATE_SRCBLEND           = 19,   /*!< D3DBLEND */
+    D3DRENDERSTATE_DESTBLEND          = 20,   /*!< D3DBLEND */
+    D3DRENDERSTATE_TEXTUREMAPBLEND    = 21,   /*!< D3DTEXTUREBLEND */
+    D3DRENDERSTATE_CULLMODE           = 22,   /*!< D3DCULL */
+    D3DRENDERSTATE_ZFUNC              = 23,   /*!< D3DCMPFUNC */
+    D3DRENDERSTATE_ALPHAREF           = 24,   /*!< D3DFIXED */
+    D3DRENDERSTATE_ALPHAFUNC          = 25,   /*!< D3DCMPFUNC */
+    D3DRENDERSTATE_DITHERENABLE       = 26,   /*!< TRUE to enable dithering */
+    D3DRENDERSTATE_ALPHABLENDENABLE   = 27,   /*!< TRUE to enable alpha blending */
+    D3DRENDERSTATE_FOGENABLE          = 28,   /*!< TRUE to enable fog */
+    D3DRENDERSTATE_SPECULARENABLE     = 29,   /*!< TRUE to enable specular */
+    D3DRENDERSTATE_ZVISIBLE           = 30,   /*!< TRUE to enable z checking */
+    D3DRENDERSTATE_SUBPIXEL	      = 31,   /*!< TRUE to enable subpixel correction */
+    D3DRENDERSTATE_SUBPIXELX          = 32,   /*!< TRUE to enable correction in X only */
+    D3DRENDERSTATE_STIPPLEDALPHA      = 33,   /*!< TRUE to enable stippled alpha */
+    D3DRENDERSTATE_FOGCOLOR           = 34,   /*!< D3DCOLOR */
+    D3DRENDERSTATE_FOGTABLEMODE       = 35,   /*!< D3DFOGMODE */
+    D3DRENDERSTATE_FOGTABLESTART      = 36,   /*!< Fog table start	*/
+    D3DRENDERSTATE_FOGTABLEEND        = 37,   /*!< Fog table end		*/
+    D3DRENDERSTATE_FOGTABLEDENSITY    = 38,   /*!< Fog table density	*/
+    D3DRENDERSTATE_STIPPLEENABLE      = 39,   /*!< TRUE to enable stippling */
+    D3DRENDERSTATE_EDGEANTIALIAS      = 40,   /*!< TRUE to enable edge antialiasing */
+    D3DRENDERSTATE_COLORKEYENABLE     = 41,   /*!< TRUE to enable source colorkeyed textures */
+    D3DRENDERSTATE_BORDERCOLOR        = 43,   /*!< Border color for texturing w/border */
+    D3DRENDERSTATE_TEXTUREADDRESSU    = 44,   /*!< Texture addressing mode for U coordinate */
+    D3DRENDERSTATE_TEXTUREADDRESSV    = 45,   /*!< Texture addressing mode for V coordinate */
+    D3DRENDERSTATE_MIPMAPLODBIAS      = 46,   /*!< D3DVALUE Mipmap LOD bias */
+    D3DRENDERSTATE_ZBIAS              = 47,   /*!< LONG Z bias */
+    D3DRENDERSTATE_RANGEFOGENABLE     = 48,   /*!< Enables range-based fog */
+    D3DRENDERSTATE_ANISOTROPY         = 49,   /*!< Max. anisotropy. 1 = no anisotropy */
+	D3DRENDERSTATE_FLUSHBATCH		  = 50,   /*!< Explicit flush for DP batching (DX5 Only) */
+    D3DRENDERSTATE_STIPPLEPATTERN00   = 64,   /*!< Stipple pattern 01...	*/
     D3DRENDERSTATE_STIPPLEPATTERN01   = 65,
     D3DRENDERSTATE_STIPPLEPATTERN02   = 66,
     D3DRENDERSTATE_STIPPLEPATTERN03   = 67,
@@ -974,7 +974,7 @@ typedef enum _D3DRENDERSTATETYPE {
     D3DRENDERSTATE_STIPPLEPATTERN29   = 93,
     D3DRENDERSTATE_STIPPLEPATTERN30   = 94,
     D3DRENDERSTATE_STIPPLEPATTERN31   = 95,
-    D3DRENDERSTATE_FORCE_DWORD        = 0x7fffffff, /* force 32-bit size enum */
+    D3DRENDERSTATE_FORCE_DWORD        = 0x7fffffff, /*!< force 32-bit size enum */
 } D3DRENDERSTATETYPE;
 
 // For back-compatibility with legacy compilations
