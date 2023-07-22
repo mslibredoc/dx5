@@ -48,31 +48,27 @@ typedef struct IDirectPlayLobby2    IDirectPlayLobby2A;
 
 
 /*!
- * DPLAPPINFO
  * Used to hold information about a registered DirectPlay
  * application
  */
 typedef struct DPLAPPINFO
 {
-    DWORD       dwSize;             //! Size of this structure
-    GUID        guidApplication;    //! GUID of the Application
+    DWORD       dwSize;             //!< Size of this structure
+    GUID        guidApplication;    //!< GUID of the Application
     union
     {
-        LPSTR   lpszAppNameA;       //! Pointer to the Application Name
+        LPSTR   lpszAppNameA;       //!< Pointer to the Application Name
         LPWSTR  lpszAppName;
     };
 
 } DPLAPPINFO, FAR *LPDPLAPPINFO;
 
 /*!
- * LPCDPLAPPINFO
  * A constant pointer to DPLAPPINFO
  */
 typedef const DPLAPPINFO FAR *LPCDPLAPPINFO;
 
 /*!
- * DPCOMPOUNDADDRESSELEMENT
- *
  * An array of these is passed to CreateCompoundAddresses()
  */
 typedef struct DPCOMPOUNDADDRESSELEMENT
@@ -83,7 +79,6 @@ typedef struct DPCOMPOUNDADDRESSELEMENT
 } DPCOMPOUNDADDRESSELEMENT, FAR *LPDPCOMPOUNDADDRESSELEMENT;
 
 /*!
- * LPCDPCOMPOUNDADDRESSELEMENT
  * A constant pointer to DPCOMPOUNDADDRESSELEMENT
  */
 typedef const DPCOMPOUNDADDRESSELEMENT FAR *LPCDPCOMPOUNDADDRESSELEMENT;
@@ -277,18 +272,18 @@ DECLARE_INTERFACE_( IDirectPlayLobby2, IDirectPlayLobby )
 //! Generic message structure used to identify the message type.
 typedef struct _DPLMSG_GENERIC
 {
-    DWORD       dwType;         // Message type
+    DWORD       dwType;         //!< Message type
 } DPLMSG_GENERIC, FAR *LPDPLMSG_GENERIC;
 
 //! Standard message sent by an application to a lobby to set a property
 typedef struct _DPLMSG_SETPROPERTY
 {
-	DWORD	dwType;				//! Message type
-	DWORD	dwRequestID;		//! Request ID (DPL_NOCONFIRMATION if no confirmation desired)
-	GUID	guidPlayer;			//! Player GUID
-	GUID	guidPropertyTag;	//! Property GUID
-	DWORD	dwDataSize;			//! Size of data
-	DWORD	dwPropertyData[1];	//! Buffer containing data
+	DWORD	dwType;				//!< Message type
+	DWORD	dwRequestID;		//!< Request ID (DPL_NOCONFIRMATION if no confirmation desired)
+	GUID	guidPlayer;			//!< Player GUID
+	GUID	guidPropertyTag;	//!< Property GUID
+	DWORD	dwDataSize;			//!< Size of data
+	DWORD	dwPropertyData[1];	//!< Buffer containing data
 } DPLMSG_SETPROPERTY, FAR *LPDPLMSG_SETPROPERTY;
 
 #define	DPL_NOCONFIRMATION			0
@@ -296,32 +291,32 @@ typedef struct _DPLMSG_SETPROPERTY
 //! Standard message returned by a lobby to confirm a DPLMSG_SETPROPERTY message.
 typedef struct _DPLMSG_SETPROPERTYRESPONSE
 {
-	DWORD	dwType;				//! Message type
-	DWORD	dwRequestID;		//! Request ID
-	GUID	guidPlayer;			//! Player GUID
-	GUID	guidPropertyTag;	//! Property GUID
-	HRESULT	hr;					//! Return Code
+	DWORD	dwType;				//!< Message type
+	DWORD	dwRequestID;		//!< Request ID
+	GUID	guidPlayer;			//!< Player GUID
+	GUID	guidPropertyTag;	//!< Property GUID
+	HRESULT	hr;					//!< Return Code
 } DPLMSG_SETPROPERTYRESPONSE, FAR *LPDPLMSG_SETPROPERTYRESPONSE;
 
 //! Standard message sent by an application to a lobby to request the current value of a property
 typedef struct _DPLMSG_GETPROPERTY
 {
-	DWORD	dwType;				//! Message type
-	DWORD	dwRequestID;		//! Request ID
-	GUID	guidPlayer;			//! Player GUID
-	GUID	guidPropertyTag;	//! Property GUID
+	DWORD	dwType;				//!< Message type
+	DWORD	dwRequestID;		//!< Request ID
+	GUID	guidPlayer;			//!< Player GUID
+	GUID	guidPropertyTag;	//!< Property GUID
 } DPLMSG_GETPROPERTY, FAR *LPDPLMSG_GETPROPERTY;
 
 //!  Standard message returned by a lobby in response to a DPLMSG_GETPROPERTY message.
 typedef struct _DPLMSG_GETPROPERTYRESPONSE
 {
-	DWORD	dwType;				//! Message type
-	DWORD	dwRequestID;		//! Request ID
-	GUID	guidPlayer;			//! Player GUID
-	GUID	guidPropertyTag;	//! Property GUID
-	HRESULT	hr;					//! Return Code
-	DWORD	dwDataSize;			//! Size of data
-	DWORD	dwPropertyData[1];	//! Buffer containing data
+	DWORD	dwType;				//!< Message type
+	DWORD	dwRequestID;		//!< Request ID
+	GUID	guidPlayer;			//!< Player GUID
+	GUID	guidPropertyTag;	//!< Property GUID
+	HRESULT	hr;					//!< Return Code
+	DWORD	dwDataSize;			//!< Size of data
+	DWORD	dwPropertyData[1];	//!< Buffer containing data
 } DPLMSG_GETPROPERTYRESPONSE, FAR *LPDPLMSG_GETPROPERTYRESPONSE;
 
 
@@ -565,19 +560,19 @@ DEFINE_GUID(DPAID_INetW,
  * control are given below.
  */
 
-#define DPCPA_NOFLOW        0           //! no flow control
-#define DPCPA_XONXOFFFLOW   1           //! software flow control
-#define DPCPA_RTSFLOW       2           //! hardware flow control with RTS
-#define DPCPA_DTRFLOW       3           //! hardware flow control with DTR
-#define DPCPA_RTSDTRFLOW    4           //! hardware flow control with RTS and DTR
+#define DPCPA_NOFLOW        0           //!< no flow control
+#define DPCPA_XONXOFFFLOW   1           //!< software flow control
+#define DPCPA_RTSFLOW       2           //!< hardware flow control with RTS
+#define DPCPA_DTRFLOW       3           //!< hardware flow control with DTR
+#define DPCPA_RTSDTRFLOW    4           //!< hardware flow control with RTS and DTR
 
 typedef struct _DPCOMPORTADDRESS
 {
-    DWORD   dwComPort;                  //! COM port to use (1-4)
-    DWORD   dwBaudRate;                 //! baud rate (100-256k)
-    DWORD   dwStopBits;                 //! no. stop bits (1-2)
-    DWORD   dwParity;                   //! parity (none, odd, even, mark)
-    DWORD   dwFlowControl;              //! flow control (none, xon/xoff, rts, dtr)
+    DWORD   dwComPort;                  //!< COM port to use (1-4)
+    DWORD   dwBaudRate;                 //!< baud rate (100-256k)
+    DWORD   dwStopBits;                 //!< no. stop bits (1-2)
+    DWORD   dwParity;                   //!< parity (none, odd, even, mark)
+    DWORD   dwFlowControl;              //!< flow control (none, xon/xoff, rts, dtr)
 } DPCOMPORTADDRESS;
 
 typedef DPCOMPORTADDRESS FAR *LPDPCOMPORTADDRESS;
