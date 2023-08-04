@@ -87,12 +87,12 @@ typedef LONG D3DFIXED;
  * Flags for Enumerate functions
  */
 
-/*
+/*!
  * Stop the enumeration
  */
 #define D3DENUMRET_CANCEL                        DDENUMRET_CANCEL
 
-/*
+/*!
  * Continue the enumeration
  */
 #define D3DENUMRET_OK                            DDENUMRET_OK
@@ -845,7 +845,7 @@ typedef enum _D3DANTIALIASMODE {
     D3DANTIALIAS_FORCE_DWORD   = 0x7fffffff, /*!< force 32-bit size enum */
 } D3DANTIALIASMODE;
 
-// Vertex types supported by Direct3D
+//! Vertex types supported by Direct3D
 typedef enum _D3DVERTEXTYPE {
     D3DVT_VERTEX        = 1,
     D3DVT_LVERTEX       = 2,
@@ -853,7 +853,7 @@ typedef enum _D3DVERTEXTYPE {
     D3DVT_FORCE_DWORD   = 0x7fffffff, /*!< force 32-bit size enum */
 } D3DVERTEXTYPE;
 
-// Primitives supported by draw-primitive API
+//! Primitives supported by draw-primitive API
 typedef enum _D3DPRIMITIVETYPE {
     D3DPT_POINTLIST     = 1,
     D3DPT_LINELIST      = 2,
