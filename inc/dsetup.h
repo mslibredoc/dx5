@@ -22,7 +22,7 @@
 extern "C" {
 #endif
 
-/** @name DirectX Setup Error Codes*/
+/** @defgroup dxsetuperrcodes DirectX Setup Error Codes*/
 //!@{
 #define DSETUPERR_SUCCESS_RESTART        1
 #define DSETUPERR_SUCCESS                0
@@ -41,16 +41,21 @@ extern "C" {
 #define DSETUPERR_NOTPREINSTALLEDONNT   -13
 //!@}
 
-// DSETUP flags. DirectX 5.0 apps should use these flags only.
-#define DSETUP_DDRAWDRV         0x00000008      /*!< install DirectDraw Drivers           */
-#define DSETUP_DSOUNDDRV        0x00000010      /*!< install DirectSound Drivers          */
-#define DSETUP_DXCORE           0x00010000	/*!< install DirectX runtime              */
-#define DSETUP_DIRECTX  (DSETUP_DXCORE|DSETUP_DDRAWDRV|DSETUP_DSOUNDDRV)
-#define DSETUP_TESTINSTALL      0x00020000      /*!< just test install, don't do anything */
+/** @defgroup dxsetupflags DirectX Setup Flags
+ * DirectX 5.0 apps should use these flags only.
+ */
+//!@{
+#define DSETUP_DDRAWDRV         0x00000008      //!< Installs display drivers provided by Microsoft.
+#define DSETUP_DSOUNDDRV        0x00000010      //!< Installs audio drivers provided by Microsoft.
+#define DSETUP_DXCORE           0x00010000	//!< Installs DirectX runtime components. Does not install DirectX-compatible display and audio drivers.
+#define DSETUP_DIRECTX  (DSETUP_DXCORE|DSETUP_DDRAWDRV|DSETUP_DSOUNDDRV) //!< Installs DirectX runtime components as well as DirectX-compatible display and audio drivers.
+#define DSETUP_TESTINSTALL      0x00020000      //!< Performs a test installation. Does not actually install new components.
+//!@}
 
 // These OBSOLETE flags are here for compatibility with pre-DX5 apps only.
 // They are present to allow DX3 apps to be recompiled with DX5 and still work.
 // DO NOT USE THEM for DX5. They will go away in future DX releases.
+// TODO: In the official doc, all of these say DX3 programs that use this will install all DX components. Does this mean doing one of these will necessitate installing all DX components?
 #define DSETUP_DDRAW            0x00000001      /*!< OBSOLETE. install DirectDraw           */
 #define DSETUP_DSOUND           0x00000002      /*!< OBSOLETE. install DirectSound          */
 #define DSETUP_DPLAY            0x00000004      /*!< OBSOLETE. install DirectPlay           */
@@ -155,19 +160,27 @@ typedef LPDIRECTXREGISTERAPPA LPDIRECTXREGISTERAPP;
 //
 // API
 //
+//! @brief Installs one or more DirectX components. (ANSI only)
 INT
 WINAPI
 DirectXSetupA(
-    HWND  hWnd,
-    LPSTR lpszRootPath,
-    DWORD dwFlags
+    HWND  hWnd, //!< Handle to the parent window for the setup dialog boxes.
+    LPSTR lpszRootPath, //!< Pointer to a string that contains the root path of the DirectX component files. This string must specify a full path to the directory that contains the files Dsetup.dll, Dsetup16.dll, and Dsetup.dll32. This directory is typically Redist. If you are certain the current directory contains Dsetup.dll and the Directx directory, this parameter can be NULL.
+    DWORD dwFlags //!< One or more flags indicating which DirectX components should be installed. A full installation (DSETUP_DIRECTX) is recommended. See @ref dxsetupflags .
+    //! @returns If this function is successful, it returns SUCCESS. 
+    //! @returns If it is not successful, it returns an error code. For a list of possible return codes, see @ref dxsetuperrcodes .
+    //! @remarks According to official docs, "Before you use the DirectXSetup function in your setup program, you should ensure that there is at least 15 MB of available disk space on the user's system. This is the maximum space required for DirectX to set up the appropriate files. If the user's system already contains the DirectX files, this space is not needed."
     );
+//! @brief Installs one or more DirectX components. (Unicode only)
 INT
 WINAPI
 DirectXSetupW(
-    HWND   hWnd,
-    LPWSTR lpszRootPath,
-    DWORD  dwFlags
+    HWND   hWnd, //!< Handle to the parent window for the setup dialog boxes.
+    LPWSTR lpszRootPath, //!< Pointer to a string that contains the root path of the DirectX component files. This string must specify a full path to the directory that contains the files Dsetup.dll, Dsetup16.dll, and Dsetup.dll32. This directory is typically Redist. If you are certain the current directory contains Dsetup.dll and the Directx directory, this parameter can be NULL.
+    DWORD  dwFlags  //!< One or more flags indicating which DirectX components should be installed. A full installation (DSETUP_DIRECTX) is recommended. See @ref dxsetupflags .
+    //! @returns If this function is successful, it returns SUCCESS. 
+    //! @returns If it is not successful, it returns an error code. For a list of possible return codes, see @ref dxsetuperrcodes .
+    //! @remarks According to official docs, "Before you use the DirectXSetup function in your setup program, you should ensure that there is at least 15 MB of available disk space on the user's system. This is the maximum space required for DirectX to set up the appropriate files. If the user's system already contains the DirectX files, this space is not needed."
     );
 #define DirectXSetup  DirectXSetupW
 #define DirectXSetup  DirectXSetupA

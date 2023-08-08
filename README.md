@@ -18,10 +18,12 @@ A complete file is considered to have all of it's documentation transferred, and
 - [ ] dinput.h
 - [ ] dplay.h
 - [ ] dplobby.h
-- [ ] [dsetup.h](https://github.com/orgs/mslibredoc/projects/1?pane=issue&itemId=35371687) (1/8)
+- [ ] [dsetup.h](https://github.com/orgs/mslibredoc/projects/1?pane=issue&itemId=35371687) - in progress
 - [ ] dsound.h
 - [ ] dvp.h
 - [ ] fastfile.h
+
+Possibly, code samples/tutorial sections (like, "Using the DirectXSetup Function") may be added for the purpose of a full doc restoration.
 
 ## Why?
 Microsoft tends to remove documentations for old versions of their libraries. When decompiling/reverse engineering a game, it can be tricky to understand the data structures and functions when working with DirectX code.
