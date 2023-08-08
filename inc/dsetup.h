@@ -22,7 +22,9 @@
 extern "C" {
 #endif
 
-/** @defgroup dxsetuperrcodes DirectX Setup Error Codes*/
+/** @defgroup dxsetuperrcodes DirectX Setup Error Codes
+ * Apparently "must remain compatible with previous setup."
+ */
 //!@{
 #define DSETUPERR_SUCCESS_RESTART        1
 #define DSETUPERR_SUCCESS                0
@@ -266,7 +268,25 @@ typedef DWORD (FAR PASCAL * DSETUP_CALLBACK)(DWORD Reason,
                                   LPSTR szName,
                                   void *pInfo);
 
+//! @brief Sets a pointer to a callback function that is periodically called by DirectXSetup.
+//! @details The callback function can be used for setup progress notification and to implement a custom user interface for an application’s setup program. For information on the callback function, see DirectXSetupCallbackFunction. If a setup program does not provide a callback function, the DirectXSetupSetCallback function should not be invoked.
+//! @param Callback Pointer to a callback function.
+//! @returns The documentation says, "Currently returns zero."
+//! @remarks To set a callback function, DirectXSetupSetCallback must be called before the DirectXSetup function is called.
+//! @remarks The name of the callback function passed to DirectXSetupSetCallback is supplied by the setup program. However, it must match the prototype given in DirectXSetupCallbackFunction
+//! @see DirectXSetupCallbackFunction DirectXSetup
 INT WINAPI DirectXSetupSetCallback(DSETUP_CALLBACK Callback);
+
+//! @brief Retrieves the version number of the DirectX components that are currently installed.
+//! @param lpdwVersion Receives the version number. Pointer to a DWORD. The DirectXSetupGetVersion function will fill the DWORD with the version number. If this parameter is NULL, it is ignored.
+//! @param lpdwMinorVersion Receives the revision number. Pointer to a DWORD. The DirectXSetupGetVersion function will fill the DWORD with the revision number. If this parameter is NULL, it is ignored.
+//! @returns If this function is successful, it returns non-zero.
+//! @returns If it is not successful, it returns zero.
+//! @remarks The DirectXSetupGetVersion function can be used to retrieve the version and revision numbers before or after the DirectXSetup function is called. If it is called before the DirectXSetup function is invoked, it gives the version and revision numbers of the DirectX components that are currently installed. If it is called after the DirectXSetup function is called, but before the computer has been rebooted, it will give the version and revision numbers of the DirectX components that will take effect after the computer is restarted.
+//! @remarks The version number in the pdwVersion parameter is composed of the major version number and the minor version number. The major version number will be in the 16 most significant bits of the DWORD when this function returns. The minor version number will be in the 16 least significant bits of the DWORD when this function returns. The version numbers can be interpreted as 0x0x0004000(DirectX version number), so DirectX 1 would be 0x00040001 and so forth.
+//! @remarks The version number in the pdwRevision parameter is composed of the release number and the build number. The release number will be in the 16 most significant bits of the DWORD when this function returns. The build number will be in the 16 least significant bits of the DWORD when this function returns.
+//! @remarks Version and revision numbers can concatenated into a 64 bit quantity for comparison. The version number should be in the 32 most significant bits and the revision number should be in the 32 least significant bits.
+//! @see DirectXSetup
 INT WINAPI DirectXSetupGetVersion(DWORD *lpdwVersion, DWORD *lpdwMinorVersion);
 
 
