@@ -200,34 +200,46 @@ DirectXDeviceDriverSetupW(
     LPWSTR lpszDriverPath,
     DWORD  dwFlags
     );
-#endif //!ANSI_ONLY
+#endif //ANSI_ONLY
 #ifdef UNICODE
 #define DirectXDeviceDriverSetup  DirectXDeviceDriverSetupW
 #else
 #define DirectXDeviceDriverSetup  DirectXDeviceDriverSetupA
-#endif // !UNICODE
+#endif // UNICODE
 
 #ifndef UNICODE_ONLY
+//! @brief Registers an application as one designed to work with DirectPlayLobby. (ANSI only)
 INT
 WINAPI
 DirectXRegisterApplicationA(
-    HWND                  hWnd,
-    LPDIRECTXREGISTERAPPA lpDXRegApp
+    HWND                  hWnd, //!< Handle to the parent window. If this parameter is set to NULL, the desktop is the parent window.
+    LPDIRECTXREGISTERAPPA lpDXRegApp //!< Address of the DIRECTXREGISTERAPP structure that contains the registry entries that are required for the application to function properly with DirectPlayLobby
+    //! @returns TRUE if the function is successful, otherwise FALSE. Use the GetLastError Win32 function to get extended error information.
+    //! @remark The DirectXRegisterApplication function inserts the registry entries needed for an application to operate with DirectPlayLobby. If these registry entries are added with DirectXRegisterApplication, they should be removed with DirectXUnRegisterApplication when the application is uninstalled. 
+    //! @remark Many commercial install programs will remove registry entries automatically when a program in uninstalled. However, such a program will only do so if it added the registry entries itself. If the DirectPlayLobby registry entries are added by DirectXRegisterApplication, commercial install programs will not delete the registry entries when the application is uninstalled. Therefore, DirectPlayLobby registry entries that are created by DirectXRegisterApplication should be deleted by DirectXUnRegisterApplication.
+    //! @remark Registry entries needed for DirectPlayLobby access can be created without the use of the DirectXRegisterApplication function. This, however, is not generally recommended. See Registering Lobby-able Applications in the DirectPlay® documentation.
+    //! @see DirectXUnRegisterApplication
     );
-#endif //!UNICODE_ONLY
+#endif //UNICODE_ONLY
 #ifndef ANSI_ONLY
+//! @brief Registers an application as one designed to work with DirectPlayLobby. (Unicode only)
 INT
 WINAPI
 DirectXRegisterApplicationW(
-    HWND                  hWnd,
-    LPDIRECTXREGISTERAPPW lpDXRegApp
+    HWND                  hWnd, //!< Handle to the parent window. If this parameter is set to NULL, the desktop is the parent window.
+    LPDIRECTXREGISTERAPPA lpDXRegApp //!< Address of the DIRECTXREGISTERAPP structure that contains the registry entries that are required for the application to function properly with DirectPlayLobby
+    //! @returns TRUE if the function is successful, otherwise FALSE. Use the GetLastError Win32 function to get extended error information.
+    //! @remark The DirectXRegisterApplication function inserts the registry entries needed for an application to operate with DirectPlayLobby. If these registry entries are added with DirectXRegisterApplication, they should be removed with DirectXUnRegisterApplication when the application is uninstalled. 
+    //! @remark Many commercial install programs will remove registry entries automatically when a program in uninstalled. However, such a program will only do so if it added the registry entries itself. If the DirectPlayLobby registry entries are added by DirectXRegisterApplication, commercial install programs will not delete the registry entries when the application is uninstalled. Therefore, DirectPlayLobby registry entries that are created by DirectXRegisterApplication should be deleted by DirectXUnRegisterApplication.
+    //! @remark Registry entries needed for DirectPlayLobby access can be created without the use of the DirectXRegisterApplication function. This, however, is not generally recommended. See Registering Lobby-able Applications in the DirectPlay® documentation.
+    //! @see DirectXUnRegisterApplication
     );
-#endif //!ANSI_ONLY
+#endif //ANSI_ONLY
 #ifdef UNICODE
 #define DirectXRegisterApplication  DirectXRegisterApplicationW
 #else
 #define DirectXRegisterApplication  DirectXRegisterApplicationA
-#endif // !UNICODE
+#endif // UNICODE
 
 INT
 WINAPI
