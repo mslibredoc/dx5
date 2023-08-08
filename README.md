@@ -1,6 +1,28 @@
 # DirectX 5 Redocumentation
 A redocumentation of DirectX 5, brought to you by a bunch of Infomaniacs.
 
+## Progress
+
+A complete file is considered to have all of it's documentation transferred, and ideally its parameters, return values, remarks, see-alsos, and if possible, any structure offsets.
+
+- [ ] d3d.h
+- [ ] d3dcaps.h
+
+- [ ] d3drm.h
+- [ ] d3drmdef.h
+- [ ] d3drmobj.h
+- [ ] d3drmwin.h
+
+- [ ] d3dtypes.h
+- [ ] ddraw.h
+- [ ] dinput.h
+- [ ] dplay.h
+- [ ] dplobby.h
+- [ ] dsetup.h (1/8)
+- [ ] dsound.h
+- [ ] dvp.h
+- [ ] fastfile.h
+
 ## Why?
 Microsoft tends to remove documentations for old versions of their libraries. When decompiling/reverse engineering a game, it can be tricky to understand the data structures and functions when working with DirectX code.
 
