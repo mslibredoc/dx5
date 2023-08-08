@@ -120,27 +120,29 @@ typedef struct _DSETUP_CB_FILECOPYERROR
 // Data Structures
 //
 #ifndef UNICODE_ONLY
+//! @brief Contains the registry entries needed for applications designed to work with DirectPlayLobby. (ANSI only)
 typedef struct _DIRECTXREGISTERAPPA {
-    DWORD    dwSize;
-    DWORD    dwFlags;
-    LPSTR    lpszApplicationName;
-    LPGUID   lpGUID;
-    LPSTR    lpszFilename;
-    LPSTR    lpszCommandLine;
-    LPSTR    lpszPath;
-    LPSTR    lpszCurrentDirectory;
+    DWORD    dwSize; //!< Size of the structure. Must be initialized to the size of the DirectXRegisterAppA structure.
+    DWORD    dwFlags; //!< Reserved for future use.
+    LPSTR    lpszApplicationName; //!< Name of the application.
+    LPGUID   lpGUID; //!< Globally unique identifier (GUID) of the application.
+    LPSTR    lpszFilename; //!< Name of the executable file to be called.
+    LPSTR    lpszCommandLine; //!< Command-line arguments for the executable file.
+    LPSTR    lpszPath; //!< Path of the executable file.
+    LPSTR    lpszCurrentDirectory; //!< Current directory. This is typically the same as lpszPath.
 } DIRECTXREGISTERAPPA, *PDIRECTXREGISTERAPPA, *LPDIRECTXREGISTERAPPA;
 #endif //!UNICODE_ONLY
 #ifndef ANSI_ONLY
+//! @brief Contains the registry entries needed for applications designed to work with DirectPlayLobby. (Unicode only)
 typedef struct _DIRECTXREGISTERAPPW {
-    DWORD    dwSize;
-    DWORD    dwFlags;
-    LPWSTR   lpszApplicationName;
-    LPGUID   lpGUID;
-    LPWSTR   lpszFilename;
-    LPWSTR   lpszCommandLine;
-    LPWSTR   lpszPath;
-    LPWSTR   lpszCurrentDirectory;
+    DWORD    dwSize; //!< Size of the structure. Must be initialized to the size of the DirectXRegisterAppW structure.
+    DWORD    dwFlags; //!< Reserved for future use.
+    LPWSTR    lpszApplicationName; //!< Name of the application.
+    LPGUID   lpGUID; //!< Globally unique identifier (GUID) of the application.
+    LPWSTR    lpszFilename; //!< Name of the executable file to be called.
+    LPWSTR    lpszCommandLine; //!< Command-line arguments for the executable file.
+    LPWSTR    lpszPath; //!< Path of the executable file.
+    LPWSTR    lpszCurrentDirectory; //!< Current directory. This is typically the same as lpszPath.
 } DIRECTXREGISTERAPPW, *PDIRECTXREGISTERAPPW, *LPDIRECTXREGISTERAPPW;
 #endif //!ANSI_ONLY
 #ifdef UNICODE
