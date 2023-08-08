@@ -113,11 +113,16 @@ extern "C" {
 #define DSETUP_CB_UPGRADE_DEVICE_MEDIA          0x2000
 
 
+//! @brief Structure passed as a parameter to the DirectXSetupCallbackFunction.
+//! @details It only contains valid information when the Reason parameter is DSETUP_CB_MSG_CHECK_DRIVER_UPGRADE. Callback functions can use it to get status information on the upgrade that is about to be done.
 typedef struct _DSETUP_CB_UPGRADEINFO
 {
-    DWORD UpgradeFlags;
+    DWORD UpgradeFlags; //!< A flag indicating the status of the upgrade. See the pInfo parameter of the DirectXSetupCallbackFunction function for details.
+    //! @see DirectXSetupCallbackFunction
 } DSETUP_CB_UPGRADEINFO;
 
+//! @brief Undocumented, but in the headerfile. Probably a structure passed as a callback to the DirectXSetupCallbackFunction as a 'failed to copy file' error.
+//! @remarks This is undocumented. What we know is a guess.
 typedef struct _DSETUP_CB_FILECOPYERROR
 {
     DWORD dwError;
