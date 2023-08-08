@@ -131,7 +131,7 @@ typedef struct _DIRECTXREGISTERAPPA {
     LPSTR    lpszPath; //!< Path of the executable file.
     LPSTR    lpszCurrentDirectory; //!< Current directory. This is typically the same as lpszPath.
 } DIRECTXREGISTERAPPA, *PDIRECTXREGISTERAPPA, *LPDIRECTXREGISTERAPPA;
-#endif //!UNICODE_ONLY
+#endif
 #ifndef ANSI_ONLY
 //! @brief Contains the registry entries needed for applications designed to work with DirectPlayLobby. (Unicode only)
 typedef struct _DIRECTXREGISTERAPPW {
@@ -144,12 +144,10 @@ typedef struct _DIRECTXREGISTERAPPW {
     LPWSTR    lpszPath; //!< Path of the executable file.
     LPWSTR    lpszCurrentDirectory; //!< Current directory. This is typically the same as lpszPath.
 } DIRECTXREGISTERAPPW, *PDIRECTXREGISTERAPPW, *LPDIRECTXREGISTERAPPW;
-#endif //!ANSI_ONLY
-#ifdef UNICODE
+#endif
 typedef DIRECTXREGISTERAPPW DIRECTXREGISTERAPP;
 typedef PDIRECTXREGISTERAPPW PDIRECTXREGISTERAPP;
 typedef LPDIRECTXREGISTERAPPW LPDIRECTXREGISTERAPP;
-#else
 typedef DIRECTXREGISTERAPPA DIRECTXREGISTERAPP;
 typedef PDIRECTXREGISTERAPPA PDIRECTXREGISTERAPP;
 typedef LPDIRECTXREGISTERAPPA LPDIRECTXREGISTERAPP;
@@ -176,12 +174,10 @@ DirectXSetupW(
     LPWSTR lpszRootPath,
     DWORD  dwFlags
     );
-#endif //!ANSI_ONLY
-#ifdef UNICODE
+#endif
 #define DirectXSetup  DirectXSetupW
-#else
 #define DirectXSetup  DirectXSetupA
-#endif // !UNICODE
+#endif
 
 #ifndef UNICODE_ONLY
 INT
@@ -192,7 +188,7 @@ DirectXDeviceDriverSetupA(
     LPSTR lpszDriverPath,
     DWORD dwFlags
     );
-#endif //!UNICODE_ONLY
+#endif
 #ifndef ANSI_ONLY
 INT
 WINAPI
@@ -202,12 +198,10 @@ DirectXDeviceDriverSetupW(
     LPWSTR lpszDriverPath,
     DWORD  dwFlags
     );
-#endif //ANSI_ONLY
-#ifdef UNICODE
+#endif
 #define DirectXDeviceDriverSetup  DirectXDeviceDriverSetupW
-#else
 #define DirectXDeviceDriverSetup  DirectXDeviceDriverSetupA
-#endif // UNICODE
+#endif
 
 #ifndef UNICODE_ONLY
 //! @brief Registers an application as one designed to work with DirectPlayLobby. (ANSI only)
@@ -223,7 +217,7 @@ DirectXRegisterApplicationA(
     //! @remark Registry entries needed for DirectPlayLobby access can be created without the use of the DirectXRegisterApplication function. This, however, is not generally recommended. See Registering Lobby-able Applications in the DirectPlay® documentation.
     //! @see DirectXUnRegisterApplication
     );
-#endif //UNICODE_ONLY
+#endif
 #ifndef ANSI_ONLY
 //! @brief Registers an application as one designed to work with DirectPlayLobby. (Unicode only)
 INT
@@ -238,12 +232,10 @@ DirectXRegisterApplicationW(
     //! @remark Registry entries needed for DirectPlayLobby access can be created without the use of the DirectXRegisterApplication function. This, however, is not generally recommended. See Registering Lobby-able Applications in the DirectPlay® documentation.
     //! @see DirectXUnRegisterApplication
     );
-#endif //ANSI_ONLY
-#ifdef UNICODE
+#endif
+
 #define DirectXRegisterApplication  DirectXRegisterApplicationW
-#else
 #define DirectXRegisterApplication  DirectXRegisterApplicationA
-#endif // UNICODE
 
 //! @brief Deletes the registration of an application designed to work with DirectPlayLobby.
 INT
@@ -260,15 +252,13 @@ DirectXUnRegisterApplication(
 //
 // Function Pointers
 //
-#ifdef UNICODE
 typedef INT (WINAPI * LPDIRECTXSETUP)(HWND, LPWSTR, DWORD);
 typedef INT (WINAPI * LPDIRECTXDEVICEDRIVERSETUP)(HWND, LPWSTR, LPSTR, DWORD);
 typedef INT (WINAPI * LPDIRECTXREGISTERAPPLICATION)(HWND, LPDIRECTXREGISTERAPPW);
-#else
 typedef INT (WINAPI * LPDIRECTXSETUP)(HWND, LPSTR, DWORD);
 typedef INT (WINAPI * LPDIRECTXDEVICEDRIVERSETUP)(HWND, LPSTR, LPSTR, DWORD);
 typedef INT (WINAPI * LPDIRECTXREGISTERAPPLICATION)(HWND, LPDIRECTXREGISTERAPPA);
-#endif // UNICODE
+#endif
 
 typedef DWORD (FAR PASCAL * DSETUP_CALLBACK)(DWORD Reason,
                                   DWORD MsgType,       /*! Same as flags to MessageBox */
