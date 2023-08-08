@@ -25,7 +25,6 @@ extern "C" {
 /*
  * GUIDS used by DirectDrawVideoPort objects
  */
-#if defined( _WIN32 ) && !defined( _NO_COM )
 DEFINE_GUID( IID_IDDVideoPortContainer,		0x6C142760,0xA733,0x11CE,0xA5,0x21,0x00,0x20,0xAF,0x0B,0xE5,0x60 );
 DEFINE_GUID( IID_IDirectDrawVideoPort,		0xB36D93E0,0x2B43,0x11CF,0xA2,0xDE,0x00,0xAA,0x00,0xB9,0x33,0x56 );
 
@@ -41,7 +40,6 @@ DEFINE_GUID( DDVPTYPE_PHILIPS,	     0x332CF160L,0xDA61,0x11CF,0x9B,0x06,0x00,0xA
  * GUIDS used to describe connections
  */
 
-#endif
 
 /*============================================================================
  *
@@ -85,7 +83,6 @@ typedef HRESULT (FAR PASCAL * LPDDENUMVIDEOCALLBACK)(LPDDVIDEOPORTCAPS, LPVOID);
 /*
  * IDirectDrawVideoPortContainer
  */
-#if defined( _WIN32 ) && !defined( _NO_COM )
 #undef INTERFACE
 #define INTERFACE IDDVideoPortContainer
 DECLARE_INTERFACE_( IDDVideoPortContainer, IUnknown )
@@ -119,13 +116,11 @@ DECLARE_INTERFACE_( IDDVideoPortContainer, IUnknown )
 #define IVideoPortContainer_QueryVideoPortStatus(p, a, b)   (p)->QueryVideoPortStatus(a, b)
 #endif
 
-#endif
 
 
 /*
  * IDirectDrawVideoPort
  */
-#if defined( _WIN32 ) && !defined( _NO_COM )
 #undef INTERFACE
 #define INTERFACE IDirectDrawVideoPort
 DECLARE_INTERFACE_( IDirectDrawVideoPort, IUnknown )
@@ -189,7 +184,6 @@ DECLARE_INTERFACE_( IDirectDrawVideoPort, IUnknown )
 #define IVideoPort_WaitForSync(p,a,b,c)		(p)->WaitForSync(a,b,c)
 #endif
 
-#endif
 
 
 /*
