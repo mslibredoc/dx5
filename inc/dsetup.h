@@ -26,21 +26,22 @@ extern "C" {
  * Apparently "must remain compatible with previous setup."
  */
 //!@{
-#define DSETUPERR_SUCCESS_RESTART        1
-#define DSETUPERR_SUCCESS                0
-#define DSETUPERR_BADWINDOWSVERSION     -1
-#define DSETUPERR_SOURCEFILENOTFOUND    -2
-#define DSETUPERR_BADSOURCESIZE         -3
-#define DSETUPERR_BADSOURCETIME         -4
-#define DSETUPERR_NOCOPY                -5
-#define DSETUPERR_OUTOFDISKSPACE        -6
-#define DSETUPERR_CANTFINDINF           -7
-#define DSETUPERR_CANTFINDDIR           -8
-#define DSETUPERR_INTERNAL              -9
-#define DSETUPERR_NTWITHNO3D            -10  /*!< REM: obsolete, you'll never see this */
-#define DSETUPERR_UNKNOWNOS             -11
-#define DSETUPERR_USERHITCANCEL         -12
-#define DSETUPERR_NOTPREINSTALLEDONNT   -13
+#define DSETUPERR_SUCCESS_RESTART        1 //!< Setup was successful and a restart is required.
+#define DSETUPERR_SUCCESS                0 //!< Setup was successful and no restart is required. 
+#define DSETUPERR_BADWINDOWSVERSION     -1 //!< DirectX does not support the Windows version on the system.
+#define DSETUPERR_SOURCEFILENOTFOUND    -2 //!< One of the required source files could not be found.
+#define DSETUPERR_BADSOURCESIZE         -3 //!< A file's size could not be verified or was incorrect. 
+#define DSETUPERR_BADSOURCETIME         -4 //!< A file's date and time could not be verified or were incorrect. 
+#define DSETUPERR_NOCOPY                -5 //!< A file's version could not be verified or was incorrect. 
+#define DSETUPERR_OUTOFDISKSPACE        -6 //!< The setup program ran out of disk space during installation. 
+#define DSETUPERR_CANTFINDINF           -7 //!< A required .inf file could not be found. 
+#define DSETUPERR_CANTFINDDIR           -8 //!< The setup program could not find the working directory. 
+#define DSETUPERR_INTERNAL              -9 //!< An internal error occurred.
+//! @remarks According to the header comments, this is "obsolete, you'll never see this".
+#define DSETUPERR_NTWITHNO3D            -10 //!< Undocumented flag, but it's in the header file.
+#define DSETUPERR_UNKNOWNOS             -11 //!< The operating system on your system is not currently supported. 
+#define DSETUPERR_USERHITCANCEL         -12 //!< The Cancel button was pressed before the application was fully installed.
+#define DSETUPERR_NOTPREINSTALLEDONNT   -13 //!< The version of Windows NT on the system does not contain the current version of DirectX. An older version of DirectX may be present, or DirectX may be absent altogether.
 //!@}
 
 /** @defgroup dxsetupflags DirectX Setup Flags
