@@ -119,7 +119,6 @@ typedef struct _DSETUP_CB_FILECOPYERROR
 //
 // Data Structures
 //
-#ifndef UNICODE_ONLY
 //! @brief Contains the registry entries needed for applications designed to work with DirectPlayLobby. (ANSI only)
 typedef struct _DIRECTXREGISTERAPPA {
     DWORD    dwSize; //!< Size of the structure. Must be initialized to the size of the DirectXRegisterAppA structure.
@@ -131,8 +130,7 @@ typedef struct _DIRECTXREGISTERAPPA {
     LPSTR    lpszPath; //!< Path of the executable file.
     LPSTR    lpszCurrentDirectory; //!< Current directory. This is typically the same as lpszPath.
 } DIRECTXREGISTERAPPA, *PDIRECTXREGISTERAPPA, *LPDIRECTXREGISTERAPPA;
-#endif
-#ifndef ANSI_ONLY
+
 //! @brief Contains the registry entries needed for applications designed to work with DirectPlayLobby. (Unicode only)
 typedef struct _DIRECTXREGISTERAPPW {
     DWORD    dwSize; //!< Size of the structure. Must be initialized to the size of the DirectXRegisterAppW structure.
@@ -144,7 +142,7 @@ typedef struct _DIRECTXREGISTERAPPW {
     LPWSTR    lpszPath; //!< Path of the executable file.
     LPWSTR    lpszCurrentDirectory; //!< Current directory. This is typically the same as lpszPath.
 } DIRECTXREGISTERAPPW, *PDIRECTXREGISTERAPPW, *LPDIRECTXREGISTERAPPW;
-#endif
+
 typedef DIRECTXREGISTERAPPW DIRECTXREGISTERAPP;
 typedef PDIRECTXREGISTERAPPW PDIRECTXREGISTERAPP;
 typedef LPDIRECTXREGISTERAPPW LPDIRECTXREGISTERAPP;
@@ -157,7 +155,6 @@ typedef LPDIRECTXREGISTERAPPA LPDIRECTXREGISTERAPP;
 //
 // API
 //
-#ifndef UNICODE_ONLY
 INT
 WINAPI
 DirectXSetupA(
@@ -165,8 +162,6 @@ DirectXSetupA(
     LPSTR lpszRootPath,
     DWORD dwFlags
     );
-#endif //!UNICODE_ONLY
-#ifndef ANSI_ONLY
 INT
 WINAPI
 DirectXSetupW(
@@ -174,12 +169,9 @@ DirectXSetupW(
     LPWSTR lpszRootPath,
     DWORD  dwFlags
     );
-#endif
 #define DirectXSetup  DirectXSetupW
 #define DirectXSetup  DirectXSetupA
-#endif
 
-#ifndef UNICODE_ONLY
 INT
 WINAPI
 DirectXDeviceDriverSetupA(
@@ -188,8 +180,7 @@ DirectXDeviceDriverSetupA(
     LPSTR lpszDriverPath,
     DWORD dwFlags
     );
-#endif
-#ifndef ANSI_ONLY
+
 INT
 WINAPI
 DirectXDeviceDriverSetupW(
@@ -198,12 +189,11 @@ DirectXDeviceDriverSetupW(
     LPWSTR lpszDriverPath,
     DWORD  dwFlags
     );
-#endif
+
 #define DirectXDeviceDriverSetup  DirectXDeviceDriverSetupW
 #define DirectXDeviceDriverSetup  DirectXDeviceDriverSetupA
-#endif
 
-#ifndef UNICODE_ONLY
+
 //! @brief Registers an application as one designed to work with DirectPlayLobby. (ANSI only)
 INT
 WINAPI
@@ -217,8 +207,6 @@ DirectXRegisterApplicationA(
     //! @remark Registry entries needed for DirectPlayLobby access can be created without the use of the DirectXRegisterApplication function. This, however, is not generally recommended. See Registering Lobby-able Applications in the DirectPlay® documentation.
     //! @see DirectXUnRegisterApplication
     );
-#endif
-#ifndef ANSI_ONLY
 //! @brief Registers an application as one designed to work with DirectPlayLobby. (Unicode only)
 INT
 WINAPI
@@ -232,7 +220,6 @@ DirectXRegisterApplicationW(
     //! @remark Registry entries needed for DirectPlayLobby access can be created without the use of the DirectXRegisterApplication function. This, however, is not generally recommended. See Registering Lobby-able Applications in the DirectPlay® documentation.
     //! @see DirectXUnRegisterApplication
     );
-#endif
 
 #define DirectXRegisterApplication  DirectXRegisterApplicationW
 #define DirectXRegisterApplication  DirectXRegisterApplicationA
