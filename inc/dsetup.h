@@ -22,7 +22,8 @@
 extern "C" {
 #endif
 
-// DSETUP Error Codes, must remain compatible with previous setup.
+/** @name DirectX Setup Error Codes*/
+//!@{
 #define DSETUPERR_SUCCESS_RESTART        1
 #define DSETUPERR_SUCCESS                0
 #define DSETUPERR_BADWINDOWSVERSION     -1
@@ -38,6 +39,7 @@ extern "C" {
 #define DSETUPERR_UNKNOWNOS             -11
 #define DSETUPERR_USERHITCANCEL         -12
 #define DSETUPERR_NOTPREINSTALLEDONNT   -13
+//!@}
 
 // DSETUP flags. DirectX 5.0 apps should use these flags only.
 #define DSETUP_DDRAWDRV         0x00000008      /*!< install DirectDraw Drivers           */
@@ -114,7 +116,6 @@ typedef struct _DSETUP_CB_FILECOPYERROR
 } DSETUP_CB_FILECOPYERROR;
 
 
-#ifdef _WIN32
 //
 // Data Structures
 //
@@ -256,8 +257,6 @@ typedef DWORD (FAR PASCAL * DSETUP_CALLBACK)(DWORD Reason,
 
 INT WINAPI DirectXSetupSetCallback(DSETUP_CALLBACK Callback);
 INT WINAPI DirectXSetupGetVersion(DWORD *lpdwVersion, DWORD *lpdwMinorVersion);
-
-#endif // WIN32
 
 
 #ifdef __cplusplus
