@@ -332,14 +332,14 @@ typedef struct
     DWORD dwSize;                   //!< Size of structure
     DWORD dwFlags;                  //!< Not used. Must be zero.
     union
-    {                               //!< SSPI provider name
-        LPWSTR  lpszSSPIProvider;   //!< Unicode
-        LPSTR   lpszSSPIProviderA;  //!< ANSI
+    {
+        LPWSTR  lpszSSPIProvider;   //!< SSPI provider name (Unicode)
+        LPSTR   lpszSSPIProviderA;  //!< SSPI provider name (ANSI)
     };
     union
-    {                               //!< CAPI provider name
-        LPWSTR lpszCAPIProvider;    //!< Unicode
-        LPSTR  lpszCAPIProviderA;   //!< ANSI
+    {
+        LPWSTR lpszCAPIProvider;    //!< CAPI provider name (Unicode)
+        LPSTR  lpszCAPIProviderA;   //!< CAPI provider name (ANSI)
     };
     DWORD dwCAPIProviderType;       //!< Crypto Service Provider type
     DWORD dwEncryptionAlgorithm;    //!< Encryption Algorithm type
@@ -355,15 +355,15 @@ typedef struct
     DWORD dwSize;                   //!< Size of structure
     DWORD dwFlags;                  //!< Not used. Must be zero.
     union
-    {                               //!< Account identifier
-        LPWSTR  lpszAccountID;      //!< Unicode
-        LPSTR   lpszAccountIDA;     //!< ANSI
+    {
+        LPWSTR  lpszAccountID;      //!< Account identifier (Unicode)
+        LPSTR   lpszAccountIDA;     //!< Account identifier (ANSI)
     };
 } DPACCOUNTDESC, FAR *LPDPACCOUNTDESC;
 
 typedef const DPACCOUNTDESC FAR *LPCDPACCOUNTDESC;
 
-/*
+/**
  * A constant pointer to a guid
  */
 typedef const GUID FAR *LPCGUID;
