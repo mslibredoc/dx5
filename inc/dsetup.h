@@ -55,21 +55,26 @@ extern "C" {
 #define DSETUP_TESTINSTALL      0x00020000      //!< Performs a test installation. Does not actually install new components.
 //!@}
 
-// These OBSOLETE flags are here for compatibility with pre-DX5 apps only.
-// They are present to allow DX3 apps to be recompiled with DX5 and still work.
-// DO NOT USE THEM for DX5. They will go away in future DX releases.
+/** @defgroup dxsetupflagsobsolete DirectX OBSOLETE Setup Flags (for compatibility)
+ * @ingroup dxsetupflags
+ * These OBSOLETE flags are here for compatibility with pre-DX5 apps only.
+ * They are present to allow DX3 apps to be recompiled with DX5 and still work.
+ * DO NOT USE THEM for DX5. They will go away in future DX releases.
+*/
+//!@{
 // TODO: In the official doc, all of these say DX3 programs that use this will install all DX components. Does this mean doing one of these will necessitate installing all DX components?
-#define DSETUP_DDRAW            0x00000001      /*!< OBSOLETE. install DirectDraw           */
-#define DSETUP_DSOUND           0x00000002      /*!< OBSOLETE. install DirectSound          */
-#define DSETUP_DPLAY            0x00000004      /*!< OBSOLETE. install DirectPlay           */
-#define DSETUP_DPLAYSP          0x00000020      /*!< OBSOLETE. install DirectPlay Providers */
-#define DSETUP_DVIDEO           0x00000040      /*!< OBSOLETE. install DirectVideo          */
-#define DSETUP_D3D              0x00000200      /*!< OBSOLETE. install Direct3D             */
-#define DSETUP_DINPUT           0x00000800      /*!< OBSOLETE. install DirectInput          */
-#define DSETUP_DIRECTXSETUP     0x00001000      /*!< OBSOLETE. install DirectXSetup DLL's   */
-#define DSETUP_NOUI             0x00002000      /*!< OBSOLETE. install DirectX with NO UI   */
-#define DSETUP_PROMPTFORDRIVERS 0x10000000      /*!< OBSOLETE. prompt when replacing display/audio drivers */
-#define DSETUP_RESTOREDRIVERS   0x20000000      /*!< OBSOLETE. restore display/audio drivers */
+#define DSETUP_DDRAW            0x00000001      //!< OBSOLETE. install DirectDraw           
+#define DSETUP_DSOUND           0x00000002      //!< OBSOLETE. install DirectSound          
+#define DSETUP_DPLAY            0x00000004      //!< OBSOLETE. install DirectPlay           
+#define DSETUP_DPLAYSP          0x00000020      //!< OBSOLETE. install DirectPlay Providers 
+#define DSETUP_DVIDEO           0x00000040      //!< OBSOLETE. install DirectVideo          
+#define DSETUP_D3D              0x00000200      //!< OBSOLETE. install Direct3D             
+#define DSETUP_DINPUT           0x00000800      //!< OBSOLETE. install DirectInput          
+#define DSETUP_DIRECTXSETUP     0x00001000      //!< OBSOLETE. install DirectXSetup DLL's   
+#define DSETUP_NOUI             0x00002000      //!< OBSOLETE. install DirectX with NO UI   
+#define DSETUP_PROMPTFORDRIVERS 0x10000000      //!< OBSOLETE. prompt when replacing display/audio drivers 
+#define DSETUP_RESTOREDRIVERS   0x20000000      //!< OBSOLETE. restore display/audio drivers
+//!@}
 
 
 
@@ -77,55 +82,67 @@ extern "C" {
 // DirectX Setup Callback mechanism
 //******************************************************************
 
-// DSETUP Message Info Codes, passed to callback as Reason parameter.
-#define DSETUP_CB_MSG_NOMESSAGE                     0
-#define DSETUP_CB_MSG_CANTINSTALL_UNKNOWNOS         1
-#define DSETUP_CB_MSG_CANTINSTALL_NT                2
-#define DSETUP_CB_MSG_CANTINSTALL_BETA              3
-#define DSETUP_CB_MSG_CANTINSTALL_NOTWIN32          4
-#define DSETUP_CB_MSG_CANTINSTALL_WRONGLANGUAGE     5
-#define DSETUP_CB_MSG_CANTINSTALL_WRONGPLATFORM     6
-#define DSETUP_CB_MSG_PREINSTALL_NT                 7
-#define DSETUP_CB_MSG_NOTPREINSTALLEDONNT           8
-#define DSETUP_CB_MSG_SETUP_INIT_FAILED             9
-#define DSETUP_CB_MSG_INTERNAL_ERROR                10
-#define DSETUP_CB_MSG_CHECK_DRIVER_UPGRADE          11
-#define DSETUP_CB_MSG_OUTOFDISKSPACE                12
-#define DSETUP_CB_MSG_BEGIN_INSTALL                 13
-#define DSETUP_CB_MSG_BEGIN_INSTALL_RUNTIME         14
-#define DSETUP_CB_MSG_BEGIN_INSTALL_DRIVERS         15
-#define DSETUP_CB_MSG_BEGIN_RESTORE_DRIVERS         16
-#define DSETUP_CB_MSG_FILECOPYERROR                 17
+/** @defgroup dxsetupcallbackreasons DirectX Setup Callback Message Info Codes
+ * Passed to callback as Reason parameter.
+ */
+//!@{
+#define DSETUP_CB_MSG_NOMESSAGE                     0 //!< No message to be displayed. The callback function should return.
+#define DSETUP_CB_MSG_CANTINSTALL_UNKNOWNOS         1 //!< The operating system is unknown. The DirectX component or device driver can’t be installed. 
+#define DSETUP_CB_MSG_CANTINSTALL_NT                2 //!< The DirectX component or device driver can’t be installed on versions of Windows NT prior to version 4.0. 
+#define DSETUP_CB_MSG_CANTINSTALL_BETA              3 //!< A pre-release beta version of Windows 95 was detected. The DirectX component or device driver can’t be installed.
+#define DSETUP_CB_MSG_CANTINSTALL_NOTWIN32          4 //!< The operating system detected is not Windows 95 or Windows NT®. DirectX is not compatible with Windows 3.x. 
+#define DSETUP_CB_MSG_CANTINSTALL_WRONGLANGUAGE     5 //!< The DirectX component or device driver is not localized to the language being used by Windows. 
+#define DSETUP_CB_MSG_CANTINSTALL_WRONGPLATFORM     6 //!< The DirectX component or device driver is for another type of computer. 
+#define DSETUP_CB_MSG_PREINSTALL_NT                 7 //!< DirectX is already installed on the version of Windows NT in use. 
+#define DSETUP_CB_MSG_NOTPREINSTALLEDONNT           8 //!< The DirectX component or device driver can’t be installed on the version of Windows NT in use. 
+#define DSETUP_CB_MSG_SETUP_INIT_FAILED             9 //!< Setup of the DirectX component or device driver has failed. 
+#define DSETUP_CB_MSG_INTERNAL_ERROR                10 //!< An internal error has occurred. Setup of the DirectX component or device driver has failed. 
+#define DSETUP_CB_MSG_CHECK_DRIVER_UPGRADE          11 //!< Driver is being considered for upgrade. Verification from user is recommended. 
+//! @remarks This is undocumented, but in the headerfile. Though, this flag specifically should have for the systems back then.
+#define DSETUP_CB_MSG_OUTOFDISKSPACE                12 //!< Probably would have been: There is not enough disk space to install DirectX.
+#define DSETUP_CB_MSG_BEGIN_INSTALL                 13 //!< DirectXSetup is about to begin installing DirectX components and device drivers. 
+#define DSETUP_CB_MSG_BEGIN_INSTALL_RUNTIME         14 //!< DirectXSetup is about to begin installing DirectX components. 
+#define DSETUP_CB_MSG_BEGIN_INSTALL_DRIVERS         15 //!< DirectXSetup is about to begin installing device drivers.
+#define DSETUP_CB_MSG_BEGIN_RESTORE_DRIVERS         16 //!< DirectXSetup is about to begin restoring previous drivers.
+//! @remarks This is undocumented.
+#define DSETUP_CB_MSG_FILECOPYERROR                 17 //!< Probably would have been: DirectXSetup failed to copy a file.
+//!@}
 
 
-#define DSETUP_CB_UPGRADE_TYPE_MASK             0x000F
-#define DSETUP_CB_UPGRADE_KEEP                  0x0001
-#define DSETUP_CB_UPGRADE_SAFE                  0x0002
-#define DSETUP_CB_UPGRADE_FORCE                 0x0004
-#define DSETUP_CB_UPGRADE_UNKNOWN               0x0008
+/** @defgroup dxsetupupgradetypes DirectX Setup Callback Upgrade Types
+  * Contains information about the upgrade type for Windows.
+  */
+//!@{
+//! @remarks this is undocumented, so lets assuming it is the same as DSETUP_CB_UPGRADE_UNNECESSARY.
+#define DSETUP_CB_UPGRADE_TYPE_MASK             0x000F //!< The existing device driver is newer than the driver being installed. An upgrade is not recommended. 
+//! @remarks This is documented, but DSETUP_CB_UPGRADE_TYPE_MASK is not. We're assuming it is the same.
+#define DSETUP_CB_UPGRADE_UNNECESSARY           0x000F //!< The existing device driver is newer than the driver being installed. An upgrade is not recommended. 
+#define DSETUP_CB_UPGRADE_KEEP                  0x0001 //!< The system may fail if this device driver is upgraded. Upgrade not allowed. 
+#define DSETUP_CB_UPGRADE_SAFE                  0x0002 //!< DirectXSetup can safely upgrade this device driver. Upgrade recommended. A safe upgrade will not adversely affect the operation of Windows. Some hardware-dependent programs may be adversely affected.
+#define DSETUP_CB_UPGRADE_FORCE                 0x0004 //!< Windows may not function correctly if the component is not upgraded. The upgrade will be performed. 
+#define DSETUP_CB_UPGRADE_UNKNOWN               0x0008 //!< DirectXSetup does not recognize the existing driver for this device. This value will occur frequently. Upgrading may adversely affect the use of the device. It is strongly recommended that the upgrade not be performed. 
 
-#define DSETUP_CB_UPGRADE_HASWARNINGS           0x0100
-#define DSETUP_CB_UPGRADE_CANTBACKUP            0x0200
+#define DSETUP_CB_UPGRADE_HASWARNINGS           0x0100 //!< DirectXSetup can upgrade the driver for this device, but doing so may affect one or more programs on the system. szMessage contains the names of which programs may be affected. Upgrade not recommended. 
+#define DSETUP_CB_UPGRADE_CANTBACKUP            0x0200 //!< The old system components can’t be backed up. Upgrade can be performed, but the components or drivers can’t be restored later.
 
-#define DSETUP_CB_UPGRADE_DEVICE_ACTIVE         0x0800
+#define DSETUP_CB_UPGRADE_DEVICE_ACTIVE         0x0800 //!< The device is currently in use. 
 
-#define DSETUP_CB_UPGRADE_DEVICE_DISPLAY        0x1000
-#define DSETUP_CB_UPGRADE_DEVICE_MEDIA          0x2000
-
+#define DSETUP_CB_UPGRADE_DEVICE_DISPLAY        0x1000 //!< The device driver being upgraded is for a display device. 
+#define DSETUP_CB_UPGRADE_DEVICE_MEDIA          0x2000 //!< The device driver being upgraded is for a media device. 
+//!@}
 
 //! @brief Structure passed as a parameter to the DirectXSetupCallbackFunction.
 //! @details It only contains valid information when the Reason parameter is DSETUP_CB_MSG_CHECK_DRIVER_UPGRADE. Callback functions can use it to get status information on the upgrade that is about to be done.
 typedef struct _DSETUP_CB_UPGRADEINFO
 {
-    DWORD UpgradeFlags; //!< A flag indicating the status of the upgrade. See the pInfo parameter of the DirectXSetupCallbackFunction function for details.
-    //! @see DirectXSetupCallbackFunction
+    DWORD UpgradeFlags; //!< A flag indicating the status of the upgrade. Can be any of the flags in @ref dxsetupupgradetypes .
 } DSETUP_CB_UPGRADEINFO;
 
 //! @brief Undocumented, but in the headerfile. Probably a structure passed as a callback to the DirectXSetupCallbackFunction as a 'failed to copy file' error.
 //! @remarks This is undocumented. What we know is a guess.
 typedef struct _DSETUP_CB_FILECOPYERROR
 {
-    DWORD dwError;
+    DWORD dwError; //!< Probably solely for DSETUP_CB_MSG_FILECOPYERROR .
 } DSETUP_CB_FILECOPYERROR;
 
 
@@ -190,7 +207,10 @@ DirectXSetupW(
     //! @returns If it is not successful, it returns an error code. For a list of possible return codes, see @ref dxsetuperrcodes .
     //! @remarks According to official docs, "Before you use the DirectXSetup function in your setup program, you should ensure that there is at least 15 MB of available disk space on the user's system. This is the maximum space required for DirectX to set up the appropriate files. If the user's system already contains the DirectX files, this space is not needed."
     );
+
+//! @brief The define for the DirectXSetup struct. If using Unicode, this will be chosen.
 #define DirectXSetup  DirectXSetupW
+//! @brief The define for the DirectXSetup struct. If using ANSI, this will be chosen.
 #define DirectXSetup  DirectXSetupA
 
 INT
@@ -210,8 +230,9 @@ DirectXDeviceDriverSetupW(
     LPWSTR lpszDriverPath,
     DWORD  dwFlags
     );
-
+//! @brief The define for the DirectXDeviceDriver struct. If using Unicode, this will be chosen.
 #define DirectXDeviceDriverSetup  DirectXDeviceDriverSetupW
+//! @brief The define for the DirectXDeviceDriver struct. If using ANSI, this will be chosen.
 #define DirectXDeviceDriverSetup  DirectXDeviceDriverSetupA
 
 
@@ -242,7 +263,9 @@ DirectXRegisterApplicationW(
     //! @see DirectXUnRegisterApplication
     );
 
+//! @brief The define for the DirectXRegisterApplication struct. If using Unicode, this will be chosen.
 #define DirectXRegisterApplication  DirectXRegisterApplicationW
+//! @brief The define for the DirectXRegisterApplication struct. If using ANSI, this will be chosen.
 #define DirectXRegisterApplication  DirectXRegisterApplicationA
 
 //! @brief Deletes the registration of an application designed to work with DirectPlayLobby.
@@ -268,11 +291,28 @@ typedef INT (WINAPI * LPDIRECTXDEVICEDRIVERSETUP)(HWND, LPSTR, LPSTR, DWORD);
 typedef INT (WINAPI * LPDIRECTXREGISTERAPPLICATION)(HWND, LPDIRECTXREGISTERAPPA);
 #endif
 
-typedef DWORD (FAR PASCAL * DSETUP_CALLBACK)(DWORD Reason,
-                                  DWORD MsgType,       /*! Same as flags to MessageBox */
-                                  LPSTR szMessage,
-                                  LPSTR szName,
-                                  void *pInfo);
+// Microsoft did this in the header file for DirectXSetupCallbackFunction - it is a placeholder after all.
+// typedef DWORD (FAR PASCAL * DSETUP_CALLBACK)(DWORD Reason,
+//                                   DWORD MsgType,       /*! Same as flags to MessageBox */
+//                                   LPSTR szMessage,
+//                                   LPSTR szName,
+//                                   void *pInfo);
+
+// Here is the reconstructed thing. In the docs LPSTR is shown as char*, but its the same thing
+
+//! @brief Placeholder name for a callback function supplied by the setup program.
+//! @details The callback function reports the status of the current installation process. It also can provide information for use by the MessageBox function.
+DWORD DirectXSetupCallbackFunction(
+    DWORD Reason, //!< Reason for the callback. It can be one of the @ref dxsetupcallbackreasons .
+    DWORD MsgType, //!< Contains flags that control the display of a message box. These flags can be passed to the MessageBox function. An exception is when MsgType is equal to zero. In that case, the setup program can display status information but should not wait for input from the user.
+    LPSTR *szMessage, //!< A localized character string containing error or status messages that can be displayed in a message box created with the MessageBox function. 
+    LPSTR *szName, //!< The value of szName is NULL unless the Reason parameter is DSETUP_CB_MSG_CHECK_DRIVER_UPGRADE. In that case, szName  contains the name of driver to be upgraded.
+    void *pInfo //!< Pointer to a structure containing upgrade information. When Reason is DSETUP_CB_MSG_CHECK_DRIVER_UPGRADE, the setup program is in the process of upgrading a driver and asking the user whether the upgrade should take place. This structure contains information about the upgrade in its UpgradeType member, which can be a value in @dxsetupupgradetypes .
+    //! @returns The return value should be the same as the MessageBox function, with one exception. If this function returns zero, the DirectXSetup function will act as if no callback function was present. That is, it will perform the default action for upgrade of the DirectX component or driver.
+    //! @remarks The name of the DirectXSetupCallbackFunction is supplied by the setup program. The DirectXSetupSetCallback function is used to pass the address of the callback function to DirectSetup.
+    //! @remarks If MsgType is equal to zero, the setup program may display status information, but it should not wait for user input. This is useful for displaying ongoing status information.
+    //! @see MessageBox DirectXSetupSetCallback
+)
 
 //! @brief Sets a pointer to a callback function that is periodically called by DirectXSetup.
 //! @details The callback function can be used for setup progress notification and to implement a custom user interface for an application’s setup program. For information on the callback function, see DirectXSetupCallbackFunction. If a setup program does not provide a callback function, the DirectXSetupSetCallback function should not be invoked.

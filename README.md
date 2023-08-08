@@ -18,7 +18,7 @@ A complete file is considered to have all of it's documentation transferred, and
 - [ ] dinput.h
 - [ ] dplay.h
 - [ ] dplobby.h
-- [ ] [dsetup.h](https://github.com/orgs/mslibredoc/projects/1?pane=issue&itemId=35371687) - in progress
+- [ ] [dsetup.h](https://github.com/orgs/mslibredoc/projects/1?pane=issue&itemId=35371687) - needs cleanup/offsets
 - [ ] dsound.h
 - [ ] dvp.h
 - [ ] fastfile.h
