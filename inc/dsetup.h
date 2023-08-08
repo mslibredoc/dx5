@@ -241,11 +241,16 @@ DirectXRegisterApplicationW(
 #define DirectXRegisterApplication  DirectXRegisterApplicationA
 #endif // UNICODE
 
+//! @brief Deletes the registration of an application designed to work with DirectPlayLobby.
 INT
 WINAPI
 DirectXUnRegisterApplication(
-    HWND     hWnd,
-    LPGUID   lpGUID
+    HWND     hWnd, //!< Handle to the parent window. Set this to NULL if the desktop is the parent window.
+    LPGUID   lpGUID //!< Pointer to a GUID that represents the DirectPlay application to be unregistered.
+    //! @returns If the function succeeds, the return value is TRUE meaning that the registration is successfully deleted.
+    //! @returns If the function fails, the return value is FALSE.
+    //! @remark The DirectXUnRegisterApplication function removes registry the entries needed for an application to work with DirectPlayLobby. An uninstall program should only use DirectXUnRegisterApplication if it used DirectXRegisterApplication when the application was installed.
+    //! @see DirectXRegisterApplication
     );
 
 //
