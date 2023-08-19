@@ -151,13 +151,21 @@ typedef struct _DSETUP_CB_FILECOPYERROR
 //
 //! @brief Contains the registry entries needed for applications designed to work with DirectPlayLobby. (ANSI only)
 typedef struct _DIRECTXREGISTERAPPA {
+    /// @at{0} @sz{4}
     DWORD    dwSize; //!< Size of the structure. Must be initialized to the size of the DirectXRegisterAppA structure.
+    /// @at{4} @sz{4}
     DWORD    dwFlags; //!< Reserved for future use.
+    /// @at{8} @sz{4}
     LPSTR    lpszApplicationName; //!< Name of the application.
+    /// @at{c} @sz{4}
     LPGUID   lpGUID; //!< Globally unique identifier (GUID) of the application.
+    /// @at{10} @sz{4}
     LPSTR    lpszFilename; //!< Name of the executable file to be called.
+    /// @at{14} @sz{4}
     LPSTR    lpszCommandLine; //!< Command-line arguments for the executable file.
+    /// @at{18} @sz{4}
     LPSTR    lpszPath; //!< Path of the executable file.
+    /// @at{1c} @sz{4}
     LPSTR    lpszCurrentDirectory; //!< Current directory. This is typically the same as lpszPath.
 } DIRECTXREGISTERAPPA, *PDIRECTXREGISTERAPPA, *LPDIRECTXREGISTERAPPA;
 
