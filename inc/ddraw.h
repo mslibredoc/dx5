@@ -338,37 +338,37 @@ typedef DDCAPS FAR* LPDDCAPS;
  */
 typedef struct _DDPIXELFORMAT
 {
-    DWORD	dwSize;			// size of structure
-    DWORD	dwFlags;		// pixel format flags
-    DWORD	dwFourCC;		// (FOURCC code)
+    /*0*/DWORD	dwSize;			//!< size of structure
+    /*4*/DWORD	dwFlags;		//!< pixel format flags
+    /*8*/DWORD	dwFourCC;		//!< (FOURCC code)
     union
     {
-	DWORD	dwRGBBitCount;		// how many bits per pixel
-	DWORD	dwYUVBitCount;		// how many bits per pixel
-	DWORD	dwZBufferBitDepth;	// how many bits for z buffers
-	DWORD	dwAlphaBitDepth;	// how many bits for alpha channels
+	/*c*/DWORD	dwRGBBitCount;		//!< how many bits per pixel
+	/*10*/DWORD	dwYUVBitCount;		//!< how many bits per pixel
+	/*14*/DWORD	dwZBufferBitDepth;	//!< how many bits for z buffers
+	/*18*/DWORD	dwAlphaBitDepth;	//!< how many bits for alpha channels
     };
     union
     {
-	DWORD	dwRBitMask;		// mask for red bit
-	DWORD	dwYBitMask;		// mask for Y bits
+	/*1c*/DWORD	dwRBitMask;		//!< mask for red bit
+	/*20*/DWORD	dwYBitMask;		//!< mask for Y bits
+    };
+    /*24*/union
+    {
+	/*28*/DWORD	dwGBitMask;		//!< mask for green bits
+	/*2c*/DWORD	dwUBitMask;		//!< mask for U bits
     };
     union
     {
-	DWORD	dwGBitMask;		// mask for green bits
-	DWORD	dwUBitMask;		// mask for U bits
+	/*30*/DWORD	dwBBitMask;		//!< mask for blue bits
+	/*34*/DWORD	dwVBitMask;		//!< mask for V bits
     };
     union
     {
-	DWORD	dwBBitMask;		// mask for blue bits
-	DWORD	dwVBitMask;		// mask for V bits
-    };
-    union
-    {
-	DWORD	dwRGBAlphaBitMask;	// mask for alpha channel
-	DWORD	dwYUVAlphaBitMask;	// mask for alpha channel
-	DWORD	dwRGBZBitMask;		// mask for Z channel
-	DWORD	dwYUVZBitMask;		// mask for Z channel
+	/*38*/DWORD	dwRGBAlphaBitMask;	//!< mask for alpha channel
+	/*3c*/DWORD	dwYUVAlphaBitMask;	//!< mask for alpha channel
+	/*40*/DWORD	dwRGBZBitMask;		//!< mask for Z channel
+	/*4c*/DWORD	dwYUVZBitMask;		//!< mask for Z channel
     };
 } DDPIXELFORMAT;
 
